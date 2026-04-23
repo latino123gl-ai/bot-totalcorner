@@ -391,13 +391,13 @@ def main():
                     not state["r4"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -1.0
-                    and minute == 45
+                    and -3.5 <= handi_val <= -0.0
+                    and minute == 5
                     and (hg, ag) in [
-                        (2,1),(3,2),(3,1)
+                        (0,0),(3,2),(3,1)
                     ]
-                    and datt_h >= 90
-                    and on_h >= 4
+                    and datt_h >= 1
+                    and on_h >= 0
                     and tot_shots_h >= 0
                 ):
                     msg = (

@@ -223,7 +223,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.5
-                    and minute == 77
+                    and minute == 79
                     and (hg, ag) in [
                         (0,1),(1,2),
                         (2,3),(3,4) 
@@ -260,8 +260,8 @@ def main():
                         (1,1),(2,2),(3,3)
                     ]  
                     and datt_a >= 30                # attacchi pericolosi ospite
-                    and on_a >= 5                  # tiri in porta ospite
-                    and tot_shots_a >= 9            
+                    and on_a >= 4                  # tiri in porta ospite
+                    and tot_shots_a >= 8            
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE PAREGGIA\n\n"
@@ -396,7 +396,7 @@ def main():
                     and (hg, ag) in [
                         (0,0),(3,2),(3,1)
                     ]
-                    and datt_h >= 1
+                    and datt_h >= 50
                     and on_h >= 0
                     and tot_shots_h >= 0
                 ):

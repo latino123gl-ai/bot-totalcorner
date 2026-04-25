@@ -261,7 +261,7 @@ def main():
                     ]  
                     and datt_a >= 30                # attacchi pericolosi ospite
                     and on_a >= 4                  # tiri in porta ospite
-                    and tot_shots_a >= 8            
+                    and tot_shots_a >= 7            
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE PAREGGIA\n\n"

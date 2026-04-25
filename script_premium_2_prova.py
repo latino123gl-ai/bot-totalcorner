@@ -261,6 +261,7 @@ def main():
                     ]  
                     and datt_a >= 30                # attacchi pericolosi ospite
                     and on_a >= 5                  # tiri in porta ospite
+                    and off_a >= 3                 # tiri fuori porta ospite
                     and tot_shots_a >= 8            
                 ):
                     msg = (
@@ -295,6 +296,7 @@ def main():
                     ]  
                     and datt_a >= 30                # attacchi pericolosi ospite
                     and on_a >= 4                   # tiri in porta ospite 
+                    and off_a >= 3                 # tiri fuori porta ospite
                     and tot_shots_a >= 7           
                 ):
                     msg = (
@@ -329,7 +331,8 @@ def main():
                     ]
                     and datt_h >= 30
                     and on_h >= 4
-                    and tot_shots_h >= 8
+                    and off_h >= 3                 # tiri fuori porta casa
+                    and tot_shots_h >= 7
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PAREGGIA\n\n"
@@ -364,6 +367,7 @@ def main():
                     ]
                     and datt_h >= 20
                     and on_h >= 3
+                    and off_h >= 3                 # tiri fuori porta casa
                     and tot_shots_h >= 6
                 ):
                     msg = (

@@ -554,7 +554,7 @@ def main():
 
             except Exception as e:
                 print("Errore:", e)
-
+                
         time.sleep(POLL_INTERVAL_SECONDS)
 
 

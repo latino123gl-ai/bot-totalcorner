@@ -225,16 +225,19 @@ def main():
                     not state["r1"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -2.5
-                    and minute == 79
+                    and -3.0 <= handi_val <= -1.0
+                    and minute == 44
                     and (hg, ag) in [
-                        (0,1),(1,2),
+                        (0,1),(1,2),(0,2),(1,3),(0,3),
                         (2,3),(3,4) 
                     ]  
-                    and datt_h >= 0                 # pericolosi casa
+                    and datt_h >= 30                 # attacchi pericolosi casa
+                    and on_h >= 6                    # tiri in porta casa
+                    and off_h >= 4                   # tiri fuori casa
+                    and tot_shots_h >= 10            # tiri totali casa
                 ):
                     msg = (
-                        "⚽ REGOLA CORNER\n\n"
+                        "⚽ FAVORITA CASA PERDE DOPPIO OVER\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -398,17 +401,18 @@ def main():
                     not state["r4"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -0.0
-                    and minute == 5
+                    and +1.0 <= handi_val <= +3.0
+                    and minute == 44
                     and (hg, ag) in [
-                        (0,0),(3,2),(3,1)
+                        (1,0),(2,1),(2,0),(3,1),(3,0),(3,2)
                     ]
-                    and datt_h >= 50
-                    and on_h >= 0
-                    and tot_shots_h >= 0
+                    and datt_a >= 30               # attacchi pericolosi ospite
+                    and on_a >= 6                  # tiri in porta ospite
+                    and off_a >= 5                 # tiri fuori porta ospite
+                    and tot_shots_a >= 11           # tiri totali ospite
                 ):
                     msg = (
-                        "🚨 FAVORITA CASA CON GOL\n\n"
+                        "🚨 FAVORITA OSPITE PERDE DOPPIO OVER\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

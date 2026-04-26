@@ -265,10 +265,10 @@ def main():
                     and (hg, ag) in [
                         (1,1),(2,2),(3,3)
                     ]  
-                    and datt_a >= 38               # attacchi pericolosi ospite
+                    and datt_a >= 36               # attacchi pericolosi ospite
                     and on_a >= 5                  # tiri in porta ospite
-                    and off_a >= 3                 # tiri fuori porta ospite
-                    and tot_shots_a >= 8            
+                    and off_a >= 4                 # tiri fuori porta ospite
+                    and tot_shots_a >= 9            
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE PAREGGIA\n\n"

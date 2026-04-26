@@ -163,7 +163,10 @@ def main():
                 if ("esoccer" in league_str or
                     "e-football" in league_str or
                     "efootball" in league_str or
-                    "e-soccer" in league_str):
+                    "e-soccer" in league_str or
+                    "friendlies" in league_str or
+                    "friend" in league_str or
+                    "friendly" in league_str):
                     continue
 
                 # MINUTO

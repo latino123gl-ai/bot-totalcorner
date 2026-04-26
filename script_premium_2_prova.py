@@ -255,7 +255,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +1.0 <= handi_val <= +3.0
-                    and minute == 45
+                    and minute == 44
                     and (hg, ag) in [
                         (1,1),(2,2),(3,3)
                     ]  
@@ -289,7 +289,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +1.0 <= handi_val <= +3.0
-                    and minute == 45
+                    and minute == 44
                     and (hg, ag) in [
                         (1,0),(2,0),(2,1),(3,1),
                         (3,2),(4,2),(4,3)
@@ -325,7 +325,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
-                    and minute == 45
+                    and minute == 44
                     and (hg, ag) in [
                         (1,1),(2,2),(3,3)
                     ]
@@ -360,7 +360,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
-                    and minute == 45
+                    and minute == 44
                     and (hg, ag) in [
                         (0,1),(0,2),(1,2),(1,3),
                         (2,3),(2,4),(3,4)
@@ -428,7 +428,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.0
-                    and minute == 45
+                    and minute == 44
                     and (hg, ag) in [
                         (0,2),
                         (1,0),(1,2),(2,0),
@@ -532,7 +532,7 @@ def main():
                         (0,0)
                     ]
                     and datt_h >= 12
-                    and on_h >= 5
+                    and on_h >= 6
                     and tot_shots_h >= 9
                 ):
                     msg = (

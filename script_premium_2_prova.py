@@ -166,7 +166,8 @@ def main():
                     "e-soccer" in league_str or
                     "friendlies" in league_str or
                     "friend" in league_str or
-                    "friendly" in league_str):
+                    "friendly" in league_str)
+                    "cup" in league_str):
                     continue
 
                 # MINUTO
@@ -267,8 +268,8 @@ def main():
                     ]  
                     and datt_a >= 40               # attacchi pericolosi ospite
                     and on_a >= 5                  # tiri in porta ospite
-                    and off_a >= 4                 # tiri fuori porta ospite
-                    and tot_shots_a >= 9            
+                    and off_a >= 5                 # tiri fuori porta ospite
+                    and tot_shots_a >= 10            
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE PAREGGIA\n\n"
@@ -301,9 +302,9 @@ def main():
                         (3,2),(4,2),(4,3)
                     ]  
                     and datt_a >= 30                # attacchi pericolosi ospite
-                    and on_a >= 4                   # tiri in porta ospite 
-                    and off_a >= 3                 # tiri fuori porta ospite
-                    and tot_shots_a >= 7           
+                    and on_a >= 5                   # tiri in porta ospite 
+                    and off_a >= 4                  # tiri fuori porta ospite
+                    and tot_shots_a >= 9           
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE PERDE\n\n"

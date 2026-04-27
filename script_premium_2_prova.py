@@ -166,7 +166,7 @@ def main():
                     "e-soccer" in league_str or
                     "friendlies" in league_str or
                     "friend" in league_str or
-                    "friendly" in league_str)
+                    "friendly" in league_str or
                     "cup" in league_str):
                     continue
 
@@ -301,7 +301,7 @@ def main():
                         (1,0),(2,0),(2,1),(3,1),
                         (3,2),(4,2),(4,3)
                     ]  
-                    and datt_a >= 30                # attacchi pericolosi ospite
+                    and datt_a >= 38                # attacchi pericolosi ospite
                     and on_a >= 5                   # tiri in porta ospite 
                     and off_a >= 4                  # tiri fuori porta ospite
                     and tot_shots_a >= 9           

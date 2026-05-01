@@ -444,7 +444,7 @@ def main():
                     ]  
                     and datt_h >= 35                 # pericolosi casa
                     and on_h >= 6
-                    and tot_shots_h >= 9
+                    and tot_shots_h >= 10
                 ):
                     msg = (
                         "⚽ REGOLA GOL LINE >=3.5\n\n"
@@ -500,14 +500,15 @@ def main():
                     not state["r9"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and +1.0 <= handi_val <= +3.0
-                    and minute == 45
+                    and -3.0 <= handi_val <= -1.0
+                    and minute == 44
                     and (hg, ag) in [
                         (0,0)
                     ]  
-                    and datt_a >= 85                # attacchi pericolosi ospite
-                    and on_a >= 6                   # tiri in porta ospite 
-                    and tot_shots_h >= 11           
+                    and datt_h >= 40                # attacchi pericolosi casa
+                    and on_h >= 6                   # tiri in porta casa 
+                    and off_h >= 5                  # tiri fuori porta casa
+                    and tot_shots_h >= 11           # totale tiri casa
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE 0-0\n\n"

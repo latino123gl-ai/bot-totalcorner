@@ -438,9 +438,8 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and minute == 44
                     and (hg, ag) in [
-                        (0,2),
-                        (1,0),(1,2),(2,0),
-                        (0,2),(2,1),(0,1)
+                        (1,0),(1,2),
+                        (2,1),(0,1),(2,3),(3,2)
                     ]  
                     and datt_h >= 35                 # pericolosi casa
                     and on_h >= 6
@@ -511,7 +510,7 @@ def main():
                     and tot_shots_h >= 11           # totale tiri casa
                 ):
                     msg = (
-                        "⚽️ FAVORITA OSPITE 0-0\n\n"
+                        "⚽️ FAVORITA CASA 1° TEMPO 0-0\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

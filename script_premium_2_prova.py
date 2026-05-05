@@ -268,8 +268,8 @@ def main():
                     ]  
                     and datt_a >= 40               # attacchi pericolosi ospite
                     and on_a >= 5                  # tiri in porta ospite
-                    and off_a >= 5                 # tiri fuori porta ospite
-                    and tot_shots_a >= 10            
+                    and off_a >= 4                 # tiri fuori porta ospite
+                    and tot_shots_a >= 9            
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE PAREGGIA\n\n"
@@ -409,8 +409,8 @@ def main():
                     ]
                     and datt_a >= 30               # attacchi pericolosi ospite
                     and on_a >= 6                  # tiri in porta ospite
-                    and off_a >= 5                 # tiri fuori porta ospite
-                    and tot_shots_a >= 11           # tiri totali ospite
+                    and off_a >= 4                 # tiri fuori porta ospite
+                    and tot_shots_a >= 10           # tiri totali ospite
                 ):
                     msg = (
                         "🚨 FAVORITA OSPITE PERDE DOPPIO OVER\n\n"
@@ -423,7 +423,7 @@ def main():
                         f"Attacchi totali: {att_h} - {att_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
-                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Tiri totali casa: {tot_shots_a}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
                     )
                     send_msg(msg)
@@ -446,7 +446,7 @@ def main():
                     and tot_shots_h >= 10
                 ):
                     msg = (
-                        "⚽ REGOLA GOL LINE >=3.5\n\n"
+                        "⚽ REGOLA CASA GOL LINE >=3.5\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -476,7 +476,7 @@ def main():
                     and datt_h >= 0                 # pericolosi casa
                 ):
                     msg = (
-                        "⚽ REGOLA PRIMO TEMPO\n\n"
+                        "⚽ REGOLA a 8° PRIMO TEMPO\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -499,18 +499,18 @@ def main():
                     not state["r9"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -1.0
+                    and +0.0 <= handi_val <= +3.0
                     and minute == 44
                     and (hg, ag) in [
-                        (0,0)
+                        (1,0),(2,1),(0,1),(1,2),(3,2),(2,3)
                     ]  
-                    and datt_h >= 40                # attacchi pericolosi casa
-                    and on_h >= 6                   # tiri in porta casa 
-                    and off_h >= 5                  # tiri fuori porta casa
-                    and tot_shots_h >= 11           # totale tiri casa
+                    and datt_a >= 35                # attacchi pericolosi casa
+                    and on_a >= 6                   # tiri in porta casa 
+                    and off_a >= 5                  # tiri fuori porta casa
+                    and tot_shots_a >= 11           # totale tiri casa
                 ):
                     msg = (
-                        "⚽️ FAVORITA CASA 1° TEMPO 0-0\n\n"
+                        "⚽️ FAVORITA OSPITE GOL LINE >3.5\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

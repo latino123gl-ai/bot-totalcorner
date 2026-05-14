@@ -441,7 +441,7 @@ def main():
                         (2,1),(0,1)
                     ]  
                     and datt_h >= 35                 # pericolosi casa
-                    and on_h >= 6
+                    and on_h >= 7
                     and tot_shots_h >= 10
                 ):
                     msg = (
@@ -504,8 +504,8 @@ def main():
                         (1,0),(2,1),(0,1),(1,2)
                     ]  
                     and datt_a >= 35                # attacchi pericolosi casa
-                    and on_a >= 6                   # tiri in porta casa 
-                    and off_a >= 5                  # tiri fuori porta casa
+                    and on_a >= 7                   # tiri in porta casa 
+                    and off_a >= 4                  # tiri fuori porta casa
                     and tot_shots_a >= 11           # totale tiri casa
                 ):
                     msg = (

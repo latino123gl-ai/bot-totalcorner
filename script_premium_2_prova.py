@@ -503,10 +503,10 @@ def main():
                     and (hg, ag) in [
                         (1,0),(2,1),(0,1),(1,2)
                     ]  
-                    and datt_a >= 35                # attacchi pericolosi casa
-                    and on_a >= 7                   # tiri in porta casa 
-                    and off_a >= 4                  # tiri fuori porta casa
-                    and tot_shots_a >= 11           # totale tiri casa
+                    and datt_h >= 35                # attacchi pericolosi casa
+                    and on_h >= 7                   # tiri in porta casa 
+                    and off_h >= 4                  # tiri fuori porta casa
+                    and tot_shots_h >= 11           # totale tiri casa
                 ):
                     msg = (
                         "⚽️ OSPITE GOL LINE >3.5\n\n"
@@ -519,7 +519,7 @@ def main():
                         f"Attacchi totali: {att_h} - {att_a}\n\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
-                        f"Tiri totali ospite: {tot_shots_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
                     )
                     send_msg(msg)

@@ -167,7 +167,8 @@ def main():
                     "friendlies" in league_str or
                     "friend" in league_str or
                     "friendly" in league_str or
-                    "cup" in league_str):
+                    "cup" in league_str or
+                    "Beach" in league_str):
                     continue
 
                 # MINUTO

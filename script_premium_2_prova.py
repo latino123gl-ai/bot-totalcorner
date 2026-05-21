@@ -227,17 +227,17 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -1.0
-                    and minute == 44
+                    and minute == 43
                     and (hg, ag) in [
-                        (0,1),(1,2)
+                        (0,1),(1,2),(1,1),(0,2)
                     ]  
                     and datt_h >= 35                 # attacchi pericolosi casa
                     and on_h >= 6                    # tiri in porta casa
-                    and off_h >= 5                   # tiri fuori casa
-                    and tot_shots_h >= 11            # tiri totali casa
+                    and off_h >= 4                   # tiri fuori casa
+                    and tot_shots_h >= 10            # tiri totali casa
                 ):
                     msg = (
-                        "⚽ FAVORITA CASA PERDE DOPPIO OVER\n\n"
+                        "⚽ FAVORITA CASA OVER AL 75'\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -402,17 +402,17 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +1.0 <= handi_val <= +3.0
-                    and minute == 44
+                    and minute == 43
                     and (hg, ag) in [
-                        (1,0),(2,1)
+                        (1,0),(2,1),(1,1),(2.0)
                     ]
                     and datt_a >= 35               # attacchi pericolosi ospite
                     and on_a >= 6                  # tiri in porta ospite
-                    and off_a >= 5                 # tiri fuori porta ospite
-                    and tot_shots_a >= 11           # tiri totali ospite
+                    and off_a >= 4                 # tiri fuori porta ospite
+                    and tot_shots_a >= 10           # tiri totali ospite
                 ):
                     msg = (
-                        "🚨 FAVORITA OSPITE PERDE DOPPIO OVER\n\n"
+                        "🚨 FAVORITA OSPITE OVER AL 75'\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

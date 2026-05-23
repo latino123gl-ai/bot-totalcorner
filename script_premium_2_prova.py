@@ -441,7 +441,7 @@ def main():
                         (1,0),(1,2),(1,1),
                         (2,1),(0,1)
                     ]  
-                    and datt_h >= 35                 # pericolosi casa
+                    and datt_h >= 30                 # pericolosi casa
                     and on_h >= 7
                     and tot_shots_h >= 10
                 ):
@@ -468,17 +468,18 @@ def main():
                     not state["r6"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -4.0 <= handi_val <= -2.0
-                    and minute == 8
+                    and -4.0 <= handi_val <= -0.0
+                    and minute == 44
                     and (hg, ag) in [
-                        (0,1),(0,2)
+                        (0,1),(1,0),(1,1),(1,2),(2,1)
                     ]  
-                    and datt_h >= 3                 # pericolosi casa
-                    and on_h >= 19
-                    and tot_shots_h >= 3
+                    and datt_h >= 30                 # pericolosi casa
+                    and on_h >= 6
+                    and off_h >= 4
+                    and tot_shots_h >= 10
                 ):
                     msg = (
-                        "⚽ REGOLA a 8° PRIMO TEMPO\n\n"
+                        "⚽ REGOLA PROVA 1000 EURO\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -508,8 +509,8 @@ def main():
                     ]  
                     and datt_h >= 35                # attacchi pericolosi casa
                     and on_h >= 7                   # tiri in porta casa 
-                    and off_h >= 4                  # tiri fuori porta casa
-                    and tot_shots_h >= 11           # totale tiri casa
+                    and off_h >= 5                  # tiri fuori porta casa
+                    and tot_shots_h >= 12           # totale tiri casa
                 ):
                     msg = (
                         "⚽️ OSPITE GOL LINE >3.5\n\n"

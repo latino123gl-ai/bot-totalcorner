@@ -473,7 +473,9 @@ def main():
                     and (hg, ag) in [
                         (0,1),(0,2)
                     ]  
-                    and datt_h >= 0                 # pericolosi casa
+                    and datt_h >= 3                 # pericolosi casa
+                    and on_h >= 1
+                    and tot_shots_h >= 3
                 ):
                     msg = (
                         "⚽ REGOLA a 8° PRIMO TEMPO\n\n"
@@ -539,10 +541,10 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]
-                    and datt_h >= 35
+                    and datt_h >= 40
                     and on_h >= 7
-                    and off_h >= 4
-                    and tot_shots_h >= 11
+                    and off_h >= 5
+                    and tot_shots_h >= 12
                 ):
                     msg = (
                         "⚽️ FAVORITA PRIMO TEMPO 0-0\n\n"

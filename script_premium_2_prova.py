@@ -269,7 +269,7 @@ def main():
                     and datt_a >= 35               # attacchi pericolosi ospite
                     and on_a >= 5                  # tiri in porta ospite
                     and off_a >= 4                 # tiri fuori porta ospite
-                    and tot_shots_a >= 9            
+                    and tot_shots_a >= 11            
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE PAREGGIA\n\n"
@@ -408,9 +408,9 @@ def main():
                         (1,0),(2,1),(1,1),(2.0)
                     ]
                     and datt_a >= 35               # attacchi pericolosi ospite
-                    and on_a >= 6                  # tiri in porta ospite
-                    and off_a >= 4                 # tiri fuori porta ospite
-                    and tot_shots_a >= 10           # tiri totali ospite
+                    and on_a >= 7                  # tiri in porta ospite
+                    and off_a >= 5                 # tiri fuori porta ospite
+                    and tot_shots_a >= 12           # tiri totali ospite
                 ):
                     msg = (
                         "🚨 FAVORITA OSPITE OVER AL 75'\n\n"
@@ -474,7 +474,7 @@ def main():
                         (0,1),(0,2)
                     ]  
                     and datt_h >= 3                 # pericolosi casa
-                    and on_h >= 1
+                    and on_h >= 19
                     and tot_shots_h >= 3
                 ):
                     msg = (

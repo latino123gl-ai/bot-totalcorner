@@ -264,7 +264,7 @@ def main():
                     and +1.0 <= handi_val <= +3.0
                     and minute == 44
                     and (hg, ag) in [
-                        (1,1),(2,2),(3,3)
+                        (1,1)
                     ]  
                     and datt_a >= 35               # attacchi pericolosi ospite
                     and on_a >= 5                  # tiri in porta ospite
@@ -298,8 +298,7 @@ def main():
                     and +1.0 <= handi_val <= +3.0
                     and minute == 44
                     and (hg, ag) in [
-                        (1,0),(2,0),(2,1),(3,1),
-                        (3,2),(4,2),(4,3)
+                        (1,0),(2,0),(2,1),(3,1)
                     ]  
                     and datt_a >= 35                # attacchi pericolosi ospite
                     and on_a >= 5                   # tiri in porta ospite 
@@ -334,7 +333,7 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and minute == 44
                     and (hg, ag) in [
-                        (1,1),(2,2),(3,3)
+                        (1,1)
                     ]
                     and datt_h >= 35
                     and on_h >= 4
@@ -369,8 +368,7 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and minute == 44
                     and (hg, ag) in [
-                        (0,1),(0,2),(1,2),(1,3),
-                        (2,3),(2,4),(3,4)
+                        (0,1),(0,2),(1,2),(1,3)
                     ]
                     and datt_h >= 20
                     and on_h >= 3

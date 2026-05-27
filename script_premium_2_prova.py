@@ -168,7 +168,8 @@ def main():
                     "friend" in league_str or
                     "friendly" in league_str or
                     "cup" in league_str or
-                    "Beach" in league_str):
+                    "Beach" in league_str or
+                    "copa" in league_str):
                     continue
 
                 # MINUTO

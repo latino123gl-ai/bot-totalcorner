@@ -470,15 +470,16 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute == 44
                     and (hg, ag) in [
-                        (0,1),(1,0),(1,1),(1,2),(2,1)
+                        (0,1),(1,0),(1,1),(1,2),(2,1),
+                        (2,0),(0,2),(3,0),(0,3),(1,3),(3,1),(4,0),(4,1)
                     ]  
-                    and datt_h >= 30                 # pericolosi casa
+                    and datt_h >= 35                 # pericolosi casa
                     and on_h >= 6
                     and off_h >= 4
                     and tot_shots_h >= 10
                 ):
                     msg = (
-                        "⚽ REGOLA PROVA 1000 EURO\n\n"
+                        "⚽ REGOLA GOL LINE 3.5 TUTTI I RISULTATI\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

@@ -546,8 +546,8 @@ def main():
                     ]
                     and datt_h >= 30
                     and on_h >= 5
-                    and off_h >= 3
-                    and tot_shots_h >= 8
+                    and off_h >= 4
+                    and tot_shots_h >= 9
                 ):
                     msg = (
                         "⚽️ REGOLA PROVA GOL LINE 3.5\n\n"

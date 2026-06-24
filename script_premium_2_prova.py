@@ -407,7 +407,7 @@ def main():
                     and (hg, ag) in [
                         (1,0),(2,1),(1,1),(2,0),(0,1),(1,2),(0,2)
                     ]
-                    and datt_h >= 30               # attacchi pericolosi ospite
+                    and datt_h >= 90               # attacchi pericolosi ospite
                     and on_h >= 3                  # tiri in porta ospite
                     and off_h >= 2                 # tiri fuori porta ospite
                     and tot_shots_h >= 5           # tiri totali ospite
@@ -442,9 +442,9 @@ def main():
                         (2,1),(0,1)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
-                    and on_h >= 7
+                    and on_h >= 6
                     and off_h >= 4
-                    and tot_shots_h >= 11
+                    and tot_shots_h >= 10
                 ):
                     msg = (
                         "⚽ CASA GOL LINE >=3.5\n\n"
@@ -469,16 +469,16 @@ def main():
                     not state["r6"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -4.0 <= handi_val <= -0.0
+                    and -3.0 <= handi_val <= -0.0
                     and minute == 44
                     and (hg, ag) in [
                         (0,1),(1,0),(1,1),(1,2),(2,1),
-                        (2,0),(0,2),(3,0),(0,3)
+                        (2,0),(0,2),(3,0),(0,3),(1,3),(3,1)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
-                    and on_h >= 6
-                    and off_h >= 4
-                    and tot_shots_h >= 10
+                    and on_h >= 3
+                    and off_h >= 2
+                    and tot_shots_h >= 5
                 ):
                     msg = (
                         "⚽ REGOLA GOL LINE 3.5 TUTTI I RISULTATI\n\n"
@@ -510,9 +510,9 @@ def main():
                         (1,0),(2,1),(0,1),(1,2),(1,1)
                     ]  
                     and datt_h >= 30                # attacchi pericolosi casa
-                    and on_h >= 7                   # tiri in porta casa 
+                    and on_h >= 6                   # tiri in porta casa 
                     and off_h >= 4                  # tiri fuori porta casa
-                    and tot_shots_h >= 11           # totale tiri casa
+                    and tot_shots_h >= 10           # totale tiri casa
                 ):
                     msg = (
                         "⚽️ CASA GOL LINE >3.5\n\n"
@@ -544,7 +544,7 @@ def main():
                     and (hg, ag) in [
                         (1,0),(0,1),(1,1),(2,0),(0,2),(1,2),(2,1)
                     ]
-                    and datt_h >= 30
+                    and datt_h >= 90
                     and on_h >= 5
                     and off_h >= 4
                     and tot_shots_h >= 9

@@ -405,7 +405,7 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and minute == 44
                     and (hg, ag) in [
-                        (1,0),(2,1),(1,1),(2.0),(0,1),(1,2),(0,2)
+                        (1,0),(2,1),(1,1),(2,0),(0,1),(1,2),(0,2)
                     ]
                     and datt_h >= 30               # attacchi pericolosi ospite
                     and on_h >= 3                  # tiri in porta ospite

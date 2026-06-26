@@ -476,9 +476,9 @@ def main():
                         (2,0),(0,2),(3,0),(0,3),(1,3),(3,1)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
-                    and on_h >= 3
-                    and off_h >= 2
-                    and tot_shots_h >= 5
+                    and on_h >= 4
+                    and off_h >= 3
+                    and tot_shots_h >= 7
                 ):
                     msg = (
                         "⚽ REGOLA GOL LINE 3.5 TUTTI I RISULTATI\n\n"

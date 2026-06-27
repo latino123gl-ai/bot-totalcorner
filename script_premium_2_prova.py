@@ -473,12 +473,12 @@ def main():
                     and minute == 44
                     and (hg, ag) in [
                         (0,1),(1,0),(1,1),(1,2),(2,1),
-                        (2,0),(0,2),(3,0),(0,3),(1,3),(3,1)
+                        (2,0),(0,2)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
-                    and on_h >= 4
-                    and off_h >= 3
-                    and tot_shots_h >= 7
+                    and on_h >= 5
+                    and off_h >= 4
+                    and tot_shots_h >= 9
                 ):
                     msg = (
                         "⚽ REGOLA GOL LINE 3.5 TUTTI I RISULTATI\n\n"

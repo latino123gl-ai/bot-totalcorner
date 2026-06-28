@@ -472,8 +472,7 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and minute == 44
                     and (hg, ag) in [
-                        (0,1),(1,0),(1,1),(1,2),(2,1),
-                        (2,0)
+                        (0,1),(1,0),(1,1),(1,2),(2,1)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
                     and on_h >= 5

@@ -539,17 +539,17 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
-                    and minute == 44
+                    and minute == 70
                     and (hg, ag) in [
-                        (1,0),(0,1),(1,1),(2,0),(0,2),(1,2),(2,1)
+                        (0,1)
                     ]
-                    and datt_h >= 90
-                    and on_h >= 5
+                    and datt_h >= 60
+                    and on_h >= 10
                     and off_h >= 4
-                    and tot_shots_h >= 9
+                    and tot_shots_h >= 14
                 ):
                     msg = (
-                        "⚽️ REGOLA PROVA GOL LINE 3.5\n\n"
+                        "⚽️ REGOLA 0-1 al 70°\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

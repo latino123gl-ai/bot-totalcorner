@@ -408,9 +408,9 @@ def main():
                         (0,1),(1,2)
                     ]
                     and datt_h >= 40               # attacchi pericolosi ospite
-                    and on_h >= 5                  # tiri in porta ospite
+                    and on_h >= 6                  # tiri in porta ospite
                     and off_h >= 4                 # tiri fuori porta ospite
-                    and tot_shots_h >= 9           # tiri totali ospite
+                    and tot_shots_h >= 10           # tiri totali ospite
                 ):
                     msg = (
                         "🚨 REGOLA POWER'\n\n"
@@ -442,9 +442,9 @@ def main():
                         (2,1),(0,1)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
-                    and on_h >= 6
+                    and on_h >= 7
                     and off_h >= 4
-                    and tot_shots_h >= 10
+                    and tot_shots_h >= 11
                 ):
                     msg = (
                         "⚽ CASA GOL LINE >=3.5\n\n"
@@ -475,9 +475,9 @@ def main():
                         (0,1),(1,0),(1,1),(1,2),(2,1)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
-                    and on_h >= 5
+                    and on_h >= 6
                     and off_h >= 4
-                    and tot_shots_h >= 9
+                    and tot_shots_h >= 10
                 ):
                     msg = (
                         "⚽ REGOLA GOL LINE 3.5 TUTTI I RISULTATI\n\n"
@@ -508,7 +508,7 @@ def main():
                     and (hg, ag) in [
                         (1,0),(2,1),(0,1),(1,2),(1,1)
                     ]  
-                    and datt_h >= 30                # attacchi pericolosi casa
+                    and datt_h >= 90                # attacchi pericolosi casa
                     and on_h >= 6                   # tiri in porta casa 
                     and off_h >= 4                  # tiri fuori porta casa
                     and tot_shots_h >= 10           # totale tiri casa

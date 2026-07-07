@@ -268,10 +268,10 @@ def main():
                     and (hg, ag) in [
                         (1,1)
                     ]  
-                    and datt_a >= 35               # attacchi pericolosi ospite
-                    and on_a >= 6                  # tiri in porta ospite
+                    and datt_a >= 40               # attacchi pericolosi ospite
+                    and on_a >= 7                  # tiri in porta ospite
                     and off_a >= 4                 # tiri fuori porta ospite
-                    and tot_shots_a >= 10            
+                    and tot_shots_a >= 11            
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE PAREGGIA\n\n"
@@ -302,10 +302,10 @@ def main():
                     and (hg, ag) in [
                         (1,0),(2,0),(2,1)
                     ]  
-                    and datt_a >= 35                # attacchi pericolosi ospite
-                    and on_a >= 5                   # tiri in porta ospite 
+                    and datt_a >= 40                # attacchi pericolosi ospite
+                    and on_a >= 6                   # tiri in porta ospite 
                     and off_a >= 4                  # tiri fuori porta ospite
-                    and tot_shots_a >= 9           
+                    and tot_shots_a >= 10           
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE PERDE\n\n"
@@ -338,9 +338,9 @@ def main():
                         (1,1)
                     ]
                     and datt_h >= 35
-                    and on_h >= 5
-                    and off_h >= 3                 # tiri fuori porta casa
-                    and tot_shots_h >= 8
+                    and on_h >= 6
+                    and off_h >= 4                 # tiri fuori porta casa
+                    and tot_shots_h >= 10
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PAREGGIA\n\n"
@@ -373,9 +373,9 @@ def main():
                         (0,1),(0,2),(1,2)
                     ]
                     and datt_h >= 30
-                    and on_h >= 4
-                    and off_h >= 3                 # tiri fuori porta casa
-                    and tot_shots_h >= 7
+                    and on_h >= 5
+                    and off_h >= 4                 # tiri fuori porta casa
+                    and tot_shots_h >= 9
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PERDE\n\n"
@@ -413,7 +413,7 @@ def main():
                     and tot_shots_h >= 10           # tiri totali ospite
                 ):
                     msg = (
-                        "🚨 REGOLA POWER'\n\n"
+                        "🚨 REGOLA POWER 0-1/1-2'\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -543,7 +543,7 @@ def main():
                     and (hg, ag) in [
                         (0,1)
                     ]
-                    and datt_h >= 60
+                    and datt_h >= 65
                     and on_h >= 10
                     and off_h >= 4
                     and tot_shots_h >= 14

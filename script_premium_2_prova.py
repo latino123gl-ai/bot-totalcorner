@@ -441,7 +441,7 @@ def main():
                         (1,0),(1,2),(1,1),
                         (2,1),(0,1)
                     ]  
-                    and datt_h >= 30                 # pericolosi casa
+                    and datt_h >= 33                 # pericolosi casa
                     and on_h >= 7
                     and off_h >= 4
                     and tot_shots_h >= 11
@@ -474,7 +474,7 @@ def main():
                     and (hg, ag) in [
                         (0,1),(1,0),(1,1),(1,2),(2,1)
                     ]  
-                    and datt_h >= 30                 # pericolosi casa
+                    and datt_h >= 33                 # pericolosi casa
                     and on_h >= 6
                     and off_h >= 4
                     and tot_shots_h >= 10

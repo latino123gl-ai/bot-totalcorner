@@ -504,7 +504,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +0.0 <= handi_val <= +0.5
-                    and minute == 70
+                    and minute == 30
                     and (hg, ag) in [
                         (1,0),(2,1),(0,1),(1,2),(1,1)
                     ]  

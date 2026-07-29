@@ -405,15 +405,15 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and minute == 44
                     and (hg, ag) in [
-                        (0,1),(1,2)
+                        (0,1),(1,2),(1,0),(1,1),(2,1)
                     ]
-                    and datt_h >= 90               # attacchi pericolosi ospite
-                    and on_h >= 6                  # tiri in porta ospite
+                    and datt_h >= 40               # attacchi pericolosi ospite
+                    and on_h >= 5                  # tiri in porta ospite
                     and off_h >= 4                 # tiri fuori porta ospite
-                    and tot_shots_h >= 10           # tiri totali ospite
+                    and tot_shots_h >= 9           # tiri totali ospite
                 ):
                     msg = (
-                        "🚨 REGOLA POWER 0-1/1-2'\n\n"
+                        "🚨 REGOLA PROVA ATTAK>40 TIRI 5-4\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -544,9 +544,9 @@ def main():
                         (0,1)
                     ]
                     and datt_h >= 65
-                    and on_h >= 10
-                    and off_h >= 4
-                    and tot_shots_h >= 14
+                    and on_h >= 11
+                    and off_h >= 6
+                    and tot_shots_h >= 17
                 ):
                     msg = (
                         "⚽️ REGOLA 0-1 al 70°\n\n"

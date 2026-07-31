@@ -503,15 +503,15 @@ def main():
                     not state["r9"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and +0.0 <= handi_val <= +0.5
-                    and minute == 30
+                    and -3.0 <= handi_val <= -0.0
+                    and minute in [24, 25, 26]
                     and (hg, ag) in [
-                        (1,0),(2,1),(0,1),(1,2),(1,1)
+                        (1,0),(2,1),(0,1),(1,2),(1,1),(0,0)
                     ]  
-                    and datt_h >= 90                # attacchi pericolosi casa
-                    and on_h >= 12                   # tiri in porta casa 
-                    and off_h >= 6                  # tiri fuori porta casa
-                    and tot_shots_h >= 18           # totale tiri casa
+                    and datt_h >= 5                # attacchi pericolosi casa
+                    and on_h >= 1                   # tiri in porta casa 
+                    and off_h >= 0                  # tiri fuori porta casa
+                    and tot_shots_h >= 1           # totale tiri casa
                 ):
                     msg = (
                         "⚽️ REGOLA PROVA 12 TIRI AL 70°\n\n"

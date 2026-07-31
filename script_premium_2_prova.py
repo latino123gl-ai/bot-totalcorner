@@ -230,7 +230,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -1.0
-                    and minute == 43
+                    and minute in [42, 43, 44]
                     and (hg, ag) in [
                         (0,1),(1,2),(1,1),(0,2)
                     ]  
@@ -264,7 +264,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +1.0 <= handi_val <= +3.0
-                    and minute == 44
+                    and minute in [42, 43, 44]
                     and (hg, ag) in [
                         (1,1)
                     ]  
@@ -298,7 +298,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +1.0 <= handi_val <= +3.0
-                    and minute == 44
+                    and minute in [42, 43, 44]
                     and (hg, ag) in [
                         (1,0),(2,0),(2,1)
                     ]  
@@ -333,7 +333,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
-                    and minute == 44
+                    and minute in [42, 43, 44]
                     and (hg, ag) in [
                         (1,1)
                     ]
@@ -368,7 +368,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
-                    and minute == 44
+                    and minute in [42, 43, 44]
                     and (hg, ag) in [
                         (0,1),(0,2),(1,2)
                     ]
@@ -403,7 +403,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.0
-                    and minute == 44
+                    and minute in [42, 43, 44]
                     and (hg, ag) in [
                         (0,1),(1,2),(1,0),(1,1),(2,1)
                     ]
@@ -436,7 +436,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.0
-                    and minute == 44
+                    and minute in [42, 43, 44]
                     and (hg, ag) in [
                         (1,0),(1,2),(1,1),
                         (2,1),(0,1)
@@ -470,7 +470,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.0
-                    and minute == 44
+                    and minute in [42, 43, 44]
                     and (hg, ag) in [
                         (0,1),(1,0),(1,1),(1,2),(2,1)
                     ]  
@@ -508,10 +508,10 @@ def main():
                     and (hg, ag) in [
                         (1,0),(2,1),(0,1),(1,2),(1,1),(0,0)
                     ]  
-                    and datt_h >= 5                # attacchi pericolosi casa
-                    and on_h >= 1                   # tiri in porta casa 
+                    and datt_h >= 59                # attacchi pericolosi casa
+                    and on_h >= 10                   # tiri in porta casa 
                     and off_h >= 0                  # tiri fuori porta casa
-                    and tot_shots_h >= 1           # totale tiri casa
+                    and tot_shots_h >= 11           # totale tiri casa
                 ):
                     msg = (
                         "⚽️ REGOLA PROVA 12 TIRI AL 70°\n\n"
@@ -539,7 +539,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
-                    and minute == 70
+                    and minute in [42, 43, 44]
                     and (hg, ag) in [
                         (0,1)
                     ]

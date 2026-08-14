@@ -171,7 +171,7 @@ def main():
                     "Beach" in league_str or
                     "copa" in league_str or
                     "International" in league_str or
-                    "Argentina" in league_str):    
+                    "argentina" in league_str):    
                     continue
 
                 # MINUTO

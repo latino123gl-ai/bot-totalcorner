@@ -475,7 +475,7 @@ def main():
                     and (hg, ag) in [
                         (0,1),(1,0),(1,1),(1,2),(2,1)
                     ]  
-                    and datt_h >= 33                 # pericolosi casa
+                    and datt_h >= 37                 # pericolosi casa
                     and on_h >= 6
                     and off_h >= 4
                     and tot_shots_h >= 10
@@ -510,9 +510,9 @@ def main():
                         (1,0),(2,1),(0,1),(1,2),(1,1),(0,0)
                     ]  
                     and datt_h >= 59                # attacchi pericolosi casa
-                    and on_h >= 10                   # tiri in porta casa 
+                    and on_h >= 20                   # tiri in porta casa 
                     and off_h >= 0                  # tiri fuori porta casa
-                    and tot_shots_h >= 11           # totale tiri casa
+                    and tot_shots_h >= 21           # totale tiri casa
                 ):
                     msg = (
                         "⚽️ REGOLA PROVA 12 TIRI AL 70°\n\n"

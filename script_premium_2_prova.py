@@ -505,17 +505,14 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.0
-                    and minute in [38, 39, 40]
-                    and (hg, ag) in [
-                        (1,0),(2,1),(0,1),(1,2),(1,1),(0,0)
-                    ]  
-                    and datt_h >= 59                # attacchi pericolosi casa
-                    and on_h >= 20                   # tiri in porta casa 
-                    and off_h >= 0                  # tiri fuori porta casa
-                    and tot_shots_h >= 21           # totale tiri casa
+                    and minute in [42, 43, 44]
+                    and datt_h >= 20                # attacchi pericolosi casa
+                    and on_h >= 8                   # tiri in porta casa 
+                    and off_h >= 1                  # tiri fuori porta casa
+                    and tot_shots_h >= 9            # totale tiri casa
                 ):
                     msg = (
-                        "⚽️ REGOLA PROVA 12 TIRI AL 70°\n\n"
+                        "⚽️ REGOLA 8 TIRI\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

@@ -537,17 +537,17 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [69, 70, 71]
+                    and minute in [72, 73, 74]
                     and (hg, ag) in [
-                        (0,1),(1,2)
+                        (0,1),(1,2),(1,0),(2,1),(2,3),(3,2),(4,3),(3,4)
                     ]
-                    and datt_h >= 68
-                    and on_h >= 10
+                    and datt_h >= 38
+                    and on_h >= 12
                     and off_h >= 6
-                    and tot_shots_h >= 16
+                    and tot_shots_h >= 18
                 ):
                     msg = (
-                        "⚽️ REGOLA 0-1/1-2 al 70°\n\n"
+                        "⚽️ REGOLA 12 TIRI al 74°\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

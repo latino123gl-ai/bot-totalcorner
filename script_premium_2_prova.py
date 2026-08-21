@@ -444,8 +444,8 @@ def main():
                     ]  
                     and datt_h >= 40                 # pericolosi casa
                     and on_h >= 7
-                    and off_h >= 4
-                    and tot_shots_h >= 11
+                    and off_h >= 3
+                    and tot_shots_h >= 10
                 ):
                     msg = (
                         "⚽ CASA GOL LINE >=3.5\n\n"

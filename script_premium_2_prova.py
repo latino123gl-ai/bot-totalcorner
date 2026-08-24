@@ -539,7 +539,7 @@ def main():
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
                     and minute in [68, 69, 70]
-                    and datt_h >= 60
+                    and datt_h >= 50
                     and on_h >= 12
                     and off_h >= 4
                     and tot_shots_h >= 16

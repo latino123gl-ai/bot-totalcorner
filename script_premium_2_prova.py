@@ -231,18 +231,15 @@ def main():
                     not state["r1"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -1.0
-                    and minute in [42, 43, 44]
-                    and (hg, ag) in [
-                        (0,1),(1,2),(1,1),(0,2)
-                    ]  
-                    and datt_h >= 75                 # attacchi pericolosi casa
-                    and on_h >= 7                    # tiri in porta casa
+                    and -3.0 <= handi_val <= -0.0
+                    and minute in [68, 69, 70]
+                    and datt_h >= 70                 # attacchi pericolosi casa
+                    and on_h >= 5                    # tiri in porta casa
                     and off_h >= 4                   # tiri fuori casa
-                    and tot_shots_h >= 11            # tiri totali casa
+                    and tot_shots_h >= 9             # tiri totali casa
                 ):
                     msg = (
-                        "⚽ FAVORITA CASA OVER AL 75'\n\n"
+                        "⚽ REGOLA 70 ATTACCHI al 70°\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

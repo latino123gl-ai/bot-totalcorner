@@ -232,8 +232,8 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.0
-                    and minute in [68, 69, 70]
-                    and datt_h >= 70                 # attacchi pericolosi casa
+                    and minute in [42, 43, 44]
+                    and datt_h >= 99                 # attacchi pericolosi casa
                     and on_h >= 5                    # tiri in porta casa
                     and off_h >= 4                   # tiri fuori casa
                     and tot_shots_h >= 9             # tiri totali casa

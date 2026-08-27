@@ -539,10 +539,10 @@ def main():
                     and (hg, ag) in [
                         (1,0),(2,0),(3,0),(4,0),(2,1),(3,1),(4,1),(3,2),(4,2),(4,3)
                     ]    
-                    and datt_h >= 50
-                    and on_h >= 3
+                    and datt_h >= 99
+                    and on_h >= 9
                     and off_h >= 3
-                    and tot_shots_h >= 6
+                    and tot_shots_h >= 12
                 ):
                     msg = (
                         "⚽️ REGOLA 50 ATTACCHI AL 50°\n\n"

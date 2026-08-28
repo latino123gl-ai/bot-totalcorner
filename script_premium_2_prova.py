@@ -534,18 +534,18 @@ def main():
                     not state["r10"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -0.0
-                    and minute in [50, 51, 52]
+                    and -3.5 <= handi_val <= -1.0
+                    and minute in [42, 43, 44]
                     and (hg, ag) in [
                         (1,0),(2,0),(3,0),(4,0),(2,1),(3,1),(4,1),(3,2),(4,2),(4,3)
                     ]    
-                    and datt_h >= 99
-                    and on_h >= 9
+                    and datt_h >= 30
+                    and on_h >= 3
                     and off_h >= 3
-                    and tot_shots_h >= 12
+                    and tot_shots_h >= 6
                 ):
                     msg = (
-                        "⚽️ REGOLA 50 ATTACCHI AL 50°\n\n"
+                        "⚽️ NUOVO METODO GOL LINE 3.5\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

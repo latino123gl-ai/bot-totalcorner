@@ -336,10 +336,10 @@ def main():
                     and (hg, ag) in [
                         (1,1)
                     ]
-                    and datt_h >= 33
-                    and on_h >= 5
+                    and datt_h >= 37
+                    and on_h >= 4
                     and off_h >= 4                 # tiri fuori porta casa
-                    and tot_shots_h >= 9
+                    and tot_shots_h >= 8
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PAREGGIA\n\n"

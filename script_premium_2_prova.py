@@ -409,7 +409,7 @@ def main():
                     and (hg, ag) in [
                         (0,1),(1,2),(1,0),(1,1),(2,1)
                     ]
-                    and datt_h >= 40               # attacchi pericolosi ospite
+                    and datt_h >= 99               # attacchi pericolosi ospite
                     and on_h >= 5                  # tiri in porta ospite
                     and off_h >= 4                 # tiri fuori porta ospite
                     and tot_shots_h >= 9           # tiri totali ospite

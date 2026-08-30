@@ -471,15 +471,15 @@ def main():
                     not state["r6"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -0.0
+                    and -3.0 <= handi_val <= -0.5
                     and minute in [42, 43, 44]
                     and (hg, ag) in [
-                        (0,1),(1,0),(1,1),(1,2),(2,1)
+                        (0,1),(1,1),(1,2),(2,2),(2,3),(0,2)
                     ]  
-                    and datt_h >= 99                 # pericolosi casa
-                    and on_h >= 6
-                    and off_h >= 4
-                    and tot_shots_h >= 10
+                    and datt_h >= 40                 # pericolosi casa
+                    and on_h >= 5
+                    and off_h >= 3
+                    and tot_shots_h >= 8
                 ):
                     msg = (
                         "⚽ REGOLA GOL LINE 3.5 TUTTI I RISULTATI\n\n"

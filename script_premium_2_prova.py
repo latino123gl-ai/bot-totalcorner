@@ -341,8 +341,8 @@ def main():
                     ]
                     and datt_h >= 35
                     and on_h >= 4
-                    and off_h >= 4                 # tiri fuori porta casa
-                    and tot_shots_h >= 8
+                    and off_h >= 3                 # tiri fuori porta casa
+                    and tot_shots_h >= 7
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PAREGGIA\n\n"
@@ -476,13 +476,13 @@ def main():
                     and (hg, ag) in [
                         (0,1),(1,1),(1,2),(2,2),(2,3),(0,2)
                     ]  
-                    and datt_h >= 35                 # pericolosi casa
+                    and datt_h >= 30                 # pericolosi casa
                     and on_h >= 3
                     and off_h >= 3
                     and tot_shots_h >= 6
                 ):
                     msg = (
-                        "⚽️ NUOVO METODO GOL LINE 3.5\n\n"
+                        "⚽️ NUOVO METODO X/2 GOL LINE 3.5\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -542,7 +542,7 @@ def main():
                     and (hg, ag) in [
                         (1,0),(2,0),(3,0),(4,0),(2,1),(3,1),(4,1),(3,2),(4,2),(4,3)
                     ]    
-                    and datt_h >= 35
+                    and datt_h >= 30
                     and on_h >= 3
                     and off_h >= 3
                     and tot_shots_h >= 6

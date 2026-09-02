@@ -437,19 +437,19 @@ def main():
                     not state["r5"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -0.0
-                    and minute in [42, 43, 44]
+                    and -3.0 <= handi_val <= -1.5
+                    and minute in [20, 21, 22]
                     and (hg, ag) in [
-                        (1,0),(1,2),(1,1),
+                        (1,0),(1,2),(1,1),(2,0),(3,0),(2,2),(3,1),
                         (2,1),(0,1)
                     ]  
-                    and datt_h >= 99                 # pericolosi casa
-                    and on_h >= 7
-                    and off_h >= 3
-                    and tot_shots_h >= 10
+                    and datt_h >= 20                 # pericolosi casa
+                    and on_h >= 6
+                    and off_h >= 1
+                    and tot_shots_h >= 7
                 ):
                     msg = (
-                        "⚽ CASA GOL LINE >=3.5\n\n"
+                        "⚽ NUOVO METODO 20° PRIMO TEMPO\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

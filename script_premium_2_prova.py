@@ -242,7 +242,7 @@ def main():
                     and tot_shots_a >= 5             # tiri totali casa
                 ):
                     msg = (
-                        "⚽ NUOVO METODO FAVORITA OSPITE\n\n"
+                        "⚽ NUOVO METODO FAST & FURIOUS OSPITE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -482,7 +482,7 @@ def main():
                     and tot_shots_h >= 5
                 ):
                     msg = (
-                        "⚽️ NUOVO METODO X/2 GOL LINE 3.5\n\n"
+                        "⚽️ REGOLA FAST & FURIOUS X/2 CASA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -551,7 +551,7 @@ def main():
                     and tot_shots_h >= 6
                 ):
                     msg = (
-                        "⚽️ NUOVO METODO GOL LINE 3.5\n\n"
+                        "⚽️ REGOLA FAST & FURIOUS CASA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

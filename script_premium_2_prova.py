@@ -231,18 +231,18 @@ def main():
                     not state["r1"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -0.5 <= handi_val <= -0.5
+                    and +1.0 <= handi_val <= +4.0
                     and minute in [42, 43, 44]
                     and (hg, ag) in [
-                        (1,0),(2,0),(3,0),(4,0),(2,1),(3,1),(4,1),(3,2),(4,2),(4,3)
+                        (1,0),(2,0),(2,1),(3,1),(1,1),(2,2),(3,2)
                     ] 
-                    and datt_h >= 99                 # attacchi pericolosi casa
-                    and on_h >= 4                    # tiri in porta casa
-                    and off_h >= 3                   # tiri fuori casa
-                    and tot_shots_h >= 7             # tiri totali casa
+                    and datt_a >= 30                 # attacchi pericolosi casa
+                    and on_a >= 3                    # tiri in porta casa
+                    and off_a >= 2                   # tiri fuori casa
+                    and tot_shots_a >= 5             # tiri totali casa
                 ):
                     msg = (
-                        "⚽ NUOVO METODO HANDICAP -0.5\n\n"
+                        "⚽ NUOVO METODO FAVORITA OSPITE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

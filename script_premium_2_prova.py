@@ -236,7 +236,7 @@ def main():
                     and (hg, ag) in [
                         (1,0),(2,0),(2,1),(3,1),(1,1),(2,2),(3,2)
                     ] 
-                    and datt_a >= 30                 # attacchi pericolosi casa
+                    and datt_a >= 40                 # attacchi pericolosi casa
                     and on_a >= 3                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
                     and tot_shots_a >= 5             # tiri totali casa
@@ -547,8 +547,8 @@ def main():
                     ]    
                     and datt_h >= 35
                     and on_h >= 3
-                    and off_h >= 3
-                    and tot_shots_h >= 6
+                    and off_h >= 2
+                    and tot_shots_h >= 5
                 ):
                     msg = (
                         "⚽️ REGOLA FAST & FURIOUS CASA\n\n"

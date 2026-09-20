@@ -478,7 +478,7 @@ def main():
                     ]  
                     and datt_h >= 30                 # pericolosi casa
                     and on_h >= 3
-                    and off_h >= 2
+                    and off_h >= 1
                     and tot_shots_h >= 5
                 ):
                     msg = (
@@ -547,7 +547,7 @@ def main():
                     ]    
                     and datt_h >= 30
                     and on_h >= 3
-                    and off_h >= 2
+                    and off_h >= 1
                     and tot_shots_h >= 5
                 ):
                     msg = (

@@ -506,14 +506,14 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -5.0 <= handi_val <= -2.0
-                    and 1 <= minute <= 44
+                    and 8 <= minute <= 44
                     and (hg, ag) in [
                         (0,1)
                     ]
-                    and datt_h >= 0                # attacchi pericolosi casa
+                    and datt_h >= 7                # attacchi pericolosi casa
                     and on_h >= 0                   # tiri in porta casa 
                     and off_h >= 0                  # tiri fuori porta casa
-                    and tot_shots_h >= 0            # totale tiri casa
+                    and tot_shots_h >= 1            # totale tiri casa
                 ):
                     msg = (
                         "⚽️ FAVORITA IN SVANTAGGIO GIOCARE 1 FISSO\n\n"

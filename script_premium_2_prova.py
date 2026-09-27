@@ -573,18 +573,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r11"]                      # non ancora mandato
-                    and "Bragantino" in home
+                    and "Guyana" in home
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
                     and minute in [51, 52]
                     and (hg, ag) in [
-                        (3,1)
+                        (2,0)
                     ]    
-                    and datt_h >= 73
-                    and on_h >= 6
-                    and off_h >= 6
-                    and tot_shots_h >= 13
+                    and datt_h >= 58
+                    and on_h >= 5
+                    and off_h >= 4
+                    and tot_shots_h >= 10
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE\n\n"

@@ -576,12 +576,12 @@ def main():
                     and home == "egaleo"
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -0.5
-                    and minute in [77, 78, 79]
+                    and -3.5 <= handi_val <= -0.0
+                    and minute in [78, 79, 80]
                     and (hg, ag) in [
                         (3,0)
                     ]    
-                    and datt_h >= 34
+                    and datt_h >= 35
                     and on_h >= 2
                     and off_h >= 1
                     and tot_shots_h >= 3

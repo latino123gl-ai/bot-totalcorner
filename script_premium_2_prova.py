@@ -579,7 +579,7 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and minute in [88, 89, 90]
                     and (hg, ag) in [
-                        (4,0)
+                        (4,1)
                     ]    
                     and datt_h >= 37
                     and on_h >= 2

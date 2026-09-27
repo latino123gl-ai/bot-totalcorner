@@ -573,18 +573,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r11"]                      # non ancora mandato
-                    and home == "Egaleo"
+                    and home == "LePa"
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [88, 89, 90]
+                    and minute in [52, 53]
                     and (hg, ag) in [
-                        (4,1)
+                        (0,1)
                     ]    
-                    and datt_h >= 37
-                    and on_h >= 2
-                    and off_h >= 1
-                    and tot_shots_h >= 3
+                    and datt_h >= 38
+                    and on_h >= 3
+                    and off_h >= 3
+                    and tot_shots_h >= 6
                 ):
                     msg = (
                         "⚽️ REGOLA PROVA NOME SQUADRA\n\n"
@@ -601,7 +601,7 @@ def main():
                         f"Risultato attuale: {hg} - {ag}\n"
                     )
                     send_msg(msg)
-                    state["r10"] = True
+                    state["r11"] = True
 
             except Exception as e:
                 print("Errore:", e)

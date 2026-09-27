@@ -146,7 +146,7 @@ def main():
                     continue
 
                 if match_id not in tracked:
-                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False}
+                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False}
                 state = tracked[match_id]
 
                 league = m.get("l", "?")
@@ -552,6 +552,42 @@ def main():
                 ):
                     msg = (
                         "⚽️ REGOLA FAST & FURIOUS CASA\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Attacchi totali: {att_h} - {att_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r10"] = True
+
+            # =============== REGOLA 11 ===============
+                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
+                # risultati ammessi, pericolosi >= 0,
+                # tiri in porta >= 0, tiri totali >= 0
+                if (
+                    not state["r11"]                      # non ancora mandato
+                    and home == "egaleo"
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and -3.5 <= handi_val <= -0.5
+                    and minute in [65,66,67]
+                    and (hg, ag) in [
+                        (2,0)
+                    ]    
+                    and datt_h >= 32
+                    and on_h >= 2
+                    and off_h >= 1
+                    and tot_shots_h >= 3
+                ):
+                    msg = (
+                        "⚽️ REGOLA PROVA NOME SQUADRA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

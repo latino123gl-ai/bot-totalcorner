@@ -232,7 +232,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +1.0 <= handi_val <= +4.0
-                    and minute in [42, 43, 44]
+                    and minute in [43, 44]
                     and (hg, ag) in [
                         (1,0),(2,0),(2,1),(3,1),(1,1),(2,2),(3,2)
                     ] 
@@ -300,7 +300,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +1.0 <= handi_val <= +3.0
-                    and minute in [42, 43, 44]
+                    and minute in [43, 44]
                     and (hg, ag) in [
                         (1,0),(2,0),(2,1)
                     ]  
@@ -335,7 +335,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
-                    and minute in [42, 43, 44]
+                    and minute in [43, 44]
                     and (hg, ag) in [
                         (1,1)
                     ]
@@ -370,7 +370,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
-                    and minute in [42, 43, 44]
+                    and minute in [43, 44]
                     and (hg, ag) in [
                         (0,1),(0,2),(1,2)
                     ]
@@ -472,7 +472,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -1.0
-                    and minute in [42, 43, 44]
+                    and minute in [43, 44]
                     and (hg, ag) in [
                         (0,1),(1,1),(1,2),(2,2),(2,3),(0,2)
                     ]  
@@ -541,7 +541,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
-                    and minute in [42, 43, 44]
+                    and minute in [43, 44]
                     and (hg, ag) in [
                         (1,0),(2,0),(3,0),(4,0),(2,1),(3,1),(4,1),(3,2),(4,2),(4,3)
                     ]    
@@ -645,18 +645,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r13"]                      # non ancora mandato
-                    and "USA" in home
+                    and "Norway" in home
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
                     and minute in [51, 52]
                     and (hg, ag) in [
-                        (1,0)
+                        (2,1)
                     ]    
-                    and datt_h >= 79
-                    and on_h >= 4
-                    and off_h >= 7
-                    and tot_shots_h >= 11
+                    and datt_h >= 58
+                    and on_h >= 5
+                    and off_h >= 2
+                    and tot_shots_h >= 9
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE\n\n"

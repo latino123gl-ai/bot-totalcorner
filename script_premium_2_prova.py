@@ -617,7 +617,7 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 10
+                    and datt_h >= 99
                     and on_h >= 0
                     and off_h >= 1
                     and tot_shots_h >= 1
@@ -649,11 +649,11 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [15, 16]
+                    and minute in [17, 18]
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 12
+                    and datt_h >= 13
                     and on_h >= 0
                     and off_h >= 1
                     and tot_shots_h >= 1

@@ -267,13 +267,10 @@ def main():
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.0
                     and minute in [43, 44]
-                    and (hg, ag) in [
-                        (1,2),(0,1),(2,3)
-                    ]  
                     and datt_h >= 50              # attacchi pericolosi casa
-                    and on_h >= 3                  # tiri in porta casa
+                    and on_h >= 2                  # tiri in porta casa
                     and off_h >= 1                 # tiri fuori porta casa
-                    and tot_shots_h >= 4            
+                    and tot_shots_h >= 3            
                 ):
                     msg = (
                         "⚽️ REGOLA 50 ATTACCHI CASA AL MINUTO 44\n\n"

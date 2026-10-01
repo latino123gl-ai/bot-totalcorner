@@ -609,21 +609,21 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r12"]                      # non ancora mandato
-                    and "Wenzhou" in home
+                    and "Weisskirchen" in home
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
                     and minute in [51, 52]
                     and (hg, ag) in [
-                        (2,0)
+                        (2,1)
                     ]    
-                    and datt_h >= 52
-                    and on_h >= 9
-                    and off_h >= 3
-                    and tot_shots_h >= 13
+                    and datt_h >= 76
+                    and on_h >= 4
+                    and off_h >= 6
+                    and tot_shots_h >= 11
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE GOL LINE 3.5\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

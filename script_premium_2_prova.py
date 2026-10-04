@@ -266,10 +266,8 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.0
+                    and (hg, ag) != (0,0)
                     and minute in [43, 44]
-                    and (hg, ag) in [
-                        (1,0),(2,0),(2,1),(3,1),(1,1),(2,2),(3,2),(0,1),(1,1),(1,2),(2,2),(2,3),(0,2),(3,0),(1,3),(4,0),(4,1),(4,2)
-                    ] 
                     and datt_h >= 50              # attacchi pericolosi casa
                     and on_h >= 3                  # tiri in porta casa
                     and off_h >= 1                 # tiri fuori porta casa
@@ -405,6 +403,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -4.0 <= handi_val <= -0.0
+                    and (hg, ag) != (0,0)
                     and minute in [43, 44]
                     and datt_h >= 15               # attacchi pericolosi ospite
                     and on_h >= 7                  # tiri in porta ospite
@@ -440,7 +439,7 @@ def main():
                         (1,0),(1,2),(1,1),(2,0),(3,0),(2,2),(3,1),
                         (2,1),(0,1)
                     ]  
-                    and datt_h >= 20                 # pericolosi casa
+                    and datt_h >= 19                 # pericolosi casa
                     and on_h >= 6
                     and off_h >= 1
                     and tot_shots_h >= 7

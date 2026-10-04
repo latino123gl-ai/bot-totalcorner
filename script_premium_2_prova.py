@@ -641,7 +641,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r13"]                      # non ancora mandato
-                    and "Ustronie" in home
+                    and "Velka" in home
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
@@ -649,10 +649,10 @@ def main():
                     and (hg, ag) in [
                         (3,0)
                     ]    
-                    and datt_h >= 42
-                    and on_h >= 7
-                    and off_h >= 4
-                    and tot_shots_h >= 12
+                    and datt_h >= 67
+                    and on_h >= 5
+                    and off_h >= 2
+                    and tot_shots_h >= 9
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE GOL LINE 3.75\n\n"

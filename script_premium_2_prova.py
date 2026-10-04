@@ -404,7 +404,7 @@ def main():
                     and handi_val is not None
                     and -4.0 <= handi_val <= -0.0
                     and (hg, ag) != (0,0)
-                    and minute in [43, 44]
+                    and minute in [44, 45]
                     and datt_h >= 15               # attacchi pericolosi ospite
                     and on_h >= 7                  # tiri in porta ospite
                     and off_h >= 0                 # tiri fuori porta ospite
@@ -434,7 +434,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -1.5
-                    and minute in [20, 21, 22]
+                    and minute in [21, 22, 23]
                     and (hg, ag) in [
                         (1,0),(1,2),(1,1),(2,0),(3,0),(2,2),(3,1),
                         (2,1),(0,1)

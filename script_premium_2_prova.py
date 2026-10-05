@@ -649,7 +649,7 @@ def main():
                     and (hg, ag) in [
                         (3,0)
                     ]    
-                    and datt_h >= 59
+                    and datt_h >= 61
                     and on_h >= 5
                     and off_h >= 3
                     and tot_shots_h >= 10

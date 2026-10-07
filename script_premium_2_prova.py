@@ -433,7 +433,7 @@ def main():
                     not state["r5"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -0.5
+                    and -3.0 <= handi_val <= -1.0
                     and minute in [21, 22, 23]
                     and (hg, ag) in [
                         (1,0),(1,2),(1,1),(2,0),(3,0),(2,2),(3,1),

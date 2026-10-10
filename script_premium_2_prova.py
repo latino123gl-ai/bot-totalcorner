@@ -645,7 +645,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [51, 52]
+                    and minute in [72, 73]
                     and (hg, ag) in [
                         (3,0)
                     ]    
@@ -655,7 +655,7 @@ def main():
                     and tot_shots_h >= 16
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE GOL LINE 3.75\n\n"
+                        "PARTITA IN BILICO GOL LINE 4.0\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

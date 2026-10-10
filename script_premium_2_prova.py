@@ -641,21 +641,21 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r13"]                      # non ancora mandato
-                    and "Saint" in home
+                    and "Spezia" in home
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [72, 73]
+                    and minute in [53, 54]
                     and (hg, ag) in [
-                        (3,0)
+                        (2,0)
                     ]    
-                    and datt_h >= 63
-                    and on_h >= 6
-                    and off_h >= 8
-                    and tot_shots_h >= 16
+                    and datt_h >= 30
+                    and on_h >= 8
+                    and off_h >= 4
+                    and tot_shots_h >= 14
                 ):
                     msg = (
-                        "PARTITA IN BILICO GOL LINE 4.0\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE 7 TIRI\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

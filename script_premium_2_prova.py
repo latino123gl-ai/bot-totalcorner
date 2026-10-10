@@ -402,7 +402,7 @@ def main():
                     not state["r4"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -4.0 <= handi_val <= -0.0
+                    and -4.0 <= handi_val <= -0.5
                     and (hg, ag) != (0,0)
                     and minute in [44, 45]
                     and datt_h >= 10               # attacchi pericolosi ospite

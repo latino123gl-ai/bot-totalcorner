@@ -641,18 +641,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r13"]                      # non ancora mandato
-                    and "Spezia" in home
+                    and "Sangre" in home
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
                     and minute in [53, 54]
                     and (hg, ag) in [
-                        (2,0)
+                        (3,0)
                     ]    
                     and datt_h >= 30
-                    and on_h >= 8
-                    and off_h >= 4
-                    and tot_shots_h >= 14
+                    and on_h >= 11
+                    and off_h >= 8
+                    and tot_shots_h >= 21
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE 7 TIRI\n\n"

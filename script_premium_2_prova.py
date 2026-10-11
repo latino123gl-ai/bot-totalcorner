@@ -268,7 +268,7 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and (hg, ag) != (0,0)
                     and minute in [43, 44]
-                    and datt_h >= 50              # attacchi pericolosi casa
+                    and datt_h >= 99              # attacchi pericolosi casa
                     and on_h >= 3                  # tiri in porta casa
                     and off_h >= 1                 # tiri fuori porta casa
                     and tot_shots_h >= 4            
@@ -433,7 +433,7 @@ def main():
                     not state["r5"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -1.0
+                    and -3.0 <= handi_val <= -1.5
                     and 10 <= minute <= 23
                     and (hg, ag) in [
                         (1,0),(1,2),(1,1),(2,0),(3,0),(2,2),(3,1),

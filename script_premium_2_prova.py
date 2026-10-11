@@ -473,9 +473,9 @@ def main():
                         (0,1),(1,1),(1,2),(2,2),(2,3),(0,2),(1,3)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
-                    and on_h >= 2
+                    and on_h >= 3
                     and off_h >= 1
-                    and tot_shots_h >= 3
+                    and tot_shots_h >= 4
                 ):
                     msg = (
                         "⚽️ REGOLA FAST & FURIOUS X/2 CASA\n\n"

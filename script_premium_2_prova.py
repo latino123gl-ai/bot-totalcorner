@@ -405,7 +405,7 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and (hg, ag) != (0,0)
                     and minute in [44, 45]
-                    and datt_h >= 10               # attacchi pericolosi ospite
+                    and datt_h >= 30               # attacchi pericolosi ospite
                     and on_h >= 7                  # tiri in porta ospite
                     and off_h >= 0                 # tiri fuori porta ospite
                     and tot_shots_h >= 7           # tiri totali ospite

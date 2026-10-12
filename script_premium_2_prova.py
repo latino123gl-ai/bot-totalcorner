@@ -234,15 +234,15 @@ def main():
                     and +0.5 <= handi_val <= +4.0
                     and minute in [43, 44]
                     and (hg, ag) in [
-                        (1,0),(2,0),(2,1),(3,1),(1,1),(2,2),(3,2),(0,1),(1,2),(0,2)
+                        (1,0),(2,1),(3,1),(1,1),(2,2),(3,2),(0,1),(1,2),(2,3)
                     ] 
-                    and datt_a >= 33                 # attacchi pericolosi casa
+                    and datt_a >= 30                 # attacchi pericolosi casa
                     and on_a >= 2                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
-                    and tot_shots_a >= 5             # tiri totali casa
+                    and tot_shots_a >= 4             # tiri totali casa
                 ):
                     msg = (
-                        "⚽ NUOVO METODO FAST & FURIOUS OSPITE\n\n"
+                        "⚽ FAST & FURIOUS OSPITE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -445,7 +445,7 @@ def main():
                     and tot_shots_h >= 7
                 ):
                     msg = (
-                        "⚽ NUOVO METODO 20° PRIMO TEMPO\n\n"
+                        "⚽ REGOLA 20° PRIMO TEMPO\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -475,10 +475,10 @@ def main():
                     and datt_h >= 30                 # pericolosi casa
                     and on_h >= 2
                     and off_h >= 1
-                    and tot_shots_h >= 4
+                    and tot_shots_h >= 3
                 ):
                     msg = (
-                        "⚽️ REGOLA FAST & FURIOUS X/2 CASA\n\n"
+                        "⚽️ FAST & FURIOUS X/2 CASA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -544,10 +544,10 @@ def main():
                     and datt_h >= 30
                     and on_h >= 2
                     and off_h >= 1
-                    and tot_shots_h >= 4
+                    and tot_shots_h >= 3
                 ):
                     msg = (
-                        "⚽️ REGOLA FAST & FURIOUS CASA\n\n"
+                        "⚽️ FAST & FURIOUS CASA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

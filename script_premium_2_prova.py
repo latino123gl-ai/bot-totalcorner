@@ -233,12 +233,12 @@ def main():
                     and +0.5 <= handi_val <= +4.0
                     and minute in [43, 44]
                     and (hg, ag) in [
-                        (1,0),(2,1),(3,1),(1,1),(2,2),(3,2),(0,1),(1,2),(2,3)
+                        (1,0),(2,1),(3,1),(1,1),(2,2),(3,2),(0,1),(1,2),(2,3),(2,0)
                     ] 
                     and datt_a >= 30                 # attacchi pericolosi casa
                     and on_a >= 2                    # tiri in porta casa
-                    and off_a >= 2                   # tiri fuori casa
-                    and tot_shots_a >= 4             # tiri totali casa
+                    and off_a >= 1                   # tiri fuori casa
+                    and tot_shots_a >= 3             # tiri totali casa
                 ):
                     msg = (
                         "⚽ FAST & FURIOUS OSPITE\n\n"

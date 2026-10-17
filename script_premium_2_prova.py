@@ -433,12 +433,12 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -1.5
-                    and 10 <= minute <= 23
+                    and 15 <= minute <= 23
                     and (hg, ag) in [
                         (1,0),(1,2),(1,1),(2,0),(3,0),(2,2),(3,1),
                         (2,1),(0,1)
                     ]  
-                    and datt_h >= 5                 # pericolosi casa
+                    and datt_h >= 14                 # pericolosi casa
                     and on_h >= 6
                     and off_h >= 1
                     and tot_shots_h >= 7
@@ -568,21 +568,20 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r11"]                      # non ancora mandato
-                    and "Montego" in home
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -0.0
-                    and minute in [52, 53]
+                    and -0.5 <= handi_val <= -0.0
+                    and minute in [43, 44]
                     and (hg, ag) in [
-                        (1,0)
+                        (1,0),(1,1),(2,1),(2,3),(2,2),(3,2),(1,2),(0,1),(0,2),(1,3),(2,0),(3,0),(3,1)
                     ]    
-                    and datt_h >= 50
-                    and on_h >= 7
-                    and off_h >= 7
-                    and tot_shots_h >= 16
+                    and datt_h >= 30
+                    and on_h >= 2
+                    and off_h >= 1
+                    and tot_shots_h >= 3
                 ):
                     msg = (
-                        "⚽️ GIOCARE IMMEDIATAMENTE GOL LINE 2.5\n\n"
+                        "⚽️ TERMINALE FAST & FORIOUS\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

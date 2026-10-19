@@ -606,15 +606,15 @@ def main():
                     not state["r12"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -0.0
+                    and -3.5 <= handi_val <= -0.5
                     and minute in [44]
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 40
-                    and on_h >= 3
+                    and datt_h >= 39
+                    and on_h >= 1
                     and off_h >= 1
-                    and tot_shots_h >= 4
+                    and tot_shots_h >= 2
                 ):
                     msg = (
                         "⚽️ FAST 0-0\n\n"

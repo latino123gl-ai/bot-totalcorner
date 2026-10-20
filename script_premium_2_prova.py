@@ -302,7 +302,7 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]  
-                    and datt_a >= 30                # attacchi pericolosi ospite
+                    and datt_a >= 40                # attacchi pericolosi ospite
                     and on_a >= 3                   # tiri in porta ospite 
                     and off_a >= 1                  # tiri fuori porta ospite
                     and tot_shots_a >= 4           
@@ -611,10 +611,10 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 29
-                    and on_h >= 1
+                    and datt_h >= 40
+                    and on_h >= 3
                     and off_h >= 1
-                    and tot_shots_h >= 2
+                    and tot_shots_h >= 4
                 ):
                     msg = (
                         "⚽️ FAST 0-0 CASA\n\n"

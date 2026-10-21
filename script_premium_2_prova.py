@@ -268,7 +268,7 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and (hg, ag) != (0,0)
                     and minute in [43, 44]
-                    and datt_h >= 60              # attacchi pericolosi casa
+                    and datt_h >= 99              # attacchi pericolosi casa
                     and on_h >= 0                  # tiri in porta casa
                     and off_h >= 1                 # tiri fuori porta casa
                     and tot_shots_h >= 1            
@@ -297,15 +297,15 @@ def main():
                     not state["r7"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and +1.0 <= handi_val <= +3.0
+                    and +0.5 <= handi_val <= +3.0
                     and minute in [44]
                     and (hg, ag) in [
                         (0,0)
                     ]  
-                    and datt_a >= 40                # attacchi pericolosi ospite
-                    and on_a >= 3                   # tiri in porta ospite 
+                    and datt_a >= 30                # attacchi pericolosi ospite
+                    and on_a >= 2                   # tiri in porta ospite 
                     and off_a >= 1                  # tiri fuori porta ospite
-                    and tot_shots_a >= 4           
+                    and tot_shots_a >= 3           
                 ):
                     msg = (
                         "⚽️ FAST 0-0 OSPITE\n\n"
@@ -606,15 +606,15 @@ def main():
                     not state["r12"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -1.0
+                    and -3.5 <= handi_val <= -0.5
                     and minute in [44]
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 40
-                    and on_h >= 3
+                    and datt_h >= 30
+                    and on_h >= 2
                     and off_h >= 1
-                    and tot_shots_h >= 4
+                    and tot_shots_h >= 3
                 ):
                     msg = (
                         "⚽️ FAST 0-0 CASA\n\n"

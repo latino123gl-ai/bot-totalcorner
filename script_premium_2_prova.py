@@ -302,7 +302,7 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]  
-                    and datt_a >= 30                # attacchi pericolosi ospite
+                    and datt_a >= 40                # attacchi pericolosi ospite
                     and on_a >= 2                   # tiri in porta ospite 
                     and off_a >= 1                  # tiri fuori porta ospite
                     and tot_shots_a >= 3           
@@ -473,9 +473,9 @@ def main():
                         (0,1),(1,1),(1,2),(2,2),(2,3),(0,2),(1,3)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
-                    and on_h >= 0
+                    and on_h >= 2
                     and off_h >= 1
-                    and tot_shots_h >= 1
+                    and tot_shots_h >= 3
                 ):
                     msg = (
                         "⚽️ FAST & FURIOUS X/2 CASA\n\n"
@@ -611,7 +611,7 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 30
+                    and datt_h >= 40
                     and on_h >= 2
                     and off_h >= 1
                     and tot_shots_h >= 3

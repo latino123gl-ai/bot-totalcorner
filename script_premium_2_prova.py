@@ -166,6 +166,8 @@ def main():
                     "e-soccer" in league_str or
                     "friendlies" in league_str or
                     "argentina" in league_str or
+                    "paraguay" in league_str or
+                    "uruguay" in league_str or
                     "friend" in league_str or
                     "friendly" in league_str or
                     "cup" in league_str or
@@ -297,7 +299,7 @@ def main():
                     not state["r7"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and +0.5 <= handi_val <= +3.0
+                    and +1.0 <= handi_val <= +3.0
                     and minute in [44]
                     and (hg, ag) in [
                         (0,0)
@@ -606,7 +608,7 @@ def main():
                     not state["r12"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -0.5
+                    and -3.5 <= handi_val <= -1.0
                     and minute in [44]
                     and (hg, ag) in [
                         (0,0)

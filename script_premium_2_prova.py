@@ -236,7 +236,7 @@ def main():
                     and +0.5 <= handi_val <= +4.0
                     and minute in [44]
                     and (hg, ag) in [
-                        (1,0),(1,1),(1,2),(2,1),(3,1),(3,2),(2,2),(2,3),(0,1)
+                        (1,0),(1,1),(1,2),(2,1),(3,2),(2,2),(2,3),(0,1)
                     ] 
                     and datt_a >= 30                 # attacchi pericolosi casa
                     and on_a >= 3                    # tiri in porta casa
@@ -267,16 +267,18 @@ def main():
                     not state["r2"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -0.0
-                    and (hg, ag) != (0,0)
-                    and minute in [43, 44]
-                    and datt_h >= 99              # attacchi pericolosi casa
-                    and on_h >= 0                  # tiri in porta casa
+                    and -3.0 <= handi_val <= -0.5
+                    and minute in [75]
+                    and (hg, ag) in [
+                        (6,0),(6,1),(6,2),(7,0),(7,1),(7,2),(8,0),(8,1),(8,2),(9,0),(9,1),(9,2),(10,0),(10,1),(10,2)
+                    ]    
+                    and datt_h >= 45              # attacchi pericolosi casa
+                    and on_h >= 10                  # tiri in porta casa
                     and off_h >= 1                 # tiri fuori porta casa
-                    and tot_shots_h >= 1            
+                    and tot_shots_h >= 11            
                 ):
                     msg = (
-                        "⚽️ 60 ATTACCHI AL 44°\n\n"
+                        "⚽️ REGOLA 8-0\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -472,7 +474,7 @@ def main():
                     and -3.0 <= handi_val <= -1.0
                     and minute in [43, 44]
                     and (hg, ag) in [
-                        (0,1),(1,1),(1,2),(2,2),(2,3),(0,2),(1,3)
+                        (0,1),(1,1),(1,2),(2,2),(2,3)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
                     and on_h >= 3

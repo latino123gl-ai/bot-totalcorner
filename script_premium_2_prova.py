@@ -239,9 +239,9 @@ def main():
                         (1,0),(1,1),(1,2),(2,1),(3,1),(3,2),(2,2),(2,3),(0,1)
                     ] 
                     and datt_a >= 30                 # attacchi pericolosi casa
-                    and on_a >= 2                    # tiri in porta casa
+                    and on_a >= 3                    # tiri in porta casa
                     and off_a >= 1                   # tiri fuori casa
-                    and tot_shots_a >= 3             # tiri totali casa
+                    and tot_shots_a >= 4             # tiri totali casa
                 ):
                     msg = (
                         "⚽ FAST & FOURIOUS OSPITE\n\n"
@@ -305,9 +305,9 @@ def main():
                         (0,0)
                     ]  
                     and datt_a >= 40                # attacchi pericolosi ospite
-                    and on_a >= 2                   # tiri in porta ospite 
+                    and on_a >= 3                   # tiri in porta ospite 
                     and off_a >= 1                  # tiri fuori porta ospite
-                    and tot_shots_a >= 3           
+                    and tot_shots_a >= 4           
                 ):
                     msg = (
                         "⚽️ FAST 0-0 OSPITE\n\n"
@@ -475,9 +475,9 @@ def main():
                         (0,1),(1,1),(1,2),(2,2),(2,3),(0,2),(1,3)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
-                    and on_h >= 2
+                    and on_h >= 3
                     and off_h >= 1
-                    and tot_shots_h >= 3
+                    and tot_shots_h >= 4
                 ):
                     msg = (
                         "⚽️ FAST & FURIOUS X/2 CASA\n\n"
@@ -544,9 +544,9 @@ def main():
                         (1,0),(2,0),(3,0),(4,0),(2,1),(3,1),(4,1),(3,2),(4,2),(4,3)
                     ]    
                     and datt_h >= 30
-                    and on_h >= 2
+                    and on_h >= 3
                     and off_h >= 1
-                    and tot_shots_h >= 3
+                    and tot_shots_h >= 4
                 ):
                     msg = (
                         "⚽️ FAST & FURIOUS CASA\n\n"
@@ -579,9 +579,9 @@ def main():
                         (1,0),(1,1),(2,1),(2,3),(2,2),(3,2),(1,2),(0,1),(1,3),(0,2)
                     ]    
                     and datt_h >= 30
-                    and on_h >= 2
+                    and on_h >= 3
                     and off_h >= 1
-                    and tot_shots_h >= 3
+                    and tot_shots_h >= 4
                 ):
                     msg = (
                         "⚽️ TERMINALE FAST & FORIOUS\n\n"
@@ -614,9 +614,9 @@ def main():
                         (0,0)
                     ]    
                     and datt_h >= 40
-                    and on_h >= 2
+                    and on_h >= 3
                     and off_h >= 1
-                    and tot_shots_h >= 3
+                    and tot_shots_h >= 4
                 ):
                     msg = (
                         "⚽️ FAST 0-0 CASA\n\n"

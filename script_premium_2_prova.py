@@ -436,15 +436,15 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -1.5
-                    and 15 <= minute <= 23
+                    and minute in [21, 22]
                     and (hg, ag) in [
                         (1,0),(1,2),(1,1),(2,0),(3,0),(2,2),(3,1),
                         (2,1),(0,1)
                     ]  
-                    and datt_h >= 14                 # pericolosi casa
+                    and datt_h >= 20                 # pericolosi casa
                     and on_h >= 6
-                    and off_h >= 1
-                    and tot_shots_h >= 7
+                    and off_h >= 0
+                    and tot_shots_h >= 6
                 ):
                     msg = (
                         "⚽ REGOLA 20° PRIMO TEMPO\n\n"

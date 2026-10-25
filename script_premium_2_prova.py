@@ -239,7 +239,7 @@ def main():
                         (1,0),(2,1)
                     ] 
                     and datt_a >= 45                 # attacchi pericolosi casa
-                    and on_a >= 5                    # tiri in porta casa
+                    and on_a >= 4                    # tiri in porta casa
                     and off_a >= 3                   # tiri fuori casa
                     and tot_shots_a >= 8             # tiri totali casa
                 ):
@@ -306,7 +306,7 @@ def main():
                     and (hg, ag) in [
                         (0,0),(1,1)
                     ]  
-                    and datt_a >= 45                # attacchi pericolosi ospite
+                    and datt_a >= 99                # attacchi pericolosi ospite
                     and on_a >= 5                   # tiri in porta ospite 
                     and off_a >= 3                  # tiri fuori porta ospite
                     and tot_shots_a >= 8           
@@ -339,7 +339,7 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and minute in [44]
                     and (hg, ag) in [
-                        (1,1),(0,0)
+                        (1,1),(0,0),(2,2)
                     ]
                     and datt_h >= 45
                     and on_h >= 5
@@ -541,11 +541,11 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
-                    and minute in [43, 44]
+                    and minute in [44]
                     and (hg, ag) in [
                         (1,0),(2,0),(3,0),(4,0),(2,1),(3,1),(4,1),(3,2),(4,2),(4,3)
                     ]    
-                    and datt_h >= 30
+                    and datt_h >= 39
                     and on_h >= 3
                     and off_h >= 1
                     and tot_shots_h >= 4
@@ -576,11 +576,11 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -0.5 <= handi_val <= -0.0
-                    and minute in [43, 44]
+                    and minute in [44]
                     and (hg, ag) in [
-                        (1,0),(1,1),(2,1),(2,3),(2,2),(3,2),(1,2),(0,1)
+                        (1,1),(2,3),(2,2),(1,2),(0,1)
                     ]    
-                    and datt_h >= 30
+                    and datt_h >= 39
                     and on_h >= 3
                     and off_h >= 1
                     and tot_shots_h >= 4

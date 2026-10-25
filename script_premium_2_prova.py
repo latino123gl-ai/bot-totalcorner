@@ -236,9 +236,9 @@ def main():
                     and +0.5 <= handi_val <= +4.0
                     and minute in [44]
                     and (hg, ag) in [
-                        (1,0),(1,1),(1,2),(2,1),(3,2),(2,2),(2,3),(0,1)
+                        (1,0),(1,1),(2,1),(3,2),(2,2)
                     ] 
-                    and datt_a >= 30                 # attacchi pericolosi casa
+                    and datt_a >= 99                 # attacchi pericolosi casa
                     and on_a >= 3                    # tiri in porta casa
                     and off_a >= 1                   # tiri fuori casa
                     and tot_shots_a >= 4             # tiri totali casa

@@ -233,18 +233,18 @@ def main():
                     not state["r1"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and +0.5 <= handi_val <= +4.0
+                    and +1.0 <= handi_val <= +4.0
                     and minute in [44]
                     and (hg, ag) in [
-                        (1,0),(1,1),(2,1),(3,2),(2,2)
+                        (1,0),(2,1)
                     ] 
-                    and datt_a >= 99                 # attacchi pericolosi casa
-                    and on_a >= 3                    # tiri in porta casa
-                    and off_a >= 1                   # tiri fuori casa
-                    and tot_shots_a >= 4             # tiri totali casa
+                    and datt_a >= 45                 # attacchi pericolosi casa
+                    and on_a >= 5                    # tiri in porta casa
+                    and off_a >= 3                   # tiri fuori casa
+                    and tot_shots_a >= 8             # tiri totali casa
                 ):
                     msg = (
-                        "⚽ FAST & FOURIOUS OSPITE\n\n"
+                        "⚽ FAVORITA OSPITE PERDE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -308,11 +308,11 @@ def main():
                     ]  
                     and datt_a >= 45                # attacchi pericolosi ospite
                     and on_a >= 5                   # tiri in porta ospite 
-                    and off_a >= 0                  # tiri fuori porta ospite
-                    and tot_shots_a >= 5           
+                    and off_a >= 3                  # tiri fuori porta ospite
+                    and tot_shots_a >= 8           
                 ):
                     msg = (
-                        "⚽️ FAST 0-0/1-1 OSPITE\n\n"
+                        "⚽️ FAVORITA OSPITE PAREGGIA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -339,7 +339,7 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and minute in [44]
                     and (hg, ag) in [
-                        (1,1)
+                        (1,1),(0,0)
                     ]
                     and datt_h >= 45
                     and on_h >= 5
@@ -372,7 +372,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
-                    and minute in [43, 44]
+                    and minute in [44]
                     and (hg, ag) in [
                         (0,1),(1,2)
                     ]
@@ -472,7 +472,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -1.0
-                    and minute in [43, 44]
+                    and minute in [44]
                     and (hg, ag) in [
                         (0,1),(1,1),(1,2),(2,2),(2,3)
                     ]  
@@ -615,10 +615,10 @@ def main():
                     and (hg, ag) in [
                         (0,0),(1,1)
                     ]    
-                    and datt_h >= 45
+                    and datt_h >= 99
                     and on_h >= 5
-                    and off_h >= 2
-                    and tot_shots_h >= 7
+                    and off_h >= 3
+                    and tot_shots_h >= 8
                 ):
                     msg = (
                         "⚽️ FAST 0-0/1-1 CASA\n\n"

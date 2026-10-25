@@ -377,9 +377,9 @@ def main():
                         (0,1),(1,2)
                     ]
                     and datt_h >= 45
-                    and on_h >= 5
+                    and on_h >= 4
                     and off_h >= 3                 # tiri fuori porta casa
-                    and tot_shots_h >= 8
+                    and tot_shots_h >= 7
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PERDE\n\n"

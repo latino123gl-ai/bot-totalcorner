@@ -307,9 +307,9 @@ def main():
                         (0,0),(1,1)
                     ]  
                     and datt_a >= 40                # attacchi pericolosi ospite
-                    and on_a >= 4                   # tiri in porta ospite 
-                    and off_a >= 2                  # tiri fuori porta ospite
-                    and tot_shots_a >= 6           
+                    and on_a >= 5                   # tiri in porta ospite 
+                    and off_a >= 0                  # tiri fuori porta ospite
+                    and tot_shots_a >= 5           
                 ):
                     msg = (
                         "⚽️ FAST 0-0/1-1 OSPITE\n\n"

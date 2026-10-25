@@ -719,14 +719,14 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +0.0 <= handi_val <= +4.0
-                    and minute in [53]
+                    and minute in [55]
                     and (hg, ag) in [
                         (1,0)
                     ]    
                     and datt_a >= 7
-                    and on_a >= 2
+                    and on_a >= 1
                     and off_a >= 1
-                    and tot_shots_a >= 3
+                    and tot_shots_a >= 2
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE FAST OSPITE\n\n"

@@ -304,15 +304,15 @@ def main():
                     and +1.0 <= handi_val <= +3.0
                     and minute in [44]
                     and (hg, ag) in [
-                        (0,0)
+                        (0,0),(1,1)
                     ]  
                     and datt_a >= 40                # attacchi pericolosi ospite
-                    and on_a >= 3                   # tiri in porta ospite 
-                    and off_a >= 1                  # tiri fuori porta ospite
-                    and tot_shots_a >= 4           
+                    and on_a >= 4                   # tiri in porta ospite 
+                    and off_a >= 2                  # tiri fuori porta ospite
+                    and tot_shots_a >= 6           
                 ):
                     msg = (
-                        "⚽️ FAST 0-0 OSPITE\n\n"
+                        "⚽️ FAST 0-0/1-1 OSPITE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -613,15 +613,15 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and minute in [44]
                     and (hg, ag) in [
-                        (0,0)
+                        (0,0),(1,1)
                     ]    
                     and datt_h >= 40
-                    and on_h >= 3
-                    and off_h >= 1
-                    and tot_shots_h >= 4
+                    and on_h >= 4
+                    and off_h >= 2
+                    and tot_shots_h >= 6
                 ):
                     msg = (
-                        "⚽️ FAST 0-0 CASA\n\n"
+                        "⚽️ FAST 0-0/1-1 CASA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

@@ -337,14 +337,14 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
-                    and minute in [43, 44]
+                    and minute in [44]
                     and (hg, ag) in [
                         (1,1)
                     ]
-                    and datt_h >= 35
-                    and on_h >= 4
+                    and datt_h >= 40
+                    and on_h >= 5
                     and off_h >= 3                 # tiri fuori porta casa
-                    and tot_shots_h >= 7
+                    and tot_shots_h >= 8
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PAREGGIA\n\n"
@@ -374,12 +374,12 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and minute in [43, 44]
                     and (hg, ag) in [
-                        (0,1),(0,2),(1,2)
+                        (0,1),(1,2)
                     ]
-                    and datt_h >= 32
-                    and on_h >= 3
+                    and datt_h >= 40
+                    and on_h >= 5
                     and off_h >= 3                 # tiri fuori porta casa
-                    and tot_shots_h >= 6
+                    and tot_shots_h >= 8
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PERDE\n\n"

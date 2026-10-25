@@ -616,9 +616,9 @@ def main():
                         (0,0),(1,1)
                     ]    
                     and datt_h >= 40
-                    and on_h >= 4
+                    and on_h >= 5
                     and off_h >= 2
-                    and tot_shots_h >= 6
+                    and tot_shots_h >= 7
                 ):
                     msg = (
                         "⚽️ FAST 0-0/1-1 CASA\n\n"

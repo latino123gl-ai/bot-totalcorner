@@ -715,17 +715,17 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Petah" in home                    
+                    and "Ming" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -4.0 <= handi_val <= -0.0
                     and minute in [64]
                     and (hg, ag) in [
-                        (0,1)
+                        (1,0)
                     ]    
-                    and datt_h >= 94
-                    and on_h >= 6
-                    and off_h >= 6
+                    and datt_h >= 75
+                    and on_h >= 8
+                    and off_h >= 4
                     and tot_shots_h >= 14
                 ):
                     msg = (

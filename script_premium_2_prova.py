@@ -718,18 +718,18 @@ def main():
                     and "Petah" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and +0.0 <= handi_val <= +4.0
+                    and -4.0 <= handi_val <= -0.0
                     and minute in [64]
                     and (hg, ag) in [
                         (0,1)
                     ]    
-                    and datt_a >= 94
-                    and on_a >= 6
-                    and off_a >= 6
-                    and tot_shots_a >= 14
+                    and datt_h >= 94
+                    and on_h >= 6
+                    and off_h >= 6
+                    and tot_shots_h >= 14
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE FAST OSPITE\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE FAST & FORIOUS\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

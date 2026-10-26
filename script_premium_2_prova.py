@@ -643,18 +643,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r13"]                      # non ancora mandato
-                    and "Nicosia" in home                    
+                    and "Viimsi" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [31]
+                    and minute in [63]
                     and (hg, ag) in [
-                        (2,1)
+                        (1,1)
                     ]    
-                    and datt_h >= 90
-                    and on_h >= 9
-                    and off_h >= 12
-                    and tot_shots_h >= 23
+                    and datt_h >= 71
+                    and on_h >= 7
+                    and off_h >= 7
+                    and tot_shots_h >= 16
                 ):
                     msg = (
                         "⚽️ ⚽️ DA GIOCARE IMMEDIATAMENTE FAST & FORIOUS\n\n"
@@ -679,18 +679,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Ferencvarosi" in home                    
+                    and "Oppsal" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
                     and minute in [63]
                     and (hg, ag) in [
-                        (3,0)
+                        (1,0)
                     ]    
-                    and datt_h >= 69
-                    and on_h >= 7
-                    and off_h >= 6
-                    and tot_shots_h >= 15
+                    and datt_h >= 68
+                    and on_h >= 8
+                    and off_h >= 1
+                    and tot_shots_h >= 11
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE FAST & FORIOUS\n\n"
@@ -709,7 +709,7 @@ def main():
                     send_msg(msg)
                     state["r14"] = True
 
-            # =============== REGOLA 14 ===============
+            # =============== REGOLA 15 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0

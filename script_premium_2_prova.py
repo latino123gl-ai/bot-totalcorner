@@ -238,10 +238,10 @@ def main():
                     and (hg, ag) in [
                         (1,0),(2,1)
                     ] 
-                    and datt_a >= 45                 # attacchi pericolosi casa
-                    and on_a >= 5                    # tiri in porta casa
-                    and off_a >= 3                   # tiri fuori casa
-                    and tot_shots_a >= 8             # tiri totali casa
+                    and datt_a >= 40                 # attacchi pericolosi casa
+                    and on_a >= 4                    # tiri in porta casa
+                    and off_a >= 2                   # tiri fuori casa
+                    and tot_shots_a >= 6             # tiri totali casa
                 ):
                     msg = (
                         "⚽ FAVORITA OSPITE PERDE\n\n"
@@ -304,12 +304,12 @@ def main():
                     and +1.0 <= handi_val <= +3.0
                     and minute in [44]
                     and (hg, ag) in [
-                        (0,0),(1,1)
+                        (0,0),(1,1),(2,2)
                     ]  
                     and datt_a >= 99                # attacchi pericolosi ospite
                     and on_a >= 5                   # tiri in porta ospite 
-                    and off_a >= 3                  # tiri fuori porta ospite
-                    and tot_shots_a >= 8           
+                    and off_a >= 0                 # tiri fuori porta ospite
+                    and tot_shots_a >= 10           
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE PAREGGIA\n\n"
@@ -341,10 +341,10 @@ def main():
                     and (hg, ag) in [
                         (1,1),(0,0),(2,2)
                     ]
-                    and datt_h >= 45
-                    and on_h >= 5
-                    and off_h >= 3                 # tiri fuori porta casa
-                    and tot_shots_h >= 8
+                    and datt_h >= 39
+                    and on_h >= 4
+                    and off_h >= 2                 # tiri fuori porta casa
+                    and tot_shots_h >= 6
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PAREGGIA\n\n"
@@ -377,8 +377,8 @@ def main():
                         (0,1),(1,2)
                     ]
                     and datt_h >= 39
-                    and on_h >= 5
-                    and off_h >= 1                 # tiri fuori porta casa
+                    and on_h >= 4
+                    and off_h >= 2                 # tiri fuori porta casa
                     and tot_shots_h >= 6
                 ):
                     msg = (
@@ -613,12 +613,12 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and minute in [44]
                     and (hg, ag) in [
-                        (0,0),(1,1)
+                        (0,0),(1,1),(2,2)
                     ]    
-                    and datt_h >= 99
+                    and datt_h >= 30
                     and on_h >= 5
-                    and off_h >= 3
-                    and tot_shots_h >= 8
+                    and off_h >= 0
+                    and tot_shots_h >= 11
                 ):
                     msg = (
                         "⚽️ FAST 0-0/1-1 CASA\n\n"

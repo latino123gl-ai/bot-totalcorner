@@ -679,7 +679,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Oppsal" in home                    
+                    and "Tabor" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
@@ -687,10 +687,10 @@ def main():
                     and (hg, ag) in [
                         (1,0)
                     ]    
-                    and datt_h >= 68
-                    and on_h >= 8
-                    and off_h >= 1
-                    and tot_shots_h >= 11
+                    and datt_h >= 74
+                    and on_h >= 7
+                    and off_h >= 4
+                    and tot_shots_h >= 13
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE FAST & FORIOUS\n\n"
@@ -715,18 +715,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Bugolobi" in home                    
+                    and "Ludogorets" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -4.0 <= handi_val <= -0.0
                     and minute in [63]
                     and (hg, ag) in [
-                        (2,1)
+                        (1,0)
                     ]    
-                    and datt_h >= 112
-                    and on_h >= 8
-                    and off_h >= 9
-                    and tot_shots_h >= 19
+                    and datt_h >= 97
+                    and on_h >= 7
+                    and off_h >= 7
+                    and tot_shots_h >= 16
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE FAST & FORIOUS\n\n"

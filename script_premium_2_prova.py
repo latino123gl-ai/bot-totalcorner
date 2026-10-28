@@ -578,12 +578,12 @@ def main():
                     and -0.5 <= handi_val <= -0.0
                     and minute in [44]
                     and (hg, ag) in [
-                        (1,1),(2,3),(2,2),(1,2),(0,1),(1,0)
+                        (1,1),(2,3),(2,2),(1,2),(0,1)
                     ]    
-                    and datt_h >= 35
+                    and datt_h >= 38
                     and on_h >= 3
                     and off_h >= 1
-                    and tot_shots_h >= 4
+                    and tot_shots_h >= 6
                 ):
                     msg = (
                         "⚽️ TERMINALE FAST & FORIOUS\n\n"

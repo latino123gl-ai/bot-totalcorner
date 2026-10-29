@@ -231,6 +231,7 @@ def main():
 
                 # GOL LINE PRE-MATCH
                 p_goal = m.get("p_goal")
+                p_asian = m.get("p_asian")
 
                 # CONFIGURAZIONE GOL LINE PRE-MATCH
                 gol_line_1 = 2.5
@@ -240,7 +241,7 @@ def main():
                 print(
                     f"  {league} | {home} vs {away} | {minute}' | {hg}-{ag} "
                     f"(att={att_h}-{att_a}, dang={datt_h}-{datt_a}, "
-                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}"
+                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}"
                 )
 
                 # ================= REGOLA 1 =================
@@ -261,6 +262,9 @@ def main():
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +2.0
                 ):
                     msg = (
                         "⚽ FAVORITA OSPITE PERDE\n\n"
@@ -268,7 +272,8 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"Handicap: {p_asian}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
@@ -302,7 +307,7 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -338,7 +343,7 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -368,6 +373,9 @@ def main():
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PAREGGIA\n\n"
@@ -375,7 +383,8 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"Handicap: {p_asian}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
@@ -406,6 +415,9 @@ def main():
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PERDE\n\n"
@@ -413,7 +425,8 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"Handicap: {p_asian}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
@@ -448,6 +461,9 @@ def main():
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
 
                     msg = (
@@ -456,7 +472,8 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"Handicap: {p_asian}\n"
                         f"xG: {xg_h}-{xg_a}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
@@ -474,8 +491,8 @@ def main():
                     not state["r5"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -1.5
-                    and minute in [21, 22]
+                    and -3.0 <= handi_val <= -1.0
+                    and minute in [22]
                     and (hg, ag) in [
                         (1,0),(1,2),(1,1),(2,0),(3,0),(2,2),(3,1),
                         (2,1),(0,1),(4,0)
@@ -487,6 +504,9 @@ def main():
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
                 ):
                     msg = (
                         "⚽ REGOLA 20° PRIMO TEMPO\n\n"
@@ -494,7 +514,8 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"Handicap: {p_asian}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
@@ -523,6 +544,10 @@ def main():
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                     and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
+
                 ):
                     msg = (
                         "⚽️ FAST & FURIOUS X/2 CASA\n\n"
@@ -530,7 +555,8 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"Handicap: {p_asian}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
@@ -564,6 +590,10 @@ def main():
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                     and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.5
+
                 ):
 
                     msg = (
@@ -572,7 +602,8 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"Handicap: {p_asian}\n"
                         f"xG: {xg_h}-{xg_a}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
@@ -604,6 +635,9 @@ def main():
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
                 ):
                     msg = (
                         "⚽️ FAST & FURIOUS CASA\n\n"
@@ -611,7 +645,8 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"Handicap: {p_asian}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
@@ -642,6 +677,9 @@ def main():
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
                     msg = (
                         "⚽️ TERMINALE FAST & FORIOUS\n\n"
@@ -649,7 +687,8 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"Handicap: {p_asian}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
@@ -680,6 +719,9 @@ def main():
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
                 ):
                     msg = (
                         "⚽️ FAST 0-0/1-1 CASA\n\n"
@@ -687,7 +729,8 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"Handicap: {p_asian}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"

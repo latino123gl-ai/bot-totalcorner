@@ -103,7 +103,7 @@ def get_live():
         "token": TOTALCORNER_TOKEN,
         "type": "inplay",
         # colonne: gol, stato, nomi, sesso, attacchi, pericolosi, tiri, handicap
-        "columns": "hg,ag,status,h,a,l,start,sex,attacks,dangerousAttacks,shotOn,shotOff,asian,xg",
+        "columns": "hg,ag,status,h,a,l,start,sex,attacks,dangerousAttacks,shotOn,shotOff,asian,xg,goalLine",
     }
     try:
         r = requests.get(TC_URL_TODAY, params=params, timeout=15)
@@ -229,11 +229,18 @@ def main():
                     xg_h = "N/D"
                     xg_a = "N/D"
 
+                # GOL LINE PRE-MATCH
+                p_goal = m.get("p_goal")
+
+                # CONFIGURAZIONE GOL LINE PRE-MATCH
+                gol_line_1 = 2.5
+                gol_line_2 = 3.0
+
                 # DEBUG NEL TERMINALE
                 print(
                     f"  {league} | {home} vs {away} | {minute}' | {hg}-{ag} "
                     f"(att={att_h}-{att_a}, dang={datt_h}-{datt_a}, "
-                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a})"
+                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}"
                 )
 
                 # ================= REGOLA 1 =================
@@ -251,6 +258,9 @@ def main():
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
                     and tot_shots_a >= 6             # tiri totali casa
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                 ):
                     msg = (
                         "⚽ FAVORITA OSPITE PERDE\n\n"
@@ -259,6 +269,7 @@ def main():
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -316,7 +327,10 @@ def main():
                     and datt_a >= 99                # attacchi pericolosi ospite
                     and on_a >= 5                   # tiri in porta ospite 
                     and off_a >= 0                 # tiri fuori porta ospite
-                    and tot_shots_a >= 10           
+                    and tot_shots_a >= 10
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                 ):
                     msg = (
                         "⚽️ FAVORITA OSPITE PAREGGIA\n\n"
@@ -351,6 +365,9 @@ def main():
                     and on_h >= 4
                     and off_h >= 2                 # tiri fuori porta casa
                     and tot_shots_h >= 6
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PAREGGIA\n\n"
@@ -359,6 +376,7 @@ def main():
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -385,6 +403,9 @@ def main():
                     and on_h >= 4
                     and off_h >= 2                 # tiri fuori porta casa
                     and tot_shots_h >= 6
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PERDE\n\n"
@@ -393,6 +414,7 @@ def main():
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -423,6 +445,7 @@ def main():
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 0
+                    and p_goal == ['3.0']
                 ):
 
                     msg = (
@@ -458,6 +481,9 @@ def main():
                     and on_h >= 6
                     and off_h >= 0
                     and tot_shots_h >= 6
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                 ):
                     msg = (
                         "⚽ REGOLA 20° PRIMO TEMPO\n\n"
@@ -466,6 +492,7 @@ def main():
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -490,6 +517,9 @@ def main():
                     and on_h >= 3
                     and off_h >= 1
                     and tot_shots_h >= 4
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                 ):
                     msg = (
                         "⚽️ FAST & FURIOUS X/2 CASA\n\n"
@@ -498,6 +528,7 @@ def main():
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -563,6 +594,9 @@ def main():
                     and on_h >= 3
                     and off_h >= 1
                     and tot_shots_h >= 4
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                 ):
                     msg = (
                         "⚽️ FAST & FURIOUS CASA\n\n"
@@ -571,6 +605,7 @@ def main():
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -597,6 +632,9 @@ def main():
                     and on_h >= 3
                     and off_h >= 1
                     and tot_shots_h >= 6
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                 ):
                     msg = (
                         "⚽️ TERMINALE FAST & FORIOUS\n\n"
@@ -605,6 +643,7 @@ def main():
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -631,6 +670,9 @@ def main():
                     and on_h >= 5
                     and off_h >= 0
                     and tot_shots_h >= 11
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                 ):
                     msg = (
                         "⚽️ FAST 0-0/1-1 CASA\n\n"
@@ -639,6 +681,7 @@ def main():
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"

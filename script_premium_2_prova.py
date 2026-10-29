@@ -103,7 +103,7 @@ def get_live():
         "token": TOTALCORNER_TOKEN,
         "type": "inplay",
         # colonne: gol, stato, nomi, sesso, attacchi, pericolosi, tiri, handicap
-        "columns": "hg,ag,status,h,a,l,start,sex,attacks,dangerousAttacks,shotOn,shotOff,asian",
+        "columns": "hg,ag,status,h,a,l,start,sex,attacks,dangerousAttacks,shotOn,shotOff,asian,xg",
     }
     try:
         r = requests.get(TC_URL_TODAY, params=params, timeout=15)
@@ -220,11 +220,20 @@ def main():
 
                 handi_val, handi_raw = parse_handicap(m)
 
+                # XG CASA E OSPITE
+                xg_data = m.get("xg")
+                if isinstance(xg_data, list) and len(xg_data) >= 2:
+                    xg_h = xg_data[0]
+                    xg_a = xg_data[1]
+                else:
+                    xg_h = "N/D"
+                    xg_a = "N/D"
+
                 # DEBUG NEL TERMINALE
                 print(
                     f"  {league} | {home} vs {away} | {minute}' | {hg}-{ag} "
                     f"(att={att_h}-{att_a}, dang={datt_h}-{datt_a}, "
-                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw})"
+                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a})"
                 )
 
                 # ================= REGOLA 1 =================
@@ -251,7 +260,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
@@ -285,7 +293,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali ospite: {tot_shots_a}\n"
@@ -319,7 +326,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali ospite: {tot_shots_a}\n"
@@ -354,7 +360,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
@@ -389,7 +394,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
@@ -406,23 +410,29 @@ def main():
                     not state["r4"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -4.0 <= handi_val <= -0.0
-                    and (hg, ag) != (0,0)
-                    and minute in [44, 45]
-                    and datt_h >= 99               # attacchi pericolosi ospite
-                    and on_h >= 7                  # tiri in porta ospite
-                    and off_h >= 0                 # tiri fuori porta ospite
-                    and tot_shots_h >= 7           # tiri totali ospite
+                    and xg_h is not None
+                    and xg_a is not None
+                    and float(xg_h) >= 1.00       # XG CASA
+                    and float(xg_a) >= 0.00       # XG OSPITE 
+                    and -3.5 <= handi_val <= -0.5
+                    and minute in [44]
+                    and (hg, ag) in [
+                        (0,1),(0,2),(1,2),(1,1),(2,2),(0,0),(2,3)
+                    ]
+                    and datt_h >= 10
+                    and on_h >= 0
+                    and off_h >= 0                 # tiri fuori porta casa
+                    and tot_shots_h >= 0
                 ):
+
                     msg = (
-                        "🚨 REGOLA 7 TIRI AL MINUTO 45\n\n"
+                        "🚨 REGOLA XG\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_a}\n"
@@ -456,7 +466,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
@@ -489,7 +498,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
@@ -505,25 +513,31 @@ def main():
                     not state["r9"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -5.0 <= handi_val <= -2.0
-                    and 12 <= minute <= 44
+                    and xg_h is not None
+                    and xg_a is not None
+                    and float(xg_h) >= 1.00       # XG CASA
+                    and float(xg_a) >= 1.00       # XG OSPITE 
+                    and -3.5 <= handi_val <= -0.5
+                    and minute in [44]
                     and (hg, ag) in [
-                        (0,1)
+                        (0,1),(0,2),(1,2),(1,1),(2,2),(0,0),(2,3)
                     ]
-                    and datt_h >= 99                # attacchi pericolosi casa
-                    and on_h >= 0                   # tiri in porta casa 
-                    and off_h >= 0                  # tiri fuori porta casa
-                    and tot_shots_h >= 1            # totale tiri casa
+                    and datt_h >= 10
+                    and on_h >= 0
+                    and off_h >= 0                 # tiri fuori porta casa
+                    and tot_shots_h >= 0
                 ):
+
                     msg = (
-                        "⚽️ FAVORITA IN SVANTAGGIO GIOCARE 1 FISSO\n\n"
+                        "⚽️ REGOLA XG 2 GOL\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"xG casa: {xg_h}\n"
+                        f"xG ospite: {xg_a}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
@@ -558,7 +572,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
@@ -593,7 +606,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
@@ -628,7 +640,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
@@ -664,7 +675,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
@@ -700,7 +710,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
@@ -736,7 +745,6 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Attacchi totali: {att_h} - {att_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"

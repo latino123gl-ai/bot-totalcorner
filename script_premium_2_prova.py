@@ -375,7 +375,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PAREGGIA\n\n"

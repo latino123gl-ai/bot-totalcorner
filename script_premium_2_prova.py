@@ -445,7 +445,6 @@ def main():
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 0
-                    and p_goal == ['3.0']
                 ):
 
                     msg = (

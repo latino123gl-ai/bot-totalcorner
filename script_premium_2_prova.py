@@ -432,6 +432,7 @@ def main():
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"xG: {xg_h}-{xg_a}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -517,7 +518,7 @@ def main():
                     and xg_a is not None
                     and float(xg_h) >= 1.00       # XG CASA
                     and float(xg_a) >= 1.00       # XG OSPITE 
-                    and -3.5 <= handi_val <= -0.5
+                    and -3.5 <= handi_val <= -0.0
                     and minute in [44]
                     and (hg, ag) in [
                         (0,1),(0,2),(1,2),(1,1),(2,2),(0,0),(2,3)
@@ -535,8 +536,7 @@ def main():
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap apertura casa: {handi_raw}\n\n"
-                        f"xG casa: {xg_h}\n"
-                        f"xG ospite: {xg_a}\n"
+                        f"xG: {xg_h}-{xg_a}\n"                        
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"

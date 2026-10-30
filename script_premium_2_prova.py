@@ -233,6 +233,10 @@ def main():
                 p_goal = m.get("p_goal")
                 p_asian = m.get("p_asian")
 
+                # RISULTATO PRIMO TEMPO
+                hf_hg = m.get("hf_hg")
+                hf_ag = m.get("hf_ag")
+
                 # CONFIGURAZIONE GOL LINE PRE-MATCH
                 gol_line_1 = 2.5
                 gol_line_2 = 3.0
@@ -241,7 +245,7 @@ def main():
                 print(
                     f"  {league} | {home} vs {away} | {minute}' | {hg}-{ag} "
                     f"(att={att_h}-{att_a}, dang={datt_h}-{datt_a}, "
-                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}"
+                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}, PRIMO TEMPO={hf_hg}-{hf_ag}"
                 )
 
                 # ================= REGOLA 1 =================
@@ -251,11 +255,9 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +1.0 <= handi_val <= +4.0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (1,0),(2,1)
-                    ] 
-                    and datt_a >= 40                 # attacchi pericolosi casa
+                    and minute in [87]
+                    and f"{hf_hg}-{hf_ag}" in ["1-0", "2-1", "0-2"]
+                    and datt_a >= 86                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
                     and tot_shots_a >= 6             # tiri totali casa
@@ -264,7 +266,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +2.0
+                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +1.5
                 ):
                     msg = (
                         "⚽ FAVORITA OSPITE PERDE\n\n"
@@ -280,6 +282,7 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r1"] = True

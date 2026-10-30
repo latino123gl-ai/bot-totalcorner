@@ -467,10 +467,10 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.00       # XG CASA
+                    and float(xg_h) >= 1.10       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.5
-                    and minute in [48]
+                    and minute in [44]
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-0"
                         or f"{hf_hg}-{hf_ag}" == "0-1"
@@ -560,7 +560,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -1.0
-                    and minute in [48]
+                    and minute in [44]
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-1"
                         or f"{hf_hg}-{hf_ag}" == "1-1"
@@ -608,10 +608,10 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.00       # XG CASA
+                    and float(xg_h) >= 1.10       # XG CASA
                     and float(xg_a) >= 1.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [45]
+                    and minute in [44]
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-1"
                         or f"{hf_hg}-{hf_ag}" == "1-1"
@@ -662,7 +662,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
-                    and minute in [48]
+                    and minute in [44]
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-1"
                         or f"{hf_hg}-{hf_ag}" == "2-0"
@@ -714,7 +714,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -0.5 <= handi_val <= -0.0
-                    and minute in [48]
+                    and minute in [44]
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-1"
                         or f"{hf_hg}-{hf_ag}" == "2-3"
@@ -722,7 +722,7 @@ def main():
                         or f"{hf_hg}-{hf_ag}" == "1-2"
                         or f"{hf_hg}-{hf_ag}" == "0-1"
                     )
-                    and datt_h >= 31
+                    and datt_h >= 35
                     and on_h >= 0
                     and off_h >= 1
                     and tot_shots_h >= 1

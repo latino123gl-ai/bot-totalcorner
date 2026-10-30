@@ -602,7 +602,7 @@ def main():
                     and (hg, ag) in [
                         (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
                     ]  
-                    and datt_h >= 10
+                    and datt_h >= 5
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 0
@@ -611,7 +611,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                      and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.5
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
 
                 ):
                     msg = (
@@ -839,18 +839,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Sibiu" in home                    
+                    and "Bragantino" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [65]
+                    and minute in [63]
                     and (hg, ag) in [
-                        (3,0)
+                        (2,1)
                     ]    
-                    and datt_h >= 69
-                    and on_h >= 7
-                    and off_h >= 3
-                    and tot_shots_h >= 12
+                    and datt_h >= 73
+                    and on_h >= 9
+                    and off_h >= 5
+                    and tot_shots_h >= 16
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE FAST & FORIOUS\n\n"

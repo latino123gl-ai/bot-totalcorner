@@ -467,9 +467,9 @@ def main():
                     and float(xg_h) >= 1.00       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.5
-                    and minute in [54]
+                    and minute in [56]
                     and (hg, ag) in [
-                        (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
+                        (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3),(2,1)
                     ]  
                     and datt_h >= 10
                     and on_h >= 0
@@ -598,9 +598,9 @@ def main():
                     and float(xg_h) >= 1.00       # XG CASA
                     and float(xg_a) >= 1.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [54]
+                    and minute in [56]
                     and (hg, ag) in [
-                        (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
+                        (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3),(2,1)
                     ]  
                     and datt_h >= 10
                     and on_h >= 0

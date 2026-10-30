@@ -256,10 +256,9 @@ def main():
                     and handi_val is not None
                     and +1.0 <= handi_val <= +4.0
                     and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "1-0"
-                        or f"{hf_hg}-{hf_ag}" == "2-1"
-                    )
+                    and (hg, ag) in [
+                        (1,0),(2,1)
+                    ]  
                     and datt_a >= 42                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
@@ -306,6 +305,9 @@ def main():
                     and on_h >= 10                  # tiri in porta casa
                     and off_h >= 1                 # tiri fuori porta casa
                     and tot_shots_h >= 11
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
@@ -318,6 +320,7 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap live casa: {handi_raw}\n\n"
                         f"Handicap: {p_asian}\n"
+                        f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -336,12 +339,9 @@ def main():
                     and handi_val is not None
                     and +1.0 <= handi_val <= +3.0
                     and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "0-0"
-                        or f"{hf_hg}-{hf_ag}" == "1-1"
-                        or f"{hf_hg}-{hf_ag}" == "2-1"
-                    )
-
+                    and (hg, ag) in [
+                        (0,0),(1,1),(2,2)
+                    ]  
                     and datt_a >= 99                # attacchi pericolosi ospite
                     and on_a >= 5                   # tiri in porta ospite 
                     and off_a >= 0                 # tiri fuori porta ospite
@@ -378,12 +378,10 @@ def main():
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
                     and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "0-0"
-                        or f"{hf_hg}-{hf_ag}" == "1-1"
-                        or f"{hf_hg}-{hf_ag}" == "2-2"
-                    )
-                    and datt_h >= 41
+                    and (hg, ag) in [
+                        (0,0),(1,1),(2,2)
+                    ]  
+                    and datt_h >= 39
                     and on_h >= 4
                     and off_h >= 2                 # tiri fuori porta casa
                     and tot_shots_h >= 6
@@ -423,11 +421,10 @@ def main():
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
                     and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "0-1"
-                        or f"{hf_hg}-{hf_ag}" == "1-2"
-                    )
-                    and datt_h >= 42
+                    and (hg, ag) in [
+                        (0,1),(1,2)
+                    ]  
+                    and datt_h >= 39
                     and on_h >= 4
                     and off_h >= 2                 # tiri fuori porta casa
                     and tot_shots_h >= 6
@@ -471,15 +468,9 @@ def main():
                     and float(xg_a) >= 0.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.5
                     and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "0-0"
-                        or f"{hf_hg}-{hf_ag}" == "0-1"
-                        or f"{hf_hg}-{hf_ag}" == "1-1"
-                        or f"{hf_hg}-{hf_ag}" == "1-2"
-                        or f"{hf_hg}-{hf_ag}" == "2-2"
-                        or f"{hf_hg}-{hf_ag}" == "2-3"
-                        or f"{hf_hg}-{hf_ag}" == "0-2"
-                    )
+                    and (hg, ag) in [
+                        (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
+                    ]  
                     and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
@@ -561,14 +552,10 @@ def main():
                     and handi_val is not None
                     and -3.0 <= handi_val <= -1.0
                     and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "0-1"
-                        or f"{hf_hg}-{hf_ag}" == "1-1"
-                        or f"{hf_hg}-{hf_ag}" == "1-2"
-                        or f"{hf_hg}-{hf_ag}" == "2-2"
-                        or f"{hf_hg}-{hf_ag}" == "2-3"
-                    )
-                    and datt_h >= 35                 # pericolosi casa
+                    and (hg, ag) in [
+                        (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
+                    ]  
+                    and datt_h >= 30                 # pericolosi casa
                     and on_h >= 3
                     and off_h >= 1
                     and tot_shots_h >= 4
@@ -612,15 +599,9 @@ def main():
                     and float(xg_a) >= 1.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.0
                     and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "0-1"
-                        or f"{hf_hg}-{hf_ag}" == "1-1"
-                        or f"{hf_hg}-{hf_ag}" == "1-2"
-                        or f"{hf_hg}-{hf_ag}" == "2-2"
-                        or f"{hf_hg}-{hf_ag}" == "2-3"
-                        or f"{hf_hg}-{hf_ag}" == "0-0"
-                        or f"{hf_hg}-{hf_ag}" == "0-2"
-                    )
+                    and (hg, ag) in [
+                        (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
+                    ]  
                     and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
@@ -663,19 +644,10 @@ def main():
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
                     and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "0-1"
-                        or f"{hf_hg}-{hf_ag}" == "2-0"
-                        or f"{hf_hg}-{hf_ag}" == "3-0"
-                        or f"{hf_hg}-{hf_ag}" == "4-0"
-                        or f"{hf_hg}-{hf_ag}" == "2-1"
-                        or f"{hf_hg}-{hf_ag}" == "3-1"
-                        or f"{hf_hg}-{hf_ag}" == "4-1"
-                        or f"{hf_hg}-{hf_ag}" == "3-2"
-                        or f"{hf_hg}-{hf_ag}" == "4-2"
-                        or f"{hf_hg}-{hf_ag}" == "4-3"
-                    )
-                    and datt_h >= 38
+                    and (hg, ag) in [
+                        (1,0),(2,0),(3,0),(4,0),(2,1),(3,1),(3,2),(4,2),(4,3)
+                    ]  
+                    and datt_h >= 35
                     and on_h >= 3
                     and off_h >= 1
                     and tot_shots_h >= 4
@@ -715,13 +687,9 @@ def main():
                     and handi_val is not None
                     and -0.5 <= handi_val <= -0.0
                     and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "1-1"
-                        or f"{hf_hg}-{hf_ag}" == "2-3"
-                        or f"{hf_hg}-{hf_ag}" == "2-2"
-                        or f"{hf_hg}-{hf_ag}" == "1-2"
-                        or f"{hf_hg}-{hf_ag}" == "0-1"
-                    )
+                    and (hg, ag) in [
+                        (1,1),(0,1),(1,1),(1,2),(2,2),(2,3),(1,0)
+                    ]  
                     and datt_h >= 35
                     and on_h >= 3
                     and off_h >= 1
@@ -762,11 +730,9 @@ def main():
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
                     and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "0-0"
-                        or f"{hf_hg}-{hf_ag}" == "1-1"
-                        or f"{hf_hg}-{hf_ag}" == "2-2"
-                    )
+                    and (hg, ag) in [
+                        (0,0),(1,1),(2,2)
+                    ]  
                     and datt_h >= 34
                     and on_h >= 5
                     and off_h >= 0

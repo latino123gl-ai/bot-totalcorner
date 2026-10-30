@@ -260,7 +260,7 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "1-0"
                         or f"{hf_hg}-{hf_ag}" == "2-1"
                     )
-                    and datt_a >= 45                 # attacchi pericolosi casa
+                    and datt_a >= 42                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
                     and tot_shots_a >= 6             # tiri totali casa

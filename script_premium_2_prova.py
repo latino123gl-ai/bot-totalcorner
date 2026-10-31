@@ -335,7 +335,7 @@ def main():
                     send_msg(msg)
                     state["r16"] = True
 
-                # ================= REGOLA 2 =================
+                # ================= ⚽️ REGOLA 8-0 =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
                 # pericolosi casa >= 10, tiri totali >= 1
                 if (
@@ -468,7 +468,7 @@ def main():
                     send_msg(msg)
                     state["r7"] = True
 
-                # =============== REGOLA 3 ===============
+                # =============== ⚽️ FAVORITA CASA PAREGGIA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -511,7 +511,7 @@ def main():
                     send_msg(msg)
                     state["r3"] = True
 
-                # =============== REGOLA 3 XG ===============
+                # =============== ⚽️ FAVORITA CASA PAREGGIA + XG ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -559,7 +559,7 @@ def main():
                     send_msg(msg)
                     state["r17"] = True
 
-                # =============== REGOLA 8 ===============
+                # =============== ⚽️ FAVORITA CASA PERDE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -602,7 +602,7 @@ def main():
                     send_msg(msg)
                     state["r8"] = True
 
-                # =============== REGOLA 8 XG===============
+                # =============== ⚽️ FAVORITA CASA PERDE + XG ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -650,7 +650,7 @@ def main():
                     send_msg(msg)
                     state["r18"] = True
 
-                # =============== REGOLA 4 ===============
+                # =============== 🚨 REGOLA XG ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 45,
                 # risultati ammessi, attacchi pericolosi >= 30,
                 # tiri in porta >= 4, tiri totali >= 0
@@ -699,7 +699,7 @@ def main():
                     send_msg(msg)
                     state["r4"] = True
 
-                # ================= REGOLA 5 =================
+                # ================= ⚽ REGOLA 20° PRIMO TEMPO =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
                     not state["r5"]                 # non ancora mandato
@@ -711,7 +711,7 @@ def main():
                         (1,0),(1,2),(1,1),(2,0),(3,0),(2,2),(3,1),
                         (2,1),(0,1),(4,0)
                     ]  
-                    and datt_h >= 20                 # pericolosi casa
+                    and datt_h >= 18                 # pericolosi casa
                     and on_h >= 6
                     and off_h >= 0
                     and tot_shots_h >= 6
@@ -740,7 +740,7 @@ def main():
                     send_msg(msg)
                     state["r5"] = True
 
-                # ================= REGOLA 6 =================
+                # ================= ⚽️ FAST & FURIOUS X/2 CASA =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
                     not state["r6"]                 # non ancora mandato
@@ -782,7 +782,7 @@ def main():
                     send_msg(msg)
                     state["r6"] = True
 
-                # ================= REGOLA 9 =================
+                # ================= ⚽️ REGOLA XG 2 GOL =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
                 # pericolosi casa >= 10, tiri totali >= 1
                 if (
@@ -830,7 +830,7 @@ def main():
                     send_msg(msg)
                     state["r9"] = True
 
-                # =============== REGOLA 10 ===============
+                # =============== ⚽️ FAST & FURIOUS CASA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -873,7 +873,7 @@ def main():
                     send_msg(msg)
                     state["r10"] = True
 
-            # =============== REGOLA 11 ===============
+            # =============== ⚽️ TERMINALE FAST & FORIOUS ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -916,7 +916,7 @@ def main():
                     send_msg(msg)
                     state["r11"] = True
 
-                        # =============== REGOLA 12 ===============
+                        # =============== ⚽️ FAST 0-0/1-1 CASA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0

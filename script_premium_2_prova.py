@@ -751,7 +751,7 @@ def main():
                     and (hg, ag) in [
                         (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
                     ]  
-                    and datt_h >= 30                 # pericolosi casa
+                    and datt_h >= 35                 # pericolosi casa
                     and on_h >= 3
                     and off_h >= 1
                     and tot_shots_h >= 4
@@ -884,7 +884,7 @@ def main():
                     and -0.5 <= handi_val <= -0.0
                     and minute in [44]
                     and (hg, ag) in [
-                        (1,1),(0,1),(1,1),(1,2),(2,2),(2,3),(1,0)
+                        (1,1),(0,1),(1,2),(2,2),(2,3)
                     ]  
                     and datt_h >= 35
                     and on_h >= 3

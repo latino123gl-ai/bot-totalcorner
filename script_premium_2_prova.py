@@ -146,7 +146,7 @@ def main():
                     continue
 
                 if match_id not in tracked:
-                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False}
+                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False, "r19": False}
                 state = tracked[match_id]
 
                 league = m.get("l", "?")
@@ -375,6 +375,52 @@ def main():
                     )
                     send_msg(msg)
                     state["r2"] = True
+
+                # ================= REGOLA OPITE XG =================
+                # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
+                if (
+                    not state["r19"]                 # non ancora mandato
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and xg_h is not None
+                    and xg_a is not None
+                    and float(xg_h) >= 0.00       # XG CASA
+                    and float(xg_a) >= 1.20       # XG OSPITE
+                    and +0.5 <= handi_val <= +4.0
+                    and minute in [45]
+                    and (hg, ag) in [
+                        (1,0),(2,1),(1,1),(2,2),(3,1),(3,2)
+                    ]  
+                    and datt_a >= 22                 # attacchi pericolosi casa
+                    and on_a >= 2                    # tiri in porta casa
+                    and off_a >= 2                   # tiri fuori casa
+                    and tot_shots_a >= 4             # tiri totali casa
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +1.5
+                ):
+                    msg = (
+                        "⚽ REGOLA XG OSPITE\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"xG: {xg_h}-{xg_a}\n"
+                        f"Handicap: {p_asian}\n"
+                        f"Gol line pre-match: {p_goal}\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r19"] = True
 
                 # ================= REGOLA 7 =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,

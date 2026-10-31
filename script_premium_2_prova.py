@@ -528,7 +528,7 @@ def main():
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2)
                     ]  
-                    and datt_h >= 35
+                    and datt_h >= 39
                     and on_h >= 4
                     and off_h >= 2                 # tiri fuori porta casa
                     and tot_shots_h >= 6
@@ -572,7 +572,7 @@ def main():
                     and (hg, ag) in [
                         (0,1),(1,2)
                     ]  
-                    and datt_h >= 39
+                    and datt_h >= 35
                     and on_h >= 4
                     and off_h >= 2                 # tiri fuori porta casa
                     and tot_shots_h >= 6

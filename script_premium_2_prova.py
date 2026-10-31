@@ -255,11 +255,11 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +1.0 <= handi_val <= +4.0
-                    and minute in [44]
+                    and minute in [14]
                     and (hg, ag) in [
                         (1,0),(2,1)
                     ]  
-                    and datt_a >= 42                 # attacchi pericolosi casa
+                    and datt_a >= 99                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
                     and tot_shots_a >= 6             # tiri totali casa
@@ -300,11 +300,11 @@ def main():
                     and float(xg_h) >= 0.00       # XG CASA
                     and float(xg_a) >= 1.20       # XG OSPITE
                     and +1.0 <= handi_val <= +4.0
-                    and minute in [45]
+                    and minute in [15]
                     and (hg, ag) in [
                         (1,0),(2,1)
                     ]  
-                    and datt_a >= 42                 # attacchi pericolosi casa
+                    and datt_a >= 99                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
                     and tot_shots_a >= 6             # tiri totali casa
@@ -387,11 +387,11 @@ def main():
                     and float(xg_h) >= 0.00       # XG CASA
                     and float(xg_a) >= 1.20       # XG OSPITE
                     and +0.5 <= handi_val <= +4.0
-                    and minute in [45]
+                    and minute in [15]
                     and (hg, ag) in [
                         (1,0),(2,1),(1,1),(2,2),(3,1),(3,2)
                     ]  
-                    and datt_a >= 22                 # attacchi pericolosi casa
+                    and datt_a >= 99                 # attacchi pericolosi casa
                     and on_a >= 2                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
                     and tot_shots_a >= 4             # tiri totali casa
@@ -434,11 +434,11 @@ def main():
                     and float(xg_h) >= 0.00       # XG CASA
                     and float(xg_a) >= 1.20       # XG OSPITE
                     and +1.0 <= handi_val <= +3.0
-                    and minute in [45]
+                    and minute in [15]
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2)
                     ]  
-                    and datt_a >= 40                # attacchi pericolosi ospite
+                    and datt_a >= 99                # attacchi pericolosi ospite
                     and on_a >= 4                   # tiri in porta ospite 
                     and off_a >= 2                 # tiri fuori porta ospite
                     and tot_shots_a >= 6

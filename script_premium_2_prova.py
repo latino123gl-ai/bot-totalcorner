@@ -1000,7 +1000,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Sveta" in home                    
+                    and "Taverne" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
@@ -1008,10 +1008,10 @@ def main():
                     and (hg, ag) in [
                         (1,1)
                     ]    
-                    and datt_h >= 61
-                    and on_h >= 7
-                    and off_h >= 5
-                    and tot_shots_h >= 14
+                    and datt_h >= 75
+                    and on_h >= 6
+                    and off_h >= 3
+                    and tot_shots_h >= 11
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE FAST & FORIOUS\n\n"
@@ -1035,18 +1035,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Slavija" in home                    
+                    and "Haifa" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -4.0 <= handi_val <= -0.0
                     and minute in [63]
                     and (hg, ag) in [
-                        (2,0)
+                        (1,0)
                     ]    
-                    and datt_h >= 64
-                    and on_h >= 7
+                    and datt_h >= 78
+                    and on_h >= 6
                     and off_h >= 4
-                    and tot_shots_h >= 13
+                    and tot_shots_h >= 12
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE FAST & FORIOUS\n\n"

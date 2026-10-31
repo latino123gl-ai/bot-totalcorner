@@ -146,7 +146,7 @@ def main():
                     continue
 
                 if match_id not in tracked:
-                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False}
+                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False}
                 state = tracked[match_id]
 
                 league = m.get("l", "?")
@@ -268,7 +268,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +1.5
+                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +2.0
                 ):
                     msg = (
                         "⚽ FAVORITA OSPITE PERDE\n\n"
@@ -288,6 +288,52 @@ def main():
                     )
                     send_msg(msg)
                     state["r1"] = True
+
+                 # ================= REGOLA 1 XG =================
+                # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
+                if (
+                    not state["r16"]                 # non ancora mandato
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and xg_h is not None
+                    and xg_a is not None
+                    and float(xg_h) >= 0.00       # XG CASA
+                    and float(xg_a) >= 1.20       # XG OSPITE
+                    and +1.0 <= handi_val <= +4.0
+                    and minute in [45]
+                    and (hg, ag) in [
+                        (1,0),(2,1)
+                    ]  
+                    and datt_a >= 42                 # attacchi pericolosi casa
+                    and on_a >= 4                    # tiri in porta casa
+                    and off_a >= 2                   # tiri fuori casa
+                    and tot_shots_a >= 6             # tiri totali casa
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +2.0
+                ):
+                    msg = (
+                        "⚽ FAVORITA OSPITE PERDE + XG\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"xG: {xg_h}-{xg_a}\n"
+                        f"Handicap: {p_asian}\n"
+                        f"Gol line pre-match: {p_goal}\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r16"] = True
 
                 # ================= REGOLA 2 =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
@@ -337,26 +383,34 @@ def main():
                     not state["r7"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
+                    and xg_h is not None
+                    and xg_a is not None
+                    and float(xg_h) >= 0.00       # XG CASA
+                    and float(xg_a) >= 1.20       # XG OSPITE
                     and +1.0 <= handi_val <= +3.0
-                    and minute in [44]
+                    and minute in [45]
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2)
                     ]  
-                    and datt_a >= 99                # attacchi pericolosi ospite
-                    and on_a >= 5                   # tiri in porta ospite 
-                    and off_a >= 0                 # tiri fuori porta ospite
-                    and tot_shots_a >= 10
+                    and datt_a >= 40                # attacchi pericolosi ospite
+                    and on_a >= 4                   # tiri in porta ospite 
+                    and off_a >= 2                 # tiri fuori porta ospite
+                    and tot_shots_a >= 6
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +2.0
                 ):
                     msg = (
-                        "⚽️ FAVORITA OSPITE PAREGGIA\n\n"
+                        "⚽️ FAVORITA OSPITE PAREGGIA + XG\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap live casa: {handi_raw}\n\n"
+                        f"xG: {xg_h}-{xg_a}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
@@ -411,6 +465,54 @@ def main():
                     send_msg(msg)
                     state["r3"] = True
 
+                # =============== REGOLA 3 XG ===============
+                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
+                # risultati ammessi, pericolosi >= 0,
+                # tiri in porta >= 0, tiri totali >= 0
+                if (
+                    not state["r17"]                      # non ancora mandato
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and xg_h is not None
+                    and xg_a is not None
+                    and float(xg_h) >= 1.10       # XG CASA
+                    and float(xg_a) >= 0.00       # XG OSPITE
+                    and -3.5 <= handi_val <= -1.0
+                    and minute in [45]
+                    and (hg, ag) in [
+                        (0,0),(1,1),(2,2)
+                    ]  
+                    and datt_h >= 35
+                    and on_h >= 4
+                    and off_h >= 2                 # tiri fuori porta casa
+                    and tot_shots_h >= 6
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
+                ):
+                    msg = (
+                        "⚽️ FAVORITA CASA PAREGGIA + XG\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"xG: {xg_h}-{xg_a}\n"
+                        f"Handicap: {p_asian}\n"
+                        f"Gol line pre-match: {p_goal}\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r17"] = True
+
                 # =============== REGOLA 8 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
@@ -453,6 +555,54 @@ def main():
                     )
                     send_msg(msg)
                     state["r8"] = True
+
+                # =============== REGOLA 8 XG===============
+                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
+                # risultati ammessi, pericolosi >= 0,
+                # tiri in porta >= 0, tiri totali >= 0
+                if (
+                    not state["r18"]                      # non ancora mandato
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and xg_h is not None
+                    and xg_a is not None
+                    and float(xg_h) >= 1.10       # XG CASA
+                    and float(xg_a) >= 0.00       # XG OSPITE
+                    and -3.5 <= handi_val <= -1.0
+                    and minute in [45]
+                    and (hg, ag) in [
+                        (0,1),(1,2)
+                    ]  
+                    and datt_h >= 35
+                    and on_h >= 4
+                    and off_h >= 2                 # tiri fuori porta casa
+                    and tot_shots_h >= 6
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
+                ):
+                    msg = (
+                        "⚽️ FAVORITA CASA PERDE + XG\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"xG: {xg_h}-{xg_a}\n"
+                        f"Handicap: {p_asian}\n"
+                        f"Gol line pre-match: {p_goal}\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r18"] = True
 
                 # =============== REGOLA 4 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 45,

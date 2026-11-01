@@ -659,7 +659,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -4.5 <= handi_val <= -2.0
-                    and 10 <= minute <= 44
+                    and 15 <= minute <= 44
                     and (hg, ag) in [
                         (0,1)
                     ]  
@@ -1077,18 +1077,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Valencia" in home                    
+                    and "Hostoun" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (3,0)
+                        (4,0)
                     ]    
-                    and datt_h >= 78
-                    and on_h >= 10
-                    and off_h >= 3
-                    and tot_shots_h >= 15
+                    and datt_h >= 64
+                    and on_h >= 7
+                    and off_h >= 4
+                    and tot_shots_h >= 13
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE\n\n"

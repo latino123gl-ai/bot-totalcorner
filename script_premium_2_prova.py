@@ -376,46 +376,49 @@ def main():
                     send_msg(msg)
                     state["r2"] = True
 
-                # ================= REGOLA OPITE XG =================
-                # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
+                # =============== 🚨 REGOLA XG +2.0 ===============
+                # Solo MASCHILI, casa -1.0..-2.5, minuto 45,
+                # risultati ammessi, attacchi pericolosi >= 30,
+                # tiri in porta >= 4, tiri totali >= 0
                 if (
-                    not state["r19"]                 # non ancora mandato
+                    not state["r19"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 0.00       # XG CASA
-                    and float(xg_a) >= 1.40       # XG OSPITE
-                    and +0.5 <= handi_val <= +4.0
-                    and minute in [15]
+                    and float(xg_h) >= 2.00       # XG CASA
+                    and float(xg_a) >= 0.00       # XG OSPITE 
+                    and -3.5 <= handi_val <= -0.5
+                    and minute in [45]
                     and (hg, ag) in [
-                        (1,0),(2,1),(1,1),(2,2),(3,1)
+                        (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
                     ]  
-                    and datt_a >= 99                 # attacchi pericolosi casa
-                    and on_a >= 4                    # tiri in porta casa
-                    and off_a >= 0                   # tiri fuori casa
-                    and tot_shots_a >= 8             # tiri totali casa
+                    and datt_h >= 15
+                    and on_h >= 1
+                    and off_h >= 0                 # tiri fuori porta casa
+                    and tot_shots_h >= 5
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +1.5
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
+
                     msg = (
-                        "⚽ REGOLA XG OSPITE\n\n"
+                        "🚨 REGOLA XG +2.0\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap live casa: {handi_raw}\n\n"
-                        f"xG: {xg_h}-{xg_a}\n"
                         f"Handicap: {p_asian}\n"
+                        f"xG: {xg_h}-{xg_a}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
-                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Tiri totali casa: {tot_shots_a}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )

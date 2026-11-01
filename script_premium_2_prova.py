@@ -387,11 +387,11 @@ def main():
                     and float(xg_h) >= 0.00       # XG CASA
                     and float(xg_a) >= 1.40       # XG OSPITE
                     and +0.5 <= handi_val <= +4.0
-                    and minute in [45]
+                    and minute in [15]
                     and (hg, ag) in [
                         (1,0),(2,1),(1,1),(2,2),(3,1)
                     ]  
-                    and datt_a >= 35                 # attacchi pericolosi casa
+                    and datt_a >= 99                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 8             # tiri totali casa

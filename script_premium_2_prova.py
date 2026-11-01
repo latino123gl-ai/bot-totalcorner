@@ -146,7 +146,7 @@ def main():
                     continue
 
                 if match_id not in tracked:
-                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False, "r19": False, "r20": False}
+                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False, "r19": False, "r20": False, "r21": False}
                 state = tracked[match_id]
 
                 league = m.get("l", "?")
@@ -841,15 +841,15 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and minute in [45]
                     and (hg, ag) in [
-                        (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
+                        (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
                     ]  
-                    and datt_h >= 5
+                    and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 0
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 4.0
                      and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
@@ -874,6 +874,54 @@ def main():
                     )
                     send_msg(msg)
                     state["r9"] = True
+
+                # ================= ⚽️ REGOLA XG =================
+                # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
+                # pericolosi casa >= 10, tiri totali >= 1
+                if (
+                    not state["r21"]                 # non ancora mandato
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and xg_h is not None
+                    and xg_a is not None
+                    and float(xg_h) >= 1.00       # XG CASA
+                    and float(xg_a) >= 1.00       # XG OSPITE 
+                    and -3.5 <= handi_val <= -0.0
+                    and minute in [45]
+                    and (hg, ag) in [
+                        (0,0),(0,1),(1,1),(1,2)
+                    ]  
+                    and datt_h >= 10
+                    and on_h >= 0
+                    and off_h >= 0                 # tiri fuori porta casa
+                    and tot_shots_h >= 0
+                    and isinstance(p_goal, list)
+                    and len(p_goal) == 1
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                     and isinstance(p_asian, list)
+                    and len(p_asian) == 1
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
+
+                ):
+                    msg = (
+                        "⚽️ REGOLA XG 1 GOL\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"Handicap: {p_asian}\n"
+                        f"xG: {xg_h}-{xg_a}\n"
+                        f"Gol line pre-match: {p_goal}\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r21"] = True
 
                 # =============== ⚽️ FAST & FURIOUS CASA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,

@@ -440,8 +440,8 @@ def main():
                     ]  
                     and datt_a >= 44                # attacchi pericolosi ospite
                     and on_a >= 4                   # tiri in porta ospite 
-                    and off_a >= 2                 # tiri fuori porta ospite
-                    and tot_shots_a >= 7
+                    and off_a >= 3                 # tiri fuori porta ospite
+                    and tot_shots_a >= 8
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -481,7 +481,7 @@ def main():
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2)
                     ]  
-                    and datt_h >= 39
+                    and datt_h >= 40
                     and on_h >= 4
                     and off_h >= 2                 # tiri fuori porta casa
                     and tot_shots_h >= 6
@@ -793,7 +793,7 @@ def main():
                     and (hg, ag) in [
                         (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
                     ]  
-                    and datt_h >= 35                 # pericolosi casa
+                    and datt_h >= 30                 # pericolosi casa
                     and on_h >= 3
                     and off_h >= 2
                     and tot_shots_h >= 5
@@ -1001,7 +1001,7 @@ def main():
                     send_msg(msg)
                     state["r12"] = True
 
-                        # =============== REGOLA 13 ===============
+                        # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1011,7 +1011,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [63]
+                    and minute in [59]
                     and (hg, ag) in [
                         (0,1)
                     ]    
@@ -1021,7 +1021,7 @@ def main():
                     and tot_shots_h >= 14
                 ):
                     msg = (
-                        "⚽️ ⚽️ DA GIOCARE IMMEDIATAMENTE FAST & FORIOUS\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1036,7 +1036,7 @@ def main():
                     send_msg(msg)
                     state["r13"] = True
 
-            # =============== REGOLA 14 ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1046,7 +1046,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [63]
+                    and minute in [59]
                     and (hg, ag) in [
                         (1,1)
                     ]    
@@ -1056,7 +1056,7 @@ def main():
                     and tot_shots_h >= 11
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE FAST & FORIOUS\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1071,7 +1071,7 @@ def main():
                     send_msg(msg)
                     state["r14"] = True
 
-            # =============== REGOLA 15 ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1081,7 +1081,7 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [63]
+                    and minute in [59]
                     and (hg, ag) in [
                         (1,0)
                     ]    
@@ -1091,7 +1091,7 @@ def main():
                     and tot_shots_h >= 17
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE FAST & FORIOUS\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1105,8 +1105,6 @@ def main():
                     )
                     send_msg(msg)
                     state["r15"] = True
-
-
 
             except Exception as e:
                 print("Errore:", e)

@@ -653,7 +653,7 @@ def main():
                     send_msg(msg)
                     state["r18"] = True
 
-                # =============== 🚨 REGOLA PROVA XG ===============
+                # =============== 🚨 REGOLA XG CASA PERDE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 45,
                 # risultati ammessi, attacchi pericolosi >= 30,
                 # tiri in porta >= 4, tiri totali >= 0
@@ -683,7 +683,7 @@ def main():
                 ):
 
                     msg = (
-                        "🚨 REGOLA PROVA XG\n\n"
+                        "🚨 REGOLA XG CASA PERDE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

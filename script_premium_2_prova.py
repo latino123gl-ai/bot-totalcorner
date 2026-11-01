@@ -653,44 +653,51 @@ def main():
                     send_msg(msg)
                     state["r18"] = True
 
-                # =============== ⚽️ FAVORITA IN SVANTAGGIO ===============
-                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
-                # risultati ammessi, pericolosi >= 0,
-                # tiri in porta >= 0, tiri totali >= 0
+                # =============== 🚨 REGOLA PROVA XG ===============
+                # Solo MASCHILI, casa -1.0..-2.5, minuto 45,
+                # risultati ammessi, attacchi pericolosi >= 30,
+                # tiri in porta >= 4, tiri totali >= 0
                 if (
                     not state["r20"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -4.5 <= handi_val <= -2.0
-                    and 15 <= minute <= 44
+                    and xg_h is not None
+                    and xg_a is not None
+                    and float(xg_h) >= 1.50       # XG CASA
+                    and float(xg_a) >= 0.00       # XG OSPITE 
+                    and -3.5 <= handi_val <= -0.0
+                    and minute in [45]
                     and (hg, ag) in [
-                        (0,1)
+                        (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
                     ]  
-                    and datt_h >= 99
-                    and on_h >= 0
+                    and datt_h >= 15
+                    and on_h >= 2
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 7
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.5
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.5
                 ):
+
                     msg = (
-                        "⚽️ FAVORITA IN SVANTAGGIO\n\n"
+                        "🚨 REGOLA PROVA XG\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap live casa: {handi_raw}\n\n"
                         f"Handicap: {p_asian}\n"
+                        f"xG: {xg_h}-{xg_a}\n"
                         f"Gol line pre-match: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
-                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Tiri totali casa: {tot_shots_a}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r20"] = True

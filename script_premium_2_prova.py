@@ -347,7 +347,7 @@ def main():
                     and (hg, ag) in [
                         (6,0),(6,1),(6,2),(7,0),(7,1),(7,2),(8,0),(8,1),(8,2),(9,0),(9,1),(9,2),(10,0),(10,1),(10,2)
                     ]    
-                    and datt_h >= 35              # attacchi pericolosi casa
+                    and datt_h >= 25              # attacchi pericolosi casa
                     and on_h >= 10                  # tiri in porta casa
                     and off_h >= 1                 # tiri fuori porta casa
                     and tot_shots_h >= 11
@@ -388,10 +388,10 @@ def main():
                     and xg_a is not None
                     and float(xg_h) >= 2.00       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE 
-                    and -3.5 <= handi_val <= -0.5
+                    and -3.5 <= handi_val <= -0.0
                     and minute in [45]
                     and (hg, ag) in [
-                        (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
+                        (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
                     ]  
                     and datt_h >= 15
                     and on_h >= 1
@@ -447,7 +447,7 @@ def main():
                     and tot_shots_a >= 0
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and max(float(x.strip()) for x in p_asian[0].split(",")) >= +2.0
@@ -666,7 +666,7 @@ def main():
                     and (hg, ag) in [
                         (0,1)
                     ]  
-                    and datt_h >= 2
+                    and datt_h >= 99
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 0
@@ -705,12 +705,12 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.40       # XG CASA
+                    and float(xg_h) >= 1.50       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.5
                     and minute in [45]
                     and (hg, ag) in [
-                        (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
+                        (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
                     ]  
                     and datt_h >= 25
                     and on_h >= 3
@@ -875,7 +875,7 @@ def main():
                     send_msg(msg)
                     state["r9"] = True
 
-                # ================= ⚽️ REGOLA XG =================
+                # ================= ⚽️ REGOLA XG 1 GOL =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
                 # pericolosi casa >= 10, tiri totali >= 1
                 if (

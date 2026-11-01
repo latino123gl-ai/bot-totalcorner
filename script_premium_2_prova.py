@@ -248,21 +248,21 @@ def main():
                     f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}, PRIMO TEMPO={hf_hg}-{hf_ag}"
                 )
 
-                # ================= REGOLA 1 =================
+                # ================= ⚽ FAVORITA OSPITE PERDE =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
                     not state["r1"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and +1.0 <= handi_val <= +4.0
-                    and minute in [14]
+                    and minute in [44]
                     and (hg, ag) in [
                         (1,0),(2,1)
                     ]  
-                    and datt_a >= 99                 # attacchi pericolosi casa
+                    and datt_a >= 44                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
-                    and tot_shots_a >= 6             # tiri totali casa
+                    and tot_shots_a >= 7             # tiri totali casa
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -289,7 +289,7 @@ def main():
                     send_msg(msg)
                     state["r1"] = True
 
-                 # ================= REGOLA 1 XG =================
+                 # ================= ⚽ FAVORITA OSPITE PERDE + XG =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
                     not state["r16"]                 # non ancora mandato
@@ -298,16 +298,16 @@ def main():
                     and xg_h is not None
                     and xg_a is not None
                     and float(xg_h) >= 0.00       # XG CASA
-                    and float(xg_a) >= 1.20       # XG OSPITE
+                    and float(xg_a) >= 1.40       # XG OSPITE
                     and +1.0 <= handi_val <= +4.0
-                    and minute in [15]
+                    and minute in [45]
                     and (hg, ag) in [
                         (1,0),(2,1)
                     ]  
-                    and datt_a >= 99                 # attacchi pericolosi casa
+                    and datt_a >= 44                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
-                    and tot_shots_a >= 6             # tiri totali casa
+                    and tot_shots_a >= 7             # tiri totali casa
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -385,16 +385,16 @@ def main():
                     and xg_h is not None
                     and xg_a is not None
                     and float(xg_h) >= 0.00       # XG CASA
-                    and float(xg_a) >= 1.20       # XG OSPITE
+                    and float(xg_a) >= 1.40       # XG OSPITE
                     and +0.5 <= handi_val <= +4.0
-                    and minute in [15]
+                    and minute in [45]
                     and (hg, ag) in [
-                        (1,0),(2,1),(1,1),(2,2),(3,1),(3,2)
+                        (1,0),(2,1),(1,1),(2,2),(3,1)
                     ]  
-                    and datt_a >= 99                 # attacchi pericolosi casa
-                    and on_a >= 2                    # tiri in porta casa
+                    and datt_a >= 35                 # attacchi pericolosi casa
+                    and on_a >= 3                    # tiri in porta casa
                     and off_a >= 2                   # tiri fuori casa
-                    and tot_shots_a >= 4             # tiri totali casa
+                    and tot_shots_a >= 5             # tiri totali casa
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -422,7 +422,7 @@ def main():
                     send_msg(msg)
                     state["r19"] = True
 
-                # ================= REGOLA 7 =================
+                # ================= ⚽️ FAVORITA OSPITE PAREGGIA + XG =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
                 # pericolosi casa >= 10, tiri totali >= 1
                 if (
@@ -432,16 +432,16 @@ def main():
                     and xg_h is not None
                     and xg_a is not None
                     and float(xg_h) >= 0.00       # XG CASA
-                    and float(xg_a) >= 1.20       # XG OSPITE
+                    and float(xg_a) >= 1.40       # XG OSPITE
                     and +1.0 <= handi_val <= +3.0
-                    and minute in [15]
+                    and minute in [45]
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2)
                     ]  
-                    and datt_a >= 99                # attacchi pericolosi ospite
+                    and datt_a >= 44                # attacchi pericolosi ospite
                     and on_a >= 4                   # tiri in porta ospite 
                     and off_a >= 2                 # tiri fuori porta ospite
-                    and tot_shots_a >= 6
+                    and tot_shots_a >= 7
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -521,7 +521,7 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.10       # XG CASA
+                    and float(xg_h) >= 1.20       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -3.5 <= handi_val <= -1.0
                     and minute in [45]
@@ -612,7 +612,7 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.10       # XG CASA
+                    and float(xg_h) >= 1.20       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -3.5 <= handi_val <= -1.0
                     and minute in [45]
@@ -660,7 +660,7 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.00       # XG CASA
+                    and float(xg_h) >= 1.10       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.5
                     and minute in [45]
@@ -753,8 +753,8 @@ def main():
                     ]  
                     and datt_h >= 35                 # pericolosi casa
                     and on_h >= 3
-                    and off_h >= 1
-                    and tot_shots_h >= 4
+                    and off_h >= 2
+                    and tot_shots_h >= 5
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -845,8 +845,8 @@ def main():
                     ]  
                     and datt_h >= 35
                     and on_h >= 3
-                    and off_h >= 1
-                    and tot_shots_h >= 4
+                    and off_h >= 2
+                    and tot_shots_h >= 5
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -888,8 +888,8 @@ def main():
                     ]  
                     and datt_h >= 35
                     and on_h >= 3
-                    and off_h >= 1
-                    and tot_shots_h >= 4
+                    and off_h >= 2
+                    and tot_shots_h >= 5
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0

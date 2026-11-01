@@ -262,7 +262,7 @@ def main():
                     and datt_a >= 44                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
-                    and tot_shots_a >= 7             # tiri totali casa
+                    and tot_shots_a >= 8             # tiri totali casa
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -307,7 +307,7 @@ def main():
                     and datt_a >= 44                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
-                    and tot_shots_a >= 7             # tiri totali casa
+                    and tot_shots_a >= 8             # tiri totali casa
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5

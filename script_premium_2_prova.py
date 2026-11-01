@@ -709,8 +709,8 @@ def main():
                     and (hg, ag) in [
                         (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
                     ]  
-                    and datt_h >= 30
-                    and on_h >= 2
+                    and datt_h >= 25
+                    and on_h >= 3
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 7
                     and isinstance(p_goal, list)

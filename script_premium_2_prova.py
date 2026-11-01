@@ -702,15 +702,15 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.20       # XG CASA
+                    and float(xg_h) >= 1.40       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.5
                     and minute in [45]
                     and (hg, ag) in [
                         (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
                     ]  
-                    and datt_h >= 20
-                    and on_h >= 3
+                    and datt_h >= 30
+                    and on_h >= 4
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 6
                     and isinstance(p_goal, list)

@@ -710,7 +710,7 @@ def main():
                         (0,0),(0,1),(1,1),(1,2),(2,2),(0,2),(2,3)
                     ]  
                     and datt_h >= 20
-                    and on_h >= 2
+                    and on_h >= 3
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 6
                     and isinstance(p_goal, list)
@@ -1077,18 +1077,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Porto" in home                    
+                    and "Valencia" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,0)
+                        (3,0)
                     ]    
-                    and datt_h >= 87
-                    and on_h >= 5
-                    and off_h >= 10
-                    and tot_shots_h >= 17
+                    and datt_h >= 78
+                    and on_h >= 10
+                    and off_h >= 3
+                    and tot_shots_h >= 15
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE\n\n"

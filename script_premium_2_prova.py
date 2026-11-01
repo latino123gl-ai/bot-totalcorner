@@ -668,12 +668,12 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and minute in [45]
                     and (hg, ag) in [
-                        (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
+                        (0,1),(1,2)
                     ]  
                     and datt_h >= 15
                     and on_h >= 2
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 7
+                    and tot_shots_h >= 2
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0

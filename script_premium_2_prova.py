@@ -1065,19 +1065,19 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r22"]                      # non ancora mandato
-                    and "Partizan" in home                    
+                    and "Bilbao" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 2,72       # XG CASA
+                    and float(xg_h) >= 2.72       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [63]
+                    and minute in [73]
                     and (hg, ag) in [
                         (2,1)
                     ]    
-                    and datt_h >= 99
+                    and datt_h >= 19
                     and on_h >= 0
                     and off_h >= 0
                     and tot_shots_h >= 0

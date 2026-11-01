@@ -170,10 +170,7 @@ def main():
                     "uruguay" in league_str or
                     "friend" in league_str or
                     "friendly" in league_str or
-                    "cup" in league_str or
                     "Beach" in league_str or
-                    "copa" in league_str or
-                    "International" in league_str or
                     "usa" in league_str):
                     continue
 

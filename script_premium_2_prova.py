@@ -166,6 +166,7 @@ def main():
                     "e-soccer" in league_str or
                     "friendlies" in league_str or
                     "argentina" in league_str or
+                    "80 mins play" in league_str or
                     "paraguay" in league_str or
                     "uruguay" in league_str or
                     "friend" in league_str or

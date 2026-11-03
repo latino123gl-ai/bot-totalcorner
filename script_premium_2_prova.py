@@ -1320,18 +1320,18 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Stallions" in home                    
+                    and "Limassol" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (2,1)
                     ]    
-                    and datt_h >= 59
-                    and on_h >= 6
+                    and datt_h >= 65
+                    and on_h >= 8
                     and off_h >= 2
-                    and tot_shots_h >= 10
+                    and tot_shots_h >= 12
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE\n\n"

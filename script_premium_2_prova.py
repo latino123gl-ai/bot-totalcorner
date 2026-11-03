@@ -256,6 +256,8 @@ def main():
                     not state["r1"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
+                    and red_h == 0
+                    and red_a == 0
                     and +1.0 <= handi_val <= +4.0
                     and minute in [44]
                     and (hg, ag) in [
@@ -286,7 +288,6 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
-                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r1"] = True
@@ -345,6 +346,8 @@ def main():
                     and xg_a is not None
                     and float(xg_h) >= 0.00       # XG CASA
                     and float(xg_a) >= 1.50       # XG OSPITE
+                    and red_h == 0
+                    and red_a == 0
                     and +0.0 <= handi_val <= +4.0
                     and minute in [45]
                     and (hg, ag) in [
@@ -391,6 +394,8 @@ def main():
                     and "cup" not in league_str
                     and "copa" not in league_str
                     and -3.0 <= handi_val <= -0.5
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [70]
                     and (hg, ag) in [
                         (6,0),(6,1),(6,2),(7,0),(7,1),(7,2),(8,0),(8,1),(8,2),(9,0),(9,1),(9,2),(10,0),(10,1),(10,2)
@@ -437,6 +442,8 @@ def main():
                     and float(xg_h) >= 2.00       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [45]
                     and (hg, ag) in [
                         (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
@@ -485,6 +492,8 @@ def main():
                     and float(xg_h) >= 0.00       # XG CASA
                     and float(xg_a) >= 1.50       # XG OSPITE
                     and +0.0 <= handi_val <= +3.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [45]
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2)
@@ -528,6 +537,8 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [44]
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2)
@@ -557,7 +568,6 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
-                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r3"] = True
@@ -573,6 +583,8 @@ def main():
                     and red_h == 0
                     and red_a == 2
                     and -3.5 <= handi_val <= -0.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [70]
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2),(0,1),(1,2),(2,3)
@@ -621,6 +633,8 @@ def main():
                     and float(xg_h) >= 1.50       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -3.5 <= handi_val <= -0.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [45]
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2)
@@ -665,6 +679,8 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [44]
                     and (hg, ag) in [
                         (0,1),(1,2)
@@ -694,7 +710,6 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
-                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r8"] = True
@@ -712,6 +727,8 @@ def main():
                     and float(xg_h) >= 1.50       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -3.5 <= handi_val <= -0.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [45]
                     and (hg, ag) in [
                         (0,1),(1,2)
@@ -760,6 +777,8 @@ def main():
                     and float(xg_h) >= 1.50       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [45]
                     and (hg, ag) in [
                         (0,1),(1,2)
@@ -809,6 +828,8 @@ def main():
                     and float(xg_h) >= 2.00       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.5
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [45]
                     and (hg, ag) in [
                         (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
@@ -854,6 +875,8 @@ def main():
                     and "cup" not in league_str
                     and "copa" not in league_str
                     and -3.0 <= handi_val <= -1.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [22]
                     and (hg, ag) in [
                         (1,0),(1,2),(1,1),(2,0),(3,0),(2,2),(3,1),
@@ -895,6 +918,8 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -1.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [44]
                     and (hg, ag) in [
                         (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
@@ -925,7 +950,6 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
-                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r6"] = True
@@ -942,6 +966,8 @@ def main():
                     and float(xg_h) >= 1.00       # XG CASA
                     and float(xg_a) >= 1.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [45]
                     and (hg, ag) in [
                         (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
@@ -990,6 +1016,8 @@ def main():
                     and float(xg_h) >= 1.00       # XG CASA
                     and float(xg_a) >= 1.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [45]
                     and (hg, ag) in [
                         (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
@@ -1035,6 +1063,8 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [44]
                     and (hg, ag) in [
                         (1,0),(2,0),(3,0),(4,0),(2,1),(3,1),(3,2),(4,2),(4,3)
@@ -1064,7 +1094,6 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
-                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r10"] = True
@@ -1078,6 +1107,8 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -0.5 <= handi_val <= -0.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [44]
                     and (hg, ag) in [
                         (1,1),(0,1),(1,2),(2,2),(2,3)
@@ -1107,7 +1138,6 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
-                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r11"] = True
@@ -1121,6 +1151,8 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -1.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [44]
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2)
@@ -1150,7 +1182,6 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
-                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r12"] = True

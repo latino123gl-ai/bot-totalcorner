@@ -169,6 +169,8 @@ def main():
                     "80 mins play" in league_str or
                     "paraguay" in league_str or
                     "uruguay" in league_str or
+                    "cup" in league_str or
+                    "copa" in league_str or
                     "friend" in league_str or
                     "friendly" in league_str or
                     "Beach" in league_str or
@@ -393,8 +395,6 @@ def main():
                     not state["r2"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and "cup" not in league_str
-                    and "copa" not in league_str
                     and -3.0 <= handi_val <= -0.5
                     and red_h == 0
                     and red_a == 0
@@ -541,8 +541,6 @@ def main():
                     not state["r3"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and "cup" not in league_str
-                    and "copa" not in league_str
                     and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
@@ -885,8 +883,6 @@ def main():
                     not state["r5"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and "cup" not in league_str
-                    and "copa" not in league_str
                     and -3.0 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
@@ -931,8 +927,6 @@ def main():
                     not state["r6"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and "cup" not in league_str
-                    and "copa" not in league_str
                     and -3.0 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
@@ -1081,8 +1075,6 @@ def main():
                     not state["r10"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and "cup" not in league_str
-                    and "copa" not in league_str
                     and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
@@ -1128,8 +1120,6 @@ def main():
                     not state["r11"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and "cup" not in league_str
-                    and "copa" not in league_str
                     and -0.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0

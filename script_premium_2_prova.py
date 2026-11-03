@@ -1218,6 +1218,8 @@ def main():
                     and float(xg_h) >= 2.72       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -4.0 <= handi_val <= -0.0
+                    and red_h == 0
+                    and red_a == 0
                     and minute in [77]
                     and (hg, ag) in [
                         (2,1)
@@ -1253,6 +1255,8 @@ def main():
                     and "Elversberg" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
+                    and red_h == 0
+                    and red_a == 0
                     and -3.5 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
@@ -1288,6 +1292,8 @@ def main():
                     and "Taverne" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
+                    and red_h == 0
+                    and red_a == 0
                     and -3.5 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
@@ -1323,6 +1329,8 @@ def main():
                     and "Limassol" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
+                    and red_h == 0
+                    and red_a == 0
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [

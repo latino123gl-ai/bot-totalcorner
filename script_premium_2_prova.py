@@ -541,6 +541,8 @@ def main():
                     not state["r3"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
+                    and "cup" not in league_str
+                    and "copa" not in league_str
                     and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0

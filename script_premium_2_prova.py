@@ -247,7 +247,7 @@ def main():
                 print(
                     f"  {league} | {home} vs {away} | {minute}' | {hg}-{ag} "
                     f"(att={att_h}-{att_a}, dang={datt_h}-{datt_a}, "
-                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}, PRIMO TEMPO={hf_hg}-{hf_ag, ROSSI={red_h}-{red_a}"
+                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}, PRIMO TEMPO={hf_hg}-{hf_ag}, ROSSI={red_h}-{red_a}"
                 )
 
                 # ================= ⚽ FAVORITA OSPITE PERDE =================
@@ -597,6 +597,7 @@ def main():
                         f"Handicap live casa: {handi_raw}\n\n"
                         f"Handicap: {p_asian}\n"
                         f"Gol line pre-match: {p_goal}\n"
+                        f"Cartellini rossi: {red_h} - {red_a}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"

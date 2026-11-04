@@ -424,9 +424,9 @@ def main():
                         f"Gol line pre-match: {p_goal}\n"
                         f"ESPULSIONI: {red_h} - {red_a}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Tiri in porta: {on_h} - {on_a}\n"
-                        f"Tiri fuori: {off_h} - {off_a}\n"
-                        f"Tiri totali ospite: {tot_shots_a}\n"
+                        f"Tiri in porta casa: {on_h} - {on_h}\n"
+                        f"Tiri fuori casa: {off_h} - {off_h}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
                     )
                     send_msg(msg)

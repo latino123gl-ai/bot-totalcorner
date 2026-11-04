@@ -424,8 +424,8 @@ def main():
                         f"Gol line pre-match: {p_goal}\n"
                         f"ESPULSIONI: {red_h} - {red_a}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Tiri in porta casa: {on_h} - {on_h}\n"
-                        f"Tiri fuori casa: {off_h} - {off_h}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
                     )
@@ -1324,7 +1324,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Espana" in home                    
+                    and "Crvena" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1332,12 +1332,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (2,0)
+                        (1,0)
                     ]    
-                    and datt_h >= 61
-                    and on_h >= 8
-                    and off_h >= 3
-                    and tot_shots_h >= 13
+                    and datt_h >= 69
+                    and on_h >= 6
+                    and off_h >= 6
+                    and tot_shots_h >= 14
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE\n\n"

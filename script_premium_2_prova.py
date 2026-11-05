@@ -265,7 +265,7 @@ def main():
                     and (hg, ag) in [
                         (1,0),(2,1)
                     ]  
-                    and datt_a >= 44                 # attacchi pericolosi casa
+                    and datt_a >= 38                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 8             # tiri totali casa
@@ -548,7 +548,7 @@ def main():
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2)
                     ]  
-                    and datt_h >= 40
+                    and datt_h >= 38
                     and on_h >= 4
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 8
@@ -891,7 +891,7 @@ def main():
                         (1,0),(1,2),(1,1),(2,0),(3,0),(2,2),(3,1),
                         (2,1),(0,1),(4,0)
                     ]  
-                    and datt_h >= 18                 # pericolosi casa
+                    and datt_h >= 19                 # pericolosi casa
                     and on_h >= 6
                     and off_h >= 0
                     and tot_shots_h >= 6

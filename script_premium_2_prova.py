@@ -269,7 +269,7 @@ def main():
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 8             # tiri totali casa
-                    and isinstance(p_goal, list)
+                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
@@ -312,9 +312,9 @@ def main():
                     and on_a >= 5                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 5             # tiri totali casa
-                    and isinstance(p_goal, list)
+                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and max(float(x.strip()) for x in p_asian[0].split(",")) >= +1.0
@@ -360,7 +360,7 @@ def main():
                     and on_a >= 0                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 0             # tiri totali casa
-                    and isinstance(p_goal, list)
+                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
@@ -801,7 +801,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.5
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
 
                     msg = (

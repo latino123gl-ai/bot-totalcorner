@@ -261,11 +261,12 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and +1.0 <= handi_val <= +4.0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (1,0),(2,1)
-                    ]  
-                    and datt_a >= 38                 # attacchi pericolosi casa
+                    and minute in [45]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "1-0" or
+                        f"{hf_hg}-{hf_ag}" == "2-1"
+                    )
+                    and datt_a >= 44                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 8             # tiri totali casa
@@ -544,11 +545,13 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,0),(1,1),(2,2)
-                    ]  
-                    and datt_h >= 38
+                    and minute in [45]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "2-2"
+                    )
+                    and datt_h >= 43
                     and on_h >= 4
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 8
@@ -688,11 +691,12 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,1),(1,2)
-                    ]  
-                    and datt_h >= 35
+                    and minute in [45]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "0-1" or
+                        f"{hf_hg}-{hf_ag}" == "1-2"
+                    )
+                    and datt_h >= 39
                     and on_h >= 4
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 7

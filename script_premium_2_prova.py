@@ -244,12 +244,15 @@ def main():
                 # CONFIGURAZIONE CARTELLINI ROSSI
                 red_h = int(m.get("hrc") or 0)
                 red_a = int(m.get("arc") or 0)
+                
+                # CONFIGURAZIONE STATO PRIMO/SECONDO TEMPO
+                ish = m.get("ish")
 
                 # DEBUG NEL TERMINALE
                 print(
                     f"  {league} | {home} vs {away} | {minute}' | {hg}-{ag} "
                     f"(att={att_h}-{att_a}, dang={datt_h}-{datt_a}, "
-                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}, PRIMO TEMPO={hf_hg}-{hf_ag}, ROSSI={red_h}-{red_a}"
+                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}, PRIMO TEMPO={hf_hg}-{hf_ag}, ROSSI={red_h}-{red_a}, ISH={ish}"
                 )
 
                 # ================= ⚽ FAVORITA OSPITE PERDE =================
@@ -544,20 +547,23 @@ def main():
                     and -3.5 <= handi_val <= -0.5
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (1,1),(2,2),(0,0)
-                    ]  
-                    and datt_h >= 38
-                    and on_h >= 4
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "0-2" or
+                        f"{hf_hg}-{hf_ag}" == "2-0"
+                    )
+                    and datt_h >= 30
+                    and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 8
+                    and tot_shots_h >= 0
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PAREGGIA\n\n"

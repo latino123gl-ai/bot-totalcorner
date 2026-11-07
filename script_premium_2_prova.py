@@ -835,19 +835,19 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.5       # XG CASA
+                    and float(xg_h) >= 1.00       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
                     and minute in [44]
                     and (hg, ag) in [
-                        (0,1),(1,2),(2,3),(0,0),(1,1),(2,2)
+                        (0,1),(1,2),(2,3)
                     ]  
                     and datt_h >= 35
                     and on_h >= 3
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 7
+                    and tot_shots_h >= 6
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0

@@ -713,21 +713,21 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and ish == "1"
-                    and minute in [87, 88]
+                    and minute in [86, 87]
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-1" or
-                        f"{hf_hg}-{hf_ag}" == "0-1"
+                        f"{hf_hg}-{hf_ag}" == "0-2"
                     )
-                    and datt_h >= 37
-                    and on_h >= 4
+                    and datt_h >= 32
+                    and on_h >= 2
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 7
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PERDE\n\n"

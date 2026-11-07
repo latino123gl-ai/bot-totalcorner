@@ -713,15 +713,15 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and ish == "1"
-                    and minute in [89, 90]
+                    and minute in [60, 61]
                     and (
-                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "0-1" or
                         f"{hf_hg}-{hf_ag}" == "0-2"
                     )
-                    and datt_h >= 32
-                    and on_h >= 2
+                    and datt_h >= 0
+                    and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 7
+                    and tot_shots_h >= 0
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0

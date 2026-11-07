@@ -712,8 +712,8 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and ish == "1"
-                    and minute in [60, 61]
+                    and ish == "0"
+                    and minute in [62, 63]
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-1" or
                         f"{hf_hg}-{hf_ag}" == "0-2"

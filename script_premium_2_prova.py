@@ -264,11 +264,13 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and +1.0 <= handi_val <= +4.0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (1,0),(2,1)
-                    ]  
-                    and datt_a >= 40                 # attacchi pericolosi casa
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "1-0" or
+                        f"{hf_hg}-{hf_ag}" == "2-1"
+                    )
+                    and datt_a >= 42                 # attacchi pericolosi casa
                     and on_a >= 4                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 8             # tiri totali casa
@@ -294,6 +296,7 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r1"] = True
@@ -355,10 +358,12 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and +0.0 <= handi_val <= +4.0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (1,0),(2,1)
-                    ]  
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "1-0" or
+                        f"{hf_hg}-{hf_ag}" == "2-1"
+                    )
                     and datt_a >= 14                 # attacchi pericolosi casa
                     and on_a >= 0                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
@@ -450,10 +455,16 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
-                    ]  
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "2-3" or
+                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "0-1" or
+                        f"{hf_hg}-{hf_ag}" == "1-2" or
+                        f"{hf_hg}-{hf_ag}" == "2-2"
+                    )
                     and datt_h >= 15
                     and on_h >= 1
                     and off_h >= 0                 # tiri fuori porta casa
@@ -501,10 +512,13 @@ def main():
                     and +0.0 <= handi_val <= +3.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,0),(1,1),(2,2)
-                    ]  
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "2-2"
+                    )
                     and datt_a >= 14                # attacchi pericolosi ospite
                     and on_a >= 0                   # tiri in porta ospite 
                     and off_a >= 0                 # tiri fuori porta ospite
@@ -544,26 +558,26 @@ def main():
                     not state["r3"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -0.5
+                    and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
                     and ish == "1"
                     and minute in [45, 46]
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-1" or
-                        f"{hf_hg}-{hf_ag}" == "0-2" or
-                        f"{hf_hg}-{hf_ag}" == "2-0"
+                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "2-2"
                     )
-                    and datt_h >= 30
-                    and on_h >= 0
+                    and datt_h >= 40
+                    and on_h >= 4
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 8
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PAREGGIA\n\n"
@@ -580,6 +594,7 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r3"] = True
@@ -647,10 +662,13 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,0),(1,1),(2,2)
-                    ]  
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "2-2"
+                    )
                     and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
@@ -691,14 +709,16 @@ def main():
                     not state["r8"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -1.0
+                    and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (1,2),(0,1)
-                    ]  
-                    and datt_h >= 35
+                    and ish == "1"
+                    and minute in [87, 88]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "0-1"
+                    )
+                    and datt_h >= 37
                     and on_h >= 4
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 7
@@ -707,7 +727,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PERDE\n\n"
@@ -724,6 +744,7 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r8"] = True
@@ -743,10 +764,12 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,1),(1,2)
-                    ]  
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "0-1" or
+                        f"{hf_hg}-{hf_ag}" == "1-2"
+                    )
                     and datt_h >= 15
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
@@ -794,10 +817,12 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,1),(1,2)
-                    ]  
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "0-1" or
+                        f"{hf_hg}-{hf_ag}" == "1-2"
+                    )
                     and datt_h >= 15
                     and on_h >= 2
                     and off_h >= 0                 # tiri fuori porta casa
@@ -846,10 +871,13 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,1),(1,2),(2,3)
-                    ]  
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "0-1" or
+                        f"{hf_hg}-{hf_ag}" == "2-3" or
+                        f"{hf_hg}-{hf_ag}" == "1-2"
+                    )
                     and datt_h >= 35
                     and on_h >= 3
                     and off_h >= 0                 # tiri fuori porta casa
@@ -985,10 +1013,17 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
-                    ]  
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "0-1" or
+                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "2-2" or
+                        f"{hf_hg}-{hf_ag}" == "1-2" or
+                        f"{hf_hg}-{hf_ag}" == "2-3"
+                    )
+
                     and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
@@ -1036,10 +1071,16 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
-                    ]  
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "0-1" or
+                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "2-2" or
+                        f"{hf_hg}-{hf_ag}" == "1-2" or
+                        f"{hf_hg}-{hf_ag}" == "2-3"
+                    )
                     and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
@@ -1174,10 +1215,13 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,0),(1,1),(2,2)
-                    ]  
+                    and ish == "1"
+                    and minute in [45, 46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "2-2"
+                    )
                     and datt_h >= 34
                     and on_h >= 4
                     and off_h >= 0
@@ -1204,6 +1248,7 @@ def main():
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r12"] = True

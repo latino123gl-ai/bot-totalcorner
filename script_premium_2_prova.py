@@ -713,7 +713,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and ish == "1"
-                    and minute in [86, 87]
+                    and minute in [89, 90]
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-1" or
                         f"{hf_hg}-{hf_ag}" == "0-2"

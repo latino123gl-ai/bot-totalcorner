@@ -314,10 +314,15 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [44]
-                    and (hg, ag) in [
-                        (0,2),(1,3),(0,1),(1,2),(2,3)
-                    ]  
+                    and ish == "1"
+                    and minute in [46]
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "0-1" or
+                        f"{hf_hg}-{hf_ag}" == "2-3" or
+                        f"{hf_hg}-{hf_ag}" == "0-2" or
+                        f"{hf_hg}-{hf_ag}" == "1-2" or
+                        f"{hf_hg}-{hf_ag}" == "1-3"
+                    )
                     and datt_h >= 15
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
@@ -327,7 +332,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.5
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
 
                     msg = (

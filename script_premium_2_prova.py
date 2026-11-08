@@ -718,7 +718,7 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "1-2" or
                         f"{hf_hg}-{hf_ag}" == "0-1"
                     )
-                    and datt_h >= 37
+                    and datt_h >= 35
                     and on_h >= 4
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 7

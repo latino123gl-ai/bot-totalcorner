@@ -709,25 +709,25 @@ def main():
                     not state["r8"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -0.0
+                    and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
                     and ish == "1"
-                    and minute in [64, 65]
+                    and minute in [45, 46]
                     and (
-                        f"{hf_hg}-{hf_ag}" == "0-1" or
-                        f"{hf_hg}-{hf_ag}" == "0-2"
+                        f"{hf_hg}-{hf_ag}" == "1-2" or
+                        f"{hf_hg}-{hf_ag}" == "0-1"
                     )
-                    and datt_h >= 0
-                    and on_h >= 0
+                    and datt_h >= 37
+                    and on_h >= 4
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 7
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
                 ):
                     msg = (
                         "⚽️ FAVORITA CASA PERDE\n\n"

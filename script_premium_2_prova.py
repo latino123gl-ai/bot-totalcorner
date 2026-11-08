@@ -657,7 +657,7 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.50       # XG CASA
+                    and float(xg_h) >= 1.20       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
@@ -759,7 +759,7 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.50       # XG CASA
+                    and float(xg_h) >= 1.20       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
@@ -823,7 +823,7 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "0-1" or
                         f"{hf_hg}-{hf_ag}" == "1-2"
                     )
-                    and datt_h >= 15
+                    and datt_h >= 99
                     and on_h >= 2
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 2
@@ -971,7 +971,7 @@ def main():
                     and datt_h >= 30                 # pericolosi casa
                     and on_h >= 3
                     and off_h >= 0
-                    and tot_shots_h >= 6 
+                    and tot_shots_h >= 5 
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -1174,16 +1174,16 @@ def main():
                     and (hg, ag) in [
                         (1,1),(0,1),(1,2),(2,2),(2,3)
                     ]  
-                    and datt_h >= 35
+                    and datt_h >= 25
                     and on_h >= 3
                     and off_h >= 0
-                    and tot_shots_h >= 6
+                    and tot_shots_h >= 5
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.5
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
                     msg = (
                         "⚽️ TERMINALE FAST & FORIOUS\n\n"

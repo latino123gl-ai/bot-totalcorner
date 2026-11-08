@@ -802,7 +802,7 @@ def main():
                     send_msg(msg)
                     state["r18"] = True
 
-                # =============== 🚨 REGOLA XG CASA PERDE ===============
+                # =============== 🚨 PERDE AL MINUTO 68+XG  ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 45,
                 # risultati ammessi, attacchi pericolosi >= 30,
                 # tiri in porta >= 4, tiri totali >= 0
@@ -812,18 +812,16 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.50       # XG CASA
+                    and float(xg_h) >= 2.50       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and ish == "1"
-                    and minute in [45, 46]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "0-1" or
-                        f"{hf_hg}-{hf_ag}" == "1-2"
-                    )
-                    and datt_h >= 99
+                    and minute in [68]
+                    and (hg, ag) in [
+                        (0,1),(1,2),(2,3),(0,2),(1,3),(2,4),(3,4)
+                    ]  
+                    and datt_h >= 10
                     and on_h >= 2
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 2
@@ -832,11 +830,11 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.5
                 ):
 
                     msg = (
-                        "🚨 REGOLA XG CASA PERDE\n\n"
+                        "🚨 PERDE AL MINUTO 68+XG\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

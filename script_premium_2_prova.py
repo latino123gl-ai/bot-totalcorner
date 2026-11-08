@@ -1278,9 +1278,9 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [55]
+                    and minute in [59]
                     and (hg, ag) in [
-                        (0,1)
+                        (1,2)
                     ]    
                     and datt_h >= 0
                     and on_h >= 0

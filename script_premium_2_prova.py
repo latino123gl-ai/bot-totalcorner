@@ -1295,11 +1295,15 @@ def main():
                         f"Minuto: {minute}'\n"
                         f"Handicap live casa: {handi_raw}\n\n"
                         f"xG: {xg_h}-{xg_a}\n"
+                        f"Handicap: {p_asian}\n"
+                        f"Gol line pre-match: {p_goal}\n"
+                        f"ESPULSIONI: {red_h} - {red_a}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r22"] = True

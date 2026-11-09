@@ -146,7 +146,7 @@ def main():
                     continue
 
                 if match_id not in tracked:
-                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False, "r19": False, "r20": False, "r21": False, "r22": False, "r23": False, "r24": False}
+                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False, "r19": False, "r20": False, "r21": False, "r22": False, "r23": False, "r24": False, "r25": False}
                 state = tracked[match_id]
 
                 league = m.get("l", "?")
@@ -270,7 +270,7 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "1-0" or
                         f"{hf_hg}-{hf_ag}" == "2-1"
                     )
-                    and datt_a >= 42                 # attacchi pericolosi casa
+                    and datt_a >= 30                 # attacchi pericolosi casa
                     and on_a >= 2                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 4             # tiri totali casa
@@ -577,10 +577,10 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "0-0" or
                         f"{hf_hg}-{hf_ag}" == "2-2"
                     )
-                    and datt_h >= 40
-                    and on_h >= 4
+                    and datt_h >= 30
+                    and on_h >= 2
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 8
+                    and tot_shots_h >= 4
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -1211,7 +1211,7 @@ def main():
                     send_msg(msg)
                     state["r11"] = True
 
-                        # =============== ⚽️ FAST 0-0/1-1 CASA ===============
+                        # =============== ⚽ FAVORITA OSPITE PAREGGIA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1219,9 +1219,9 @@ def main():
                     not state["r12"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
+                    and +1.0 <= handi_val <= +4.0
                     and ish == "1"
                     and minute in [45, 46]
                     and (
@@ -1229,19 +1229,19 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "0-0" or
                         f"{hf_hg}-{hf_ag}" == "2-2"
                     )
-                    and datt_h >= 99
-                    and on_h >= 2
-                    and off_h >= 0
-                    and tot_shots_h >= 11
-                    and isinstance(p_goal, list)
+                    and datt_a >= 30                 # attacchi pericolosi casa
+                    and on_a >= 2                    # tiri in porta casa
+                    and off_a >= 0                   # tiri fuori casa
+                    and tot_shots_a >= 4             # tiri totali casa
+                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
+                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +2.0
                 ):
                     msg = (
-                        "⚽️ FAST 0-0/1-1 CASA\n\n"
+                        "⚽ FAVORITA OSPITE PAREGGIA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1306,7 +1306,7 @@ def main():
                     send_msg(msg)
                     state["r22"] = True
 
-                        # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE ===============
+                        # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE OPITE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1317,18 +1317,18 @@ def main():
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
-                    and -3.5 <= handi_val <= -0.0
+                    and +0.0 <= handi_val <= 3.0
                     and minute in [59]
                     and (hg, ag) in [
                         (1,1)
                     ]    
-                    and datt_h >= 72
-                    and on_h >= 6
-                    and off_h >= 4
-                    and tot_shots_h >= 12
+                    and datt_a >= 72
+                    and on_a >= 6
+                    and off_a >= 4
+                    and tot_shots_a >= 12
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE OSPITE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1343,7 +1343,7 @@ def main():
                     send_msg(msg)
                     state["r13"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1380,7 +1380,7 @@ def main():
                     send_msg(msg)
                     state["r14"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1416,6 +1416,43 @@ def main():
                     )
                     send_msg(msg)
                     state["r15"] = True
+
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA ===============
+                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
+                # risultati ammessi, pericolosi >= 0,
+                # tiri in porta >= 0, tiri totali >= 0
+                if (
+                    not state["r25"]                      # non ancora mandato
+                    and "Cartagines" in home                    
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and red_h == 0
+                    and red_a == 0
+                    and -4.0 <= handi_val <= -0.0
+                    and minute in [59]
+                    and (hg, ag) in [
+                        (3,0)
+                    ]    
+                    and datt_h >= 64
+                    and on_h >= 7
+                    and off_h >= 5
+                    and tot_shots_h >= 14
+                ):
+                    msg = (
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap apertura casa: {handi_raw}\n\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r25"] = True
 
             except Exception as e:
                 print("Errore:", e)

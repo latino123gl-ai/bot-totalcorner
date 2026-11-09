@@ -610,7 +610,7 @@ def main():
                     send_msg(msg)
                     state["r3"] = True
 
-                # =============== ⚽️ DOPPIA ESPULSIONE CASA ===============
+                # =============== ⚽️ DOPPIA ESPULSIONE OSPITE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -621,8 +621,6 @@ def main():
                     and red_h == 0
                     and red_a == 2
                     and -3.5 <= handi_val <= -0.0
-                    and red_h == 0
-                    and red_a == 0
                     and minute in [70]
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2),(0,1),(1,2),(2,3)
@@ -639,7 +637,7 @@ def main():
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
                     msg = (
-                        "⚽️ DOPPIA ESPULSIONE CASA\n\n"
+                        "⚽️ DOPPIA ESPULSIONE OSPITE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -888,10 +886,10 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "2-2" or
                         f"{hf_hg}-{hf_ag}" == "1-2"
                     )
-                    and datt_h >= 35
-                    and on_h >= 3
+                    and datt_h >= 30
+                    and on_h >= 2
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 6
+                    and tot_shots_h >= 4
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
@@ -926,7 +924,7 @@ def main():
                     not state["r5"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -1.0
+                    and -3.0 <= handi_val <= -1.5
                     and red_h == 0
                     and red_a == 0
                     and minute in [22]
@@ -1025,7 +1023,7 @@ def main():
                     and ish == "1"
                     and minute in [45, 46]
                     and (
-                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "3-3" or
                         f"{hf_hg}-{hf_ag}" == "0-1" or
                         f"{hf_hg}-{hf_ag}" == "1-1" or
                         f"{hf_hg}-{hf_ag}" == "2-2" or
@@ -1082,7 +1080,7 @@ def main():
                     and ish == "1"
                     and minute in [45, 46]
                     and (
-                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "3-3" or
                         f"{hf_hg}-{hf_ag}" == "0-1" or
                         f"{hf_hg}-{hf_ag}" == "1-1" or
                         f"{hf_hg}-{hf_ag}" == "2-2" or
@@ -1277,7 +1275,7 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [56]
+                    and minute in [59]
                     and (hg, ag) in [
                         (1,2)
                     ]    
@@ -1350,20 +1348,20 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Betis" in home                    
+                    and "Dagan" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [59]
+                    and minute in [73]
                     and (hg, ag) in [
-                        (1,0)
+                        (3,0)
                     ]    
-                    and datt_h >= 93
-                    and on_h >= 10
+                    and datt_h >= 65
+                    and on_h >= 7
                     and off_h >= 6
-                    and tot_shots_h >= 18
+                    and tot_shots_h >= 13
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"

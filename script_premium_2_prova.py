@@ -841,7 +841,6 @@ def main():
                     and len(p_asian) == 1
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.5
                 ):
-
                     msg = (
                         "🚨 PERDE AL MINUTO 68+XG\n\n"
                         f"Lega: {league}\n"
@@ -896,7 +895,6 @@ def main():
                     and len(p_asian) == 1
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
-
                     msg = (
                         "🚨 REGOLA XG\n\n"
                         f"Lega: {league}\n"
@@ -976,9 +974,9 @@ def main():
                         (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
                     ]  
                     and datt_h >= 30                 # pericolosi casa
-                    and on_h >= 3
+                    and on_h >= 2
                     and off_h >= 0
-                    and tot_shots_h >= 5 
+                    and tot_shots_h >= 4 
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -1030,7 +1028,6 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "1-2" or
                         f"{hf_hg}-{hf_ag}" == "2-3"
                     )
-
                     and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
@@ -1139,7 +1136,7 @@ def main():
                     and datt_h >= 30
                     and on_h >= 3
                     and off_h >= 0
-                    and tot_shots_h >= 6
+                    and tot_shots_h >= 5
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5

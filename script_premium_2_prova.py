@@ -271,9 +271,9 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "2-1"
                     )
                     and datt_a >= 42                 # attacchi pericolosi casa
-                    and on_a >= 4                    # tiri in porta casa
+                    and on_a >= 2                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
-                    and tot_shots_a >= 8             # tiri totali casa
+                    and tot_shots_a >= 4             # tiri totali casa
                      and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -727,10 +727,10 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "1-2" or
                         f"{hf_hg}-{hf_ag}" == "0-1"
                     )
-                    and datt_h >= 35
-                    and on_h >= 4
+                    and datt_h >= 30
+                    and on_h >= 2
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 7
+                    and tot_shots_h >= 4
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -1182,9 +1182,9 @@ def main():
                         (1,1),(0,1),(1,2),(2,2),(2,3)
                     ]  
                     and datt_h >= 25
-                    and on_h >= 3
+                    and on_h >= 2
                     and off_h >= 0
-                    and tot_shots_h >= 5
+                    and tot_shots_h >= 4
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
@@ -1229,8 +1229,8 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "0-0" or
                         f"{hf_hg}-{hf_ag}" == "2-2"
                     )
-                    and datt_h >= 34
-                    and on_h >= 4
+                    and datt_h >= 99
+                    and on_h >= 2
                     and off_h >= 0
                     and tot_shots_h >= 11
                     and isinstance(p_goal, list)

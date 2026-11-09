@@ -319,9 +319,7 @@ def main():
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-1" or
                         f"{hf_hg}-{hf_ag}" == "2-3" or
-                        f"{hf_hg}-{hf_ag}" == "0-2" or
-                        f"{hf_hg}-{hf_ag}" == "1-2" or
-                        f"{hf_hg}-{hf_ag}" == "1-3"
+                        f"{hf_hg}-{hf_ag}" == "1-2"
                     )
                     and datt_h >= 15
                     and on_h >= 0

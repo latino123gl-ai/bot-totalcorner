@@ -146,7 +146,7 @@ def main():
                     continue
 
                 if match_id not in tracked:
-                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False, "r19": False, "r20": False, "r21": False, "r22": False, "r23": False, "r24": False, "r25": False, "r26": False}
+                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False, "r19": False, "r20": False, "r21": False, "r22": False, "r23": False, "r24": False, "r25": False, "r26": False, "r27": False}
                 state = tracked[match_id]
 
                 league = m.get("l", "?")
@@ -666,9 +666,9 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.20       # XG CASA
+                    and float(xg_h) >= 0.40       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
-                    and -3.5 <= handi_val <= -0.0
+                    and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
                     and ish == "1"
@@ -768,7 +768,7 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.20       # XG CASA
+                    and float(xg_h) >= 0.40       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
@@ -811,7 +811,7 @@ def main():
                     send_msg(msg)
                     state["r18"] = True
 
-                # =============== 🚨 PERDE AL MINUTO 68+XG  ===============
+                # =============== 🚨 PERDE AL MINUTO 68+XG ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 45,
                 # risultati ammessi, attacchi pericolosi >= 30,
                 # tiri in porta >= 4, tiri totali >= 0
@@ -975,7 +975,7 @@ def main():
                     and (hg, ag) in [
                         (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
                     ]  
-                    and datt_h >= 30                 # pericolosi casa
+                    and datt_h >= 99                 # pericolosi casa
                     and on_h >= 2
                     and off_h >= 0
                     and tot_shots_h >= 4 
@@ -1296,7 +1296,7 @@ def main():
                     send_msg(msg)
                     state["r26"] = True
 
-                # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE XG ===============
+                # =============== ⚽️ GIOCARE IMMEDIATAMENTE XG CASA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1322,7 +1322,7 @@ def main():
                     and tot_shots_h >= 0
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE XG\n\n"
+                        "⚽️ GIOCARE IMMEDIATAMENTE XG CASA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1342,7 +1342,53 @@ def main():
                     send_msg(msg)
                     state["r22"] = True
 
-                        # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE OPITE ===============
+                # =============== ⚽️ GIOCARE IMMEDIATAMENTE XG OSPITE ===============
+                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
+                # risultati ammessi, pericolosi >= 0,
+                # tiri in porta >= 0, tiri totali >= 0
+                if (
+                    not state["r27"]                      # non ancora mandato
+                    and "Lech" in home                    
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and xg_h is not None
+                    and xg_a is not None
+                    and float(xg_h) >= 0.00       # XG CASA
+                    and float(xg_a) >= 0.80       # XG OSPITE
+                    and +0.0 <= handi_val <= +4.0
+                    and red_h == 0
+                    and red_a == 0
+                    and minute in [59]
+                    and (hg, ag) in [
+                        (1,2)
+                    ]    
+                    and datt_h >= 0
+                    and on_h >= 0
+                    and off_h >= 0
+                    and tot_shots_h >= 0
+                ):
+                    msg = (
+                        "⚽️ GIOCARE IMMEDIATAMENTE XG OSPITE\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap live casa: {handi_raw}\n\n"
+                        f"XG: {xg_h}-{xg_a}\n"
+                        f"Handicap: {p_asian}\n"
+                        f"Gol line pre-match: {p_goal}\n"
+                        f"ESPULSIONI: {red_h} - {red_a}\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r27"] = True
+
+                        # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE OSPITE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0

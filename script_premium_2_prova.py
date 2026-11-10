@@ -664,7 +664,7 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 0.40       # XG CASA
+                    and float(xg_h) >= 1.00       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -3.5 <= handi_val <= -1.0
                     and red_h == 0
@@ -766,7 +766,7 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 0.40       # XG CASA
+                    and float(xg_h) >= 1.00       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0

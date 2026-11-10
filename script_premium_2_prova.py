@@ -169,8 +169,6 @@ def main():
                     "80 mins play" in league_str or
                     "paraguay" in league_str or
                     "uruguay" in league_str or
-                    "cup" in league_str or
-                    "copa" in league_str or
                     "friend" in league_str or
                     "friendly" in league_str or
                     "Beach" in league_str or

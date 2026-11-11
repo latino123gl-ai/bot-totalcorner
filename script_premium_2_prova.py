@@ -1171,7 +1171,7 @@ def main():
                     not state["r11"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -0.5 <= handi_val <= -0.0
+                    and -1.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
                     and minute in [44]

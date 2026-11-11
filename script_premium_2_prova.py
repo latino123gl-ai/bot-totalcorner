@@ -960,33 +960,33 @@ def main():
                     send_msg(msg)
                     state["r5"] = True
 
-                # ================= ⚽️ FAST & FURIOUS X/2 CASA =================
+                # ================= ⚽️ REGOLA 1-1 PRIMO TEMPO =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
                     not state["r6"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -1.0
+                    and -3.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
                     and minute in [44]
                     and (hg, ag) in [
-                        (0,0),(0,1),(1,1),(1,2),(2,2),(2,3)
+                        (1,1)
                     ]  
-                    and datt_h >= 99                 # pericolosi casa
-                    and on_h >= 2
+                    and datt_h >= 25                 # pericolosi casa
+                    and on_h >= 3
                     and off_h >= 0
-                    and tot_shots_h >= 4 
+                    and tot_shots_h >= 3 
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                      and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
 
                 ):
                     msg = (
-                        "⚽️ FAST & FURIOUS X/2 CASA\n\n"
+                        "⚽️ REGOLA 1-1 PRIMO TEMPO\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1134,9 +1134,9 @@ def main():
                         (1,0),(2,0),(3,0),(4,0),(2,1),(3,1),(3,2),(4,2),(4,3)
                     ]  
                     and datt_h >= 25
-                    and on_h >= 2
+                    and on_h >= 3
                     and off_h >= 0
-                    and tot_shots_h >= 4
+                    and tot_shots_h >= 0
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -1176,12 +1176,12 @@ def main():
                     and red_a == 0
                     and minute in [44]
                     and (hg, ag) in [
-                        (1,1),(0,1),(1,2),(2,2),(2,3)
+                        (0,1),(1,2),(2,2),(1,1)
                     ]  
                     and datt_h >= 25
-                    and on_h >= 2
+                    and on_h >= 3
                     and off_h >= 0
-                    and tot_shots_h >= 4
+                    and tot_shots_h >= 0
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0

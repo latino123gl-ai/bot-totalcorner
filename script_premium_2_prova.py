@@ -1478,7 +1478,7 @@ def main():
                         (1,1)
                     ]    
                     and datt_h >= 52
-                    and on_h >= 7
+                    and on_h >= 8
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):

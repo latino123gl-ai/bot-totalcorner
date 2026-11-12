@@ -975,9 +975,9 @@ def main():
                         (1,1)
                     ]  
                     and datt_h >= 25                 # pericolosi casa
-                    and on_h >= 3
+                    and on_h >= 2
                     and off_h >= 0
-                    and tot_shots_h >= 3 
+                    and tot_shots_h >= 2 
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
@@ -1177,7 +1177,7 @@ def main():
                     and red_a == 0
                     and minute in [44]
                     and (hg, ag) in [
-                        (0,1),(1,2),(2,2),(1,1)
+                        (0,1),(1,2),(2,2)
                     ]  
                     and datt_h >= 25
                     and on_h >= 3

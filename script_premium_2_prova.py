@@ -1424,13 +1424,13 @@ def main():
                     send_msg(msg)
                     state["r13"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 3 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Alcoyano" in home                    
+                    and "Royal" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1438,12 +1438,12 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,1)
+                        (1,1)
                     ]    
-                    and datt_h >= 50
+                    and datt_h >= 64
                     and on_h >= 8
                     and off_h >= 0
-                    and tot_shots_h >= 13
+                    and tot_shots_h >= 0
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
@@ -1461,7 +1461,7 @@ def main():
                     send_msg(msg)
                     state["r14"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 2 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1498,7 +1498,7 @@ def main():
                     send_msg(msg)
                     state["r15"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 1 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0

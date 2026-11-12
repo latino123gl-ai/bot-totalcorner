@@ -254,7 +254,7 @@ def main():
                     f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}, PRIMO TEMPO={hf_hg}-{hf_ag}, ROSSI={red_h}-{red_a}, ISH={ish}"
                 )
 
-                # ================= ⚽ FAVORITA OSPITE PERDE =================
+                # ================= ⚽ FAVORITA OSPITE X/2 =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
                     not state["r1"]                 # non ancora mandato
@@ -267,6 +267,9 @@ def main():
                     and minute in [44]
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-0" or
+                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "2-2" or
                         f"{hf_hg}-{hf_ag}" == "2-1"
                     )
                     and datt_a >= 30                 # attacchi pericolosi casa
@@ -281,7 +284,7 @@ def main():
                     and max(float(x.strip()) for x in p_asian[0].split(",")) >= +2.0
                 ):
                     msg = (
-                        "⚽ FAVORITA OSPITE PERDE\n\n"
+                        "⚽ FAVORITA OSPITE X/2\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -961,7 +964,7 @@ def main():
                     send_msg(msg)
                     state["r5"] = True
 
-                # ================= ⚽️ REGOLA 1-1 PRIMO TEMPO =================
+                # ================= ⚽️ REGOLA 1-1 CASA =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
                     not state["r6"]                 # non ancora mandato
@@ -987,7 +990,7 @@ def main():
 
                 ):
                     msg = (
-                        "⚽️ REGOLA 1-1 PRIMO TEMPO\n\n"
+                        "⚽️ REGOLA 1-1 CASA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1209,7 +1212,7 @@ def main():
                     send_msg(msg)
                     state["r11"] = True
 
-                        # =============== ⚽ FAVORITA OSPITE PAREGGIA ===============
+                        # =============== ⚽ REGOLA 1-1 OSPITE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1219,27 +1222,25 @@ def main():
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
-                    and +1.0 <= handi_val <= +4.0
+                    and +0.0 <= handi_val <= +4.0
                     and ish == "0"
                     and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "1-1" or
-                        f"{hf_hg}-{hf_ag}" == "0-0" or
-                        f"{hf_hg}-{hf_ag}" == "2-2"
-                    )
-                    and datt_a >= 30                 # attacchi pericolosi casa
-                    and on_a >= 2                    # tiri in porta casa
+                    and (hg, ag) in [
+                        (1,1)
+                    ]    
+                    and datt_a >= 25                 # attacchi pericolosi casa
+                    and on_a >= 3                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
-                    and tot_shots_a >= 4             # tiri totali casa
+                    and tot_shots_a >= 0             # tiri totali casa
                      and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +2.0
+                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +1.0
                 ):
                     msg = (
-                        "⚽ FAVORITA OSPITE PAREGGIA\n\n"
+                        "⚽ REGOLA 1-1 OSPITE\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

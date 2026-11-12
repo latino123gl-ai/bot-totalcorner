@@ -1264,7 +1264,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r26"]                      # non ancora mandato
-                    and "Serbia" in home                    
+                    and "Bengaluru" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1467,7 +1467,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Cartagines" in home                    
+                    and "Bengaluru" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1475,12 +1475,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (3,0)
+                        (1,1)
                     ]    
-                    and datt_h >= 64
-                    and on_h >= 7
+                    and datt_h >= 99
+                    and on_h >= 5
                     and off_h >= 0
-                    and tot_shots_h >= 14
+                    and tot_shots_h >= 0
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
@@ -1504,7 +1504,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r25"]                      # non ancora mandato
-                    and "Colombe" in home                    
+                    and "Bengaluru" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1514,8 +1514,8 @@ def main():
                     and (hg, ag) in [
                         (1,0)
                     ]    
-                    and datt_h >= 72
-                    and on_h >= 6
+                    and datt_h >= 62
+                    and on_h >= 5
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):

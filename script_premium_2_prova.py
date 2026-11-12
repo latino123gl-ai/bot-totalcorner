@@ -1467,7 +1467,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Bengaluru" in home                    
+                    and "Kuala" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1477,8 +1477,8 @@ def main():
                     and (hg, ag) in [
                         (1,1)
                     ]    
-                    and datt_h >= 99
-                    and on_h >= 5
+                    and datt_h >= 52
+                    and on_h >= 7
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):

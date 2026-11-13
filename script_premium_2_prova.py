@@ -1303,19 +1303,19 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r22"]                      # non ancora mandato
-                    and "Senegal" in home                    
+                    and "Scotland" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 2.24       # XG CASA
+                    and float(xg_h) >= 1.72       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -4.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (0,0)
                     ]    
                     and datt_h >= 0
                     and on_h >= 0
@@ -1432,7 +1432,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Mura" in home                    
+                    and "Scotland" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1440,10 +1440,10 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (2,0)
+                        (0,0)
                     ]    
-                    and datt_h >= 86
-                    and on_h >= 9
+                    and datt_h >= 46
+                    and on_h >= 6
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):

@@ -1395,7 +1395,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r13"]                      # non ancora mandato
-                    and "Azazga" in home                    
+                    and "Firminy" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1403,10 +1403,10 @@ def main():
                     and +0.0 <= handi_val <= +3.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (0,0)
                     ]    
-                    and datt_a >= 29
-                    and on_a >= 6
+                    and datt_a >= 48
+                    and on_a >= 5
                     and off_a >= 0
                     and tot_shots_a >= 0
                 ):
@@ -1428,13 +1428,13 @@ def main():
                     send_msg(msg)
                     state["r13"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 3 ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 1 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Sokol" in home                    
+                    and "Firminy" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1442,9 +1442,9 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (4,0)
+                        (0,0)
                     ]    
-                    and datt_h >= 61
+                    and datt_h >= 99
                     and on_h >= 7
                     and off_h >= 0
                     and tot_shots_h >= 0
@@ -1506,7 +1506,7 @@ def main():
                     send_msg(msg)
                     state["r15"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 1 ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 3 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0

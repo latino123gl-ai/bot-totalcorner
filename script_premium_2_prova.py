@@ -831,7 +831,7 @@ def main():
                     and red_a == 0
                     and minute in [68]
                     and (hg, ag) in [
-                        (0,1),(1,2),(2,3),(0,2),(1,3),(2,4),(3,4)
+                        (0,1),(1,2),(2,3),(1,1),(0,0)
                     ]  
                     and datt_h >= 10
                     and on_h >= 2
@@ -842,7 +842,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.5
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
                     msg = (
                         "🚨 PERDE AL MINUTO 68+XG\n\n"

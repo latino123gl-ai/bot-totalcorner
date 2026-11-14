@@ -1303,12 +1303,12 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r22"]                      # non ancora mandato
-                    and "Graafschap" in home                    
+                    and "CRB" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.70       # XG CASA
+                    and float(xg_h) >= 1.94       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -4.0 <= handi_val <= -0.0
                     and red_h == 0
@@ -1512,7 +1512,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r25"]                      # non ancora mandato
-                    and "Graafschap" in home                    
+                    and "CRB" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1522,8 +1522,8 @@ def main():
                     and (hg, ag) in [
                         (0,1)
                     ]    
-                    and datt_h >= 53
-                    and on_h >= 9
+                    and datt_h >= 86
+                    and on_h >= 8
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):

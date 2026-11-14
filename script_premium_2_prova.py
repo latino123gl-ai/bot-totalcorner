@@ -316,8 +316,8 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and ish == "0"
-                    and minute in [44]
+                    and ish == "1"
+                    and minute in [46]
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-1" or
                         f"{hf_hg}-{hf_ag}" == "2-3" or
@@ -371,8 +371,8 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and +0.0 <= handi_val <= +4.0
-                    and ish == "0"
-                    and minute in [44]
+                    and ish == "1"
+                    and minute in [46]
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-0" or
                         f"{hf_hg}-{hf_ag}" == "2-1"
@@ -468,8 +468,8 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and ish == "0"
-                    and minute in [44]
+                    and ish == "1"
+                    and minute in [46]
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-1" or
                         f"{hf_hg}-{hf_ag}" == "2-3" or
@@ -525,8 +525,8 @@ def main():
                     and +0.0 <= handi_val <= +3.0
                     and red_h == 0
                     and red_a == 0
-                    and ish == "0"
-                    and minute in [44]
+                    and ish == "1"
+                    and minute in [46]
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-1" or
                         f"{hf_hg}-{hf_ag}" == "0-0" or
@@ -575,8 +575,8 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
-                    and ish == "0"
-                    and minute in [44]
+                    and ish == "1"
+                    and minute in [46]
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-1" or
                         f"{hf_hg}-{hf_ag}" == "0-0" or
@@ -674,8 +674,8 @@ def main():
                     and -3.5 <= handi_val <= -1.0
                     and red_h == 0
                     and red_a == 0
-                    and ish == "0"
-                    and minute in [44]
+                    and ish == "1"
+                    and minute in [46]
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-1" or
                         f"{hf_hg}-{hf_ag}" == "0-0" or
@@ -776,8 +776,8 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and ish == "0"
-                    and minute in [44]
+                    and ish == "1"
+                    and minute in [46]
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-1" or
                         f"{hf_hg}-{hf_ag}" == "1-2"
@@ -880,8 +880,8 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and ish == "0"
-                    and minute in [44]
+                    and ish == "1"
+                    and minute in [46]
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-1" or
                         f"{hf_hg}-{hf_ag}" == "2-3" or
@@ -1023,8 +1023,8 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and ish == "0"
-                    and minute in [44]
+                    and ish == "1"
+                    and minute in [46]
                     and (
                         f"{hf_hg}-{hf_ag}" == "3-3" or
                         f"{hf_hg}-{hf_ag}" == "0-1" or
@@ -1080,8 +1080,8 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and ish == "0"
-                    and minute in [44]
+                    and ish == "1"
+                    and minute in [46]
                     and (
                         f"{hf_hg}-{hf_ag}" == "3-3" or
                         f"{hf_hg}-{hf_ag}" == "0-1" or
@@ -1473,7 +1473,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "NAC" in home                    
+                    and "Tecla" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1483,8 +1483,8 @@ def main():
                     and (hg, ag) in [
                         (0,1)
                     ]    
-                    and datt_h >= 52
-                    and on_h >= 6
+                    and datt_h >= 78
+                    and on_h >= 7
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1523,7 +1523,7 @@ def main():
                         (0,1)
                     ]    
                     and datt_h >= 86
-                    and on_h >= 8
+                    and on_h >= 7
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):

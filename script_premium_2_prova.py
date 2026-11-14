@@ -582,10 +582,10 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "0-0" or
                         f"{hf_hg}-{hf_ag}" == "2-2"
                     )
-                    and datt_h >= 15
-                    and on_h >= 1
+                    and datt_h >= 0
+                    and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 1
+                    and tot_shots_h >= 0
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -730,10 +730,10 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "1-2" or
                         f"{hf_hg}-{hf_ag}" == "0-1"
                     )
-                    and datt_h >= 15
-                    and on_h >= 1
+                    and datt_h >= 0
+                    and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 2
+                    and tot_shots_h >= 0
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5

@@ -1469,7 +1469,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Persija" in home                    
+                    and "ASM" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1477,10 +1477,10 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,0)
+                        (1,0)
                     ]    
-                    and datt_h >= 66
-                    and on_h >= 7
+                    and datt_h >= 70
+                    and on_h >= 9
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1506,7 +1506,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r25"]                      # non ancora mandato
-                    and "District" in home                    
+                    and "Batna" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1514,10 +1514,10 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,0)
+                        (2,1)
                     ]    
-                    and datt_h >= 65
-                    and on_h >= 4
+                    and datt_h >= 57
+                    and on_h >= 9
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):

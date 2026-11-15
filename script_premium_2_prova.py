@@ -262,7 +262,7 @@ def main():
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
-                    and +1.0 <= handi_val <= +4.0
+                    and +0.5 <= handi_val <= +4.0
                     and ish == "0"
                     and minute in [44]
                     and (
@@ -272,10 +272,10 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "2-2" or
                         f"{hf_hg}-{hf_ag}" == "2-1"
                     )
-                    and datt_a >= 30                 # attacchi pericolosi casa
+                    and datt_a >= 20                 # attacchi pericolosi casa
                     and on_a >= 2                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
-                    and tot_shots_a >= 4             # tiri totali casa
+                    and tot_shots_a >= 2             # tiri totali casa
                      and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5

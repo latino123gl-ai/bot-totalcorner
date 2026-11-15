@@ -146,7 +146,7 @@ def main():
                     continue
 
                 if match_id not in tracked:
-                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False, "r19": False, "r20": False, "r21": False, "r22": False, "r23": False, "r24": False, "r25": False, "r26": False, "r27": False}
+                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False, "r19": False, "r20": False, "r21": False, "r22": False, "r23": False, "r24": False, "r25": False, "r26": False, "r27": False, "r28": False}
                 state = tracked[match_id]
 
                 league = m.get("l", "?")
@@ -1384,6 +1384,45 @@ def main():
                     )
                     send_msg(msg)
                     state["r27"] = True
+
+                # =============== ⚽️ GIOCARE IMMEDIATAMENTE GOL ENTRO 59° ===============
+                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
+                # risultati ammessi, pericolosi >= 0,
+                # tiri in porta >= 0, tiri totali >= 0
+                if (
+                    not state["r28"]                      # non ancora mandato
+                    and "Caudal" in home                    
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and red_h == 0
+                    and red_a == 0
+                    and -4.0 <= handi_val <= -0.0
+                    and minute in [59]
+                    and (hg, ag) in [
+                        (0,1),(1,0)
+                    ]    
+                    and datt_h >= 0
+                    and on_h >= 0
+                    and off_h >= 0
+                    and tot_shots_h >= 0
+                ):
+                    msg = (
+                        "⚽️ GIOCARE IMMEDIATAMENTE GOL ENTRO 59°\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap iniziale: {handi_raw}\n\n"
+                        f"Handicap iniziale: {p_asian}\n"
+                        f"Gol line: {p_goal}\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r28"] = True
 
                         # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE OSPITE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,

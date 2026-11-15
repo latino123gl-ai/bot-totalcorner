@@ -267,13 +267,12 @@ def main():
                     and minute in [44]
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-0" or
-                        f"{hf_hg}-{hf_ag}" == "0-0" or
                         f"{hf_hg}-{hf_ag}" == "1-1" or
                         f"{hf_hg}-{hf_ag}" == "2-2" or
                         f"{hf_hg}-{hf_ag}" == "2-1"
                     )
-                    and datt_a >= 20                 # attacchi pericolosi casa
-                    and on_a >= 2                    # tiri in porta casa
+                    and datt_a >= 25                 # attacchi pericolosi casa
+                    and on_a >= 3                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 2             # tiri totali casa
                      and isinstance(p_goal, list)

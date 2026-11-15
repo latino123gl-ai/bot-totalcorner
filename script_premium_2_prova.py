@@ -983,7 +983,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                      and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.5
 
                 ):
                     msg = (
@@ -1127,7 +1127,7 @@ def main():
                     not state["r10"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.5 <= handi_val <= -1.0
+                    and -3.5 <= handi_val <= -0.5
                     and red_h == 0
                     and red_a == 0
                     and minute in [44]
@@ -1188,7 +1188,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.5
                 ):
                     msg = (
                         "⚽️ TERMINALE FAST & FORIOUS\n\n"

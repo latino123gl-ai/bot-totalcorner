@@ -1509,7 +1509,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r25"]                      # non ancora mandato
-                    and "Caguas" in home                    
+                    and "Sagesse" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1517,10 +1517,10 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (1,2)
                     ]    
-                    and datt_h >= 86
-                    and on_h >= 7
+                    and datt_h >= 56
+                    and on_h >= 9
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):

@@ -1299,19 +1299,19 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r22"]                      # non ancora mandato
-                    and "CRB" in home                    
+                    and "France" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.94       # XG CASA
+                    and float(xg_h) >= 1.90       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -4.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,1)
+                        (0,0)
                     ]    
                     and datt_h >= 0
                     and on_h >= 0

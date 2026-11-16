@@ -1391,7 +1391,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r28"]                      # non ancora mandato
-                    and "Nasr" in home                    
+                    and "Norwich" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1508,7 +1508,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "France" in home                    
+                    and "Guadeloupe" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1518,8 +1518,8 @@ def main():
                     and (hg, ag) in [
                         (1,0)
                     ]    
-                    and datt_h >= 58
-                    and on_h >= 8
+                    and datt_h >= 53
+                    and on_h >= 6
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1547,7 +1547,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r25"]                      # non ancora mandato
-                    and "Nasr" in home                    
+                    and "Norwich" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1557,8 +1557,8 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 53
-                    and on_h >= 5
+                    and datt_h >= 55
+                    and on_h >= 11
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):

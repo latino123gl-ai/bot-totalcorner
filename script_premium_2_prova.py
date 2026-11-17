@@ -1391,7 +1391,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r28"]                      # non ancora mandato
-                    and "Norwich" in home                    
+                    and "Senegal" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0

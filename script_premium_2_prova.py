@@ -1185,10 +1185,10 @@ def main():
                     and tot_shots_h >= 0
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.5
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
                     msg = (
                         "⚽️ TERMINALE FAST & FORIOUS\n\n"

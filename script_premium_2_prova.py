@@ -974,13 +974,13 @@ def main():
                     and (hg, ag) in [
                         (1,1)
                     ]  
-                    and datt_h >= 25                 # pericolosi casa
+                    and datt_h >= 30                 # pericolosi casa
                     and on_h >= 2
                     and off_h >= 0
                     and tot_shots_h >= 2 
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                      and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.5
@@ -1225,13 +1225,13 @@ def main():
                     and (hg, ag) in [
                         (1,1)
                     ]    
-                    and datt_a >= 25                 # attacchi pericolosi casa
+                    and datt_a >= 30                 # attacchi pericolosi casa
                     and on_a >= 3                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 0             # tiri totali casa
                      and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and max(float(x.strip()) for x in p_asian[0].split(",")) >= +1.5
@@ -1284,6 +1284,8 @@ def main():
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap live: {handi_raw}\n\n"
+                        f"Handicap iniziale: {p_asian}\n"
+                        f"Gol line: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
@@ -1412,7 +1414,7 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap iniziale: {handi_raw}\n\n"
+                        f"Handicap live: {handi_raw}\n\n"
                         f"Handicap iniziale: {p_asian}\n"
                         f"Gol line: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
@@ -1451,7 +1453,7 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap iniziale: {handi_raw}\n\n"
+                        f"Handicap live: {handi_raw}\n\n"
                         f"Handicap iniziale: {p_asian}\n"
                         f"Gol line: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
@@ -1607,7 +1609,7 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap iniziale: {handi_raw}\n\n"
+                        f"Handicap live: {handi_raw}\n\n"
                         f"Handicap iniziale: {p_asian}\n"
                         f"Gol line: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
@@ -1646,7 +1648,7 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap iniziale: {handi_raw}\n\n"
+                        f"Handicap live: {handi_raw}\n\n"
                         f"Handicap iniziale: {p_asian}\n"
                         f"Gol line: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
@@ -1685,7 +1687,7 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap iniziale: {handi_raw}\n\n"
+                        f"Handicap live: {handi_raw}\n\n"
                         f"Handicap iniziale: {p_asian}\n"
                         f"Gol line: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
@@ -1724,7 +1726,7 @@ def main():
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
-                        f"Handicap iniziale: {handi_raw}\n\n"
+                        f"Handicap live: {handi_raw}\n\n"
                         f"Handicap iniziale: {p_asian}\n"
                         f"Gol line: {p_goal}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"

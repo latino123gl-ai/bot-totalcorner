@@ -1391,7 +1391,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r28"]                      # non ancora mandato
-                    and "Senegal" in home                    
+                    and "University" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1586,7 +1586,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r25"]                      # non ancora mandato
-                    and "Sanliurfaspor" in home                    
+                    and "Navy" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1594,9 +1594,9 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (1,0)
                     ]    
-                    and datt_h >= 42
+                    and datt_h >= 72
                     and on_h >= 5
                     and off_h >= 0
                     and tot_shots_h >= 0
@@ -1625,7 +1625,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r30"]                      # non ancora mandato
-                    and "Sanliurfaspor" in home                    
+                    and "University" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1633,10 +1633,10 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (0,0)
                     ]    
-                    and datt_h >= 42
-                    and on_h >= 5
+                    and datt_h >= 53
+                    and on_h >= 4
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1664,7 +1664,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r31"]                      # non ancora mandato
-                    and "Sanliurfaspor" in home                    
+                    and "University" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1672,10 +1672,10 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (0,0)
                     ]    
-                    and datt_h >= 42
-                    and on_h >= 5
+                    and datt_h >= 0
+                    and on_h >= 4
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1703,7 +1703,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r32"]                      # non ancora mandato
-                    and "Sanliurfaspor" in home                    
+                    and "University" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1711,12 +1711,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (0,0)
                     ]    
-                    and datt_h >= 42
-                    and on_h >= 5
+                    and datt_h >= 53
+                    and on_h >= 3
                     and off_h >= 0
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 4
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"

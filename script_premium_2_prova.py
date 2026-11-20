@@ -827,7 +827,7 @@ def main():
                     and red_a == 0
                     and minute in [68]
                     and (hg, ag) in [
-                        (0,1),(1,2),(2,3),(1,1),(0,0)
+                        (0,1),(1,2),(2,3)
                     ]  
                     and datt_h >= 10
                     and on_h >= 2
@@ -1014,8 +1014,8 @@ def main():
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.30       # XG CASA
-                    and float(xg_a) >= 1.30       # XG OSPITE 
+                    and float(xg_h) >= 1.20       # XG CASA
+                    and float(xg_a) >= 1.20       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
@@ -1301,7 +1301,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r22"]                      # non ancora mandato
-                    and "France" in home                    
+                    and "Western" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None

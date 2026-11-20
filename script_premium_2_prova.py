@@ -1711,7 +1711,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [65]
+                    and minute in [59]
                     and (hg, ag) in [
                         (4,0)
                     ]    

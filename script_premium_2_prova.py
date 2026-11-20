@@ -1666,7 +1666,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r31"]                      # non ancora mandato
-                    and "Penzing" in home                    
+                    and "Estudiantes" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1674,12 +1674,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,0)
+                        (3,0)
                     ]    
-                    and datt_h >= 60
+                    and datt_h >= 62
                     and on_h >= 6
                     and off_h >= 0
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 8
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
@@ -1705,7 +1705,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r32"]                      # non ancora mandato
-                    and "Madrid" in home                    
+                    and "Guadalajara" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1713,12 +1713,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (4,0)
+                        (3,0)
                     ]    
-                    and datt_h >= 54
-                    and on_h >= 8
+                    and datt_h >= 58
+                    and on_h >= 9
                     and off_h >= 0
-                    and tot_shots_h >= 2
+                    and tot_shots_h >= 11
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"

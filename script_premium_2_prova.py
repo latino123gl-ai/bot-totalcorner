@@ -1393,7 +1393,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r28"]                      # non ancora mandato
-                    and "Cardiff" in home                    
+                    and "Briton" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1401,9 +1401,9 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,0)
+                        (0,0)
                     ]    
-                    and datt_h >= 1
+                    and datt_h >= 53
                     and on_h >= 0
                     and off_h >= 0
                     and tot_shots_h >= 1
@@ -1510,7 +1510,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Cardiff" in home                    
+                    and "Caerphilly" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1518,12 +1518,12 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,0)
+                        (1,0)
                     ]    
-                    and datt_h >= 52
-                    and on_h >= 8
+                    and datt_h >= 54
+                    and on_h >= 5
                     and off_h >= 0
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 7
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
@@ -1549,7 +1549,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Cardiff" in home                    
+                    and "Wayside" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1557,12 +1557,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,0)
+                        (3,0)
                     ]    
-                    and datt_h >= 52
+                    and datt_h >= 57
                     and on_h >= 7
                     and off_h >= 0
-                    and tot_shots_h >= 8
+                    and tot_shots_h >= 9
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"

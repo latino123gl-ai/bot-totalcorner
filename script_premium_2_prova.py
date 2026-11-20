@@ -534,7 +534,7 @@ def main():
                     and datt_a >= 14                # attacchi pericolosi ospite
                     and on_a >= 0                   # tiri in porta ospite 
                     and off_a >= 0                 # tiri fuori porta ospite
-                    and tot_shots_a >= 0
+                    and tot_shots_a >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -578,10 +578,10 @@ def main():
                     and (hg, ag) in [
                         (0,0),(1,1),(2,2)
                     ]  
-                    and datt_h >= 0
+                    and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -680,7 +680,7 @@ def main():
                     and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
@@ -726,10 +726,10 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "1-2" or
                         f"{hf_hg}-{hf_ag}" == "0-1"
                     )
-                    and datt_h >= 0
+                    and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -781,7 +781,7 @@ def main():
                     and datt_h >= 15
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
@@ -1032,7 +1032,7 @@ def main():
                     and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 4.0
@@ -1089,7 +1089,7 @@ def main():
                     and datt_h >= 10
                     and on_h >= 0
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
@@ -1262,7 +1262,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r26"]                      # non ancora mandato
-                    and "University" in home                    
+                    and "Aztecas" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1270,12 +1270,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (4,1)
                     ]    
-                    and datt_h >= 0
+                    and datt_h >= 1
                     and on_h >= 0
                     and off_h >= 0
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 1
                 ):
                     msg = (
                         "⚽️ GRANDE PAREGGIO FAVORITA\n\n"
@@ -1393,7 +1393,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r28"]                      # non ancora mandato
-                    and "Al-Jazeera" in home                    
+                    and "Aztecas" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1401,12 +1401,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,1),(1,0)
+                        (1,0)
                     ]    
-                    and datt_h >= 0
+                    and datt_h >= 1
                     and on_h >= 0
                     and off_h >= 0
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 1
                 ):
                     msg = (
                         "⚽️ GIOCARE IMMEDIATAMENTE GOL ENTRO 59°\n\n"
@@ -1440,7 +1440,7 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,1),(1,0)
+                        (1,0)
                     ]    
                     and datt_h >= 0
                     and on_h >= 0
@@ -1510,7 +1510,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Al-Jazeera" in home                    
+                    and "Aztecas" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1520,8 +1520,8 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 52
-                    and on_h >= 7
+                    and datt_h >= 55
+                    and on_h >= 6
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1549,7 +1549,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Al-Jazeera" in home                    
+                    and "Aztecas" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1559,8 +1559,8 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 39
-                    and on_h >= 7
+                    and datt_h >= 55
+                    and on_h >= 5
                     and off_h >= 0
                     and tot_shots_h >= 6
                 ):
@@ -1588,7 +1588,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r25"]                      # non ancora mandato
-                    and "Duhail" in home                    
+                    and "Aztecas" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1596,10 +1596,10 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,1)
+                        (0,0)
                     ]    
-                    and datt_h >= 52
-                    and on_h >= 7
+                    and datt_h >= 33
+                    and on_h >= 6
                     and off_h >= 0
                     and tot_shots_h >= 6
                 ):
@@ -1666,7 +1666,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r31"]                      # non ancora mandato
-                    and "Triglav" in home                    
+                    and "Penzing" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1674,10 +1674,10 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (1,0)
                     ]    
-                    and datt_h >= 33
-                    and on_h >= 10
+                    and datt_h >= 60
+                    and on_h >= 6
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1705,7 +1705,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r32"]                      # non ancora mandato
-                    and "Triglav" in home                    
+                    and "Karvina" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1715,8 +1715,8 @@ def main():
                     and (hg, ag) in [
                         (1,1)
                     ]    
-                    and datt_h >= 45
-                    and on_h >= 9
+                    and datt_h >= 46
+                    and on_h >= 7
                     and off_h >= 0
                     and tot_shots_h >= 10
                 ):

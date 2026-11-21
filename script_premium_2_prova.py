@@ -1302,12 +1302,12 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r22"]                      # non ancora mandato
-                    and "Independiente" in home                    
+                    and "Man" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
                     and xg_a is not None
-                    and float(xg_h) >= 1.72       # XG CASA
+                    and float(xg_h) >= 2.30       # XG CASA
                     and float(xg_a) >= 0.00       # XG OSPITE
                     and -4.0 <= handi_val <= -0.0
                     and red_h == 0

@@ -1754,7 +1754,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r33"]                      # non ancora mandato
-                    and "Karagumruk" in home                    
+                    and "Valerenga" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1764,10 +1764,10 @@ def main():
                     and (hg, ag) in [
                         (1,0)
                     ]    
-                    and datt_h >= 22
-                    and on_h >= 6
-                    and off_h >= 0
-                    and tot_shots_h >= 6
+                    and datt_h >= 59
+                    and on_h >= 5
+                    and off_h >= 7
+                    and tot_shots_h >= 14
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"

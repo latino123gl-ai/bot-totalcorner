@@ -418,11 +418,11 @@ def main():
                     and -3.0 <= handi_val <= -0.5
                     and red_h == 0
                     and red_a == 0
-                    and minute in [65]
+                    and minute in [15]
                     and (hg, ag) in [
                         (6,0),(6,1),(6,2),(7,0),(7,1),(7,2),(8,0),(8,1),(8,2),(9,0),(9,1),(9,2),(10,0),(10,1),(10,2)
                     ]    
-                    and datt_h >= 25              # attacchi pericolosi casa
+                    and datt_h >= 99              # attacchi pericolosi casa
                     and on_h >= 10                  # tiri in porta casa
                     and off_h >= 1                 # tiri fuori porta casa
                     and tot_shots_h >= 11

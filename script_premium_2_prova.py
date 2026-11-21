@@ -1394,7 +1394,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r28"]                      # non ancora mandato
-                    and "Sagaing" in home                    
+                    and "Crvena" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1404,7 +1404,7 @@ def main():
                     and (hg, ag) in [
                         (1,0)
                     ]    
-                    and datt_h >= 54
+                    and datt_h >= 50
                     and on_h >= 0
                     and off_h >= 0
                     and tot_shots_h >= 1
@@ -1514,7 +1514,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Blaj" in home                    
+                    and "Crvena" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1522,10 +1522,10 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (3,1)
+                        (0,0)
                     ]    
-                    and datt_h >= 61
-                    and on_h >= 8
+                    and datt_h >= 55
+                    and on_h >= 7
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1554,7 +1554,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Branistea" in home                    
+                    and "Crvena" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1562,12 +1562,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (2,0)
+                        (0,0)
                     ]    
-                    and datt_h >= 69
-                    and on_h >= 7
-                    and off_h >= 0
-                    and tot_shots_h >= 4
+                    and datt_h >= 55
+                    and on_h >= 6
+                    and off_h >= 8
+                    and tot_shots_h >= 15
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
@@ -1594,7 +1594,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r25"]                      # non ancora mandato
-                    and "Dorogi" in home                    
+                    and "Crvena" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1602,10 +1602,10 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (2,0)
+                        (0,0)
                     ]    
-                    and datt_h >= 67
-                    and on_h >= 8
+                    and datt_h >= 33
+                    and on_h >= 7
                     and off_h >= 0
                     and tot_shots_h >= 6
                 ):
@@ -1754,7 +1754,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r33"]                      # non ancora mandato
-                    and "Tunari" in home                    
+                    and "d'Escaldes" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1762,10 +1762,10 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,0)
+                        (2,1)
                     ]    
-                    and datt_h >= 59
-                    and on_h >= 6
+                    and datt_h >= 67
+                    and on_h >= 9
                     and off_h >= 5
                     and tot_shots_h >= 12
                 ):

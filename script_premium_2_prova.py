@@ -271,7 +271,7 @@ def main():
                         f"{hf_hg}-{hf_ag}" == "2-2" or
                         f"{hf_hg}-{hf_ag}" == "2-1"
                     )
-                    and datt_a >= 25                 # attacchi pericolosi casa
+                    and datt_a >= 35                 # attacchi pericolosi casa
                     and on_a >= 3                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 2             # tiri totali casa
@@ -1474,7 +1474,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r13"]                      # non ancora mandato
-                    and "Phnom" in home                    
+                    and "Garden" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1484,10 +1484,10 @@ def main():
                     and (hg, ag) in [
                         (1,1)
                     ]    
-                    and datt_a >= 44
-                    and on_a >= 4
-                    and off_a >= 0
-                    and tot_shots_a >= 0
+                    and datt_a >= 69
+                    and on_a >= 5
+                    and off_a >= 5
+                    and tot_shots_a >= 12
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE OSPITE\n\n"

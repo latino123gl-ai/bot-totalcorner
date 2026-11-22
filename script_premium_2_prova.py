@@ -1679,7 +1679,7 @@ def main():
                             "Francisco" in home
                             and (on_h >= 1 or on_a >= 0)
                             and (hg, ag) == (0,0)
-                            and datt_h >= 53
+                            and datt_h >= 120
                         )
                         or
                         (
@@ -1694,7 +1694,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [74]
+                    and minute in [79]
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"

@@ -1202,7 +1202,7 @@ def main():
                     send_msg(msg)
                     state["r11"] = True
 
-                        # =============== ⚽ REGOLA 1-1 OSPITE ===============
+                        # =============== ⚽ PAREGGIO PRIMO TEMPO ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1212,25 +1212,25 @@ def main():
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
-                    and +0.0 <= handi_val <= +4.0
+                    and -4.0 <= handi_val <= -0.0
                     and ish == "0"
                     and minute in [44]
                     and (hg, ag) in [
-                        (1,1)
+                        (1,1),(0,0),(2,2)
                     ]    
-                    and datt_a >= 30                 # attacchi pericolosi casa
-                    and on_a >= 3                    # tiri in porta casa
+                    and datt_a >= 0                 # attacchi pericolosi casa
+                    and on_a >= 0                    # tiri in porta casa
                     and off_a >= 0                   # tiri fuori casa
                     and tot_shots_a >= 0             # tiri totali casa
                      and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= +1.5
+                    and max(float(x.strip()) for x in p_asian[0].split(",")) >= -0.0
                 ):
                     msg = (
-                        "⚽ REGOLA 1-1 OSPITE\n\n"
+                        "⚽ PAREGGIO PRIMO TEMPO\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1661,7 +1661,7 @@ def main():
                     send_msg(msg)
                     state["r30"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 5 ===============
+            # =============== ⚽️ DA GIOCARE 4 TIRI AL 70° ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1669,24 +1669,38 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Platense" in home
-                            and (on_h >= 1 or on_a >= 1)
-                            and (hg, ag) == (0,0)
-                            and datt_h >= 53
+                            "River" in home                  # 1° SQUADRA
+                            and (hg, ag) == (1,1)
+                            and datt_h >= 0                     # Attacchi pericolosi
+                            and (on_h >= 5 or on_a >= 7)        # Tiri in Porta
                         )
                         or
                         (
-                            "Francisco" in home
-                            and (on_h >= 1 or on_a >= 0)
-                            and (hg, ag) == (0,0)
-                            and datt_h >= 120
+                            "Arenal" in home                 # 2° SQUADRA
+                            and (hg, ag) == (1,1)
+                            and datt_h >= 0
+                            and (on_h >= 7 or on_a >= 5)        # Tiri in Porta      
                         )
                         or
                         (
-                            "Dragones" in home
-                            and (on_h >= 2 or on_a >= 2)
+                            "Canoneros" in home                  # 3° SQUADRA
+                            and (hg, ag) == (1,1)
+                            and datt_h >= 0
+                            and (on_h >= 9 or on_a >= 7)        # Tiri in Porta
+                        )
+                        or
+                        (
+                            "Dragones" in home                  # 4° SQUADRA
                             and (hg, ag) == (0,0)
-                            and datt_h >= 53
+                            and datt_h >= 0
+                            and (on_h >= 2 or on_a >= 2)        # Tiri in Porta
+                        )
+                        or
+                        (
+                            "Dragones" in home                  # 5° SQUADRA
+                            and (hg, ag) == (0,0)
+                            and datt_h >= 0
+                            and (on_h >= 2 or on_a >= 2)        # Tiri in Porta
                         )
                     )                    
                     and not is_female_match(sex, home, away)   # solo maschi
@@ -1694,10 +1708,10 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [79]
+                    and minute in [70]
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
+                        "⚽️ DA GIOCARE 4 TIRI AL 70°\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

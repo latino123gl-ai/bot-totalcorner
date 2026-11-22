@@ -1667,20 +1667,31 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r31"]                      # non ancora mandato
-                    and "Dragones" in home                    
+                    and (
+                        (
+                            "Platense" in home
+                            and (on_h >= 6 or on_a >= 5)
+                            and (hg, ag) == (1,0)
+                        )
+                        or
+                        (
+                            "Francisco" in home
+                            and (on_h >= 1 or on_a >= 0)
+                            and (hg, ag) == (0,0)
+                        )
+                        or
+                        (
+                            "Dragones" in home
+                            and (on_h >= 2 or on_a >= 2)
+                            and (hg, ag) == (0,0)
+                        )
+                    )                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [59]
-                    and (hg, ag) in [
-                        (1,2)
-                    ]    
-                    and datt_h >= 37
-                    and on_h >= 7
-                    and off_h >= 0
-                    and tot_shots_h >= 0
+                    and minute in [65]
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"

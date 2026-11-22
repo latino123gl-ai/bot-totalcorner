@@ -1770,7 +1770,7 @@ def main():
                     and tot_shots_h >= 0
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
+                        "⚽️ GIOCARE OVER AL MINUTO 75\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

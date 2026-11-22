@@ -1224,7 +1224,7 @@ def main():
                     and tot_shots_a >= 0             # tiri totali casa
                      and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and max(float(x.strip()) for x in p_asian[0].split(",")) >= -0.0

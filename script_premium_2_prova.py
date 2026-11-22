@@ -464,7 +464,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and ish == "0"
-                    and minute in [32]
+                    and minute in [33]
                     and (hg, ag) in [
                         (0,0)
                     ]    

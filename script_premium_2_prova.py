@@ -423,9 +423,9 @@ def main():
                         (0,0)
                     ]    
                     and datt_h >= 0              # attacchi pericolosi casa
-                    and on_h <= 3                  # tiri in porta casa
+                    and on_h <= 2                  # tiri in porta casa
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 2.5

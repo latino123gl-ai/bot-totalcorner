@@ -1725,9 +1725,9 @@ def main():
                         (2,0)
                     ]    
                     and datt_h >= 80
-                    and on_h >= 8
-                    and off_h >= 0
-                    and tot_shots_h >= 0
+                    and on_h >= 7
+                    and off_h >= 5
+                    and tot_shots_h >= 14
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"

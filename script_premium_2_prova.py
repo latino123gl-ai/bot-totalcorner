@@ -1666,7 +1666,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r31"]                      # non ancora mandato
-                    and "Panathinaikos" in home                    
+                    and "Dragones" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1674,12 +1674,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,0)
+                        (1,2)
                     ]    
                     and datt_h >= 37
-                    and on_h >= 4
-                    and off_h >= 4
-                    and tot_shots_h >= 10
+                    and on_h >= 7
+                    and off_h >= 0
+                    and tot_shots_h >= 0
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
@@ -1706,7 +1706,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r32"]                      # non ancora mandato
-                    and "Trabzonspor" in home                    
+                    and "Dragones" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1714,12 +1714,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,0)
+                        (1,2)
                     ]    
-                    and datt_h >= 53
-                    and on_h >= 9
-                    and off_h >= 9
-                    and tot_shots_h >= 20
+                    and datt_h >= 0
+                    and on_h >= 7
+                    and off_h >= 0
+                    and tot_shots_h >= 0
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
@@ -1746,7 +1746,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r33"]                      # non ancora mandato
-                    and "Panathinaikos" in home                    
+                    and "Dragones" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1754,12 +1754,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [50]
                     and (hg, ag) in [
-                        (0,0)
+                        (1,2)
                     ]    
-                    and datt_h >= 29
-                    and on_h >= 2
+                    and datt_h >= 0
+                    and on_h >= 4
                     and off_h >= 4
-                    and tot_shots_h >= 8
+                    and tot_shots_h >= 10
                 ):
                     msg = (
                         "⚽️ GIOCARE OVER AL MINUTO 75\n\n"

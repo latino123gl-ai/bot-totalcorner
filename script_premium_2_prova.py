@@ -452,7 +452,7 @@ def main():
                     send_msg(msg)
                     state["r2"] = True
 
-                # =============== 🚨 ENTRAMBE LE SQUADRE SEGNANO XG ===============
+                # =============== 🚨 UNDER 0.5 TUTTI I RISULTATI ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 45,
                 # risultati ammessi, attacchi pericolosi >= 30,
                 # tiri in porta >= 4, tiri totali >= 0
@@ -460,37 +460,29 @@ def main():
                     not state["r19"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and xg_h is not None
-                    and xg_a is not None
-                    and float(xg_h) >= 0.80       # XG CASA
-                    and float(xg_a) >= 1.10       # XG OSPITE 
                     and -3.5 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
                     and ish == "0"
-                    and minute in [44]
-                    and (
-                        f"{hf_hg}-{hf_ag}" == "1-1" or
-                        f"{hf_hg}-{hf_ag}" == "2-3" or
-                        f"{hf_hg}-{hf_ag}" == "0-0" or
-                        f"{hf_hg}-{hf_ag}" == "0-1" or
-                        f"{hf_hg}-{hf_ag}" == "1-2" or
-                        f"{hf_hg}-{hf_ag}" == "2-2"
-                    )
-                    and datt_h >= 10
-                    and on_h >= 1
+                    and minute in [32]
+                    and (hg, ag) in [
+                        (0,0)
+                    ]    
+                    and datt_h >= 5
+                    and on_h <= 1
+                    and on_a <= 1
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 2.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.5
                 ):
 
                     msg = (
-                        "🚨 ENTRAMBE LE SQUADRE SEGNANO SECONDO TEMPO XG\n\n"
+                        "🚨 UNDER 0.5 TUTTI I RISULTATI\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

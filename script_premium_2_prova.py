@@ -468,7 +468,8 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 5
+                    and datt_h <= 15
+                    and datt_a <= 15
                     and on_h == 0
                     and on_a == 0
                     and off_h >= 0                 # tiri fuori porta casa

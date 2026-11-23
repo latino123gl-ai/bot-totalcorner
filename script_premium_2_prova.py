@@ -1503,7 +1503,7 @@ def main():
                     send_msg(msg)
                     state["r13"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 1 ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 1 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1525,7 +1525,7 @@ def main():
                     and tot_shots_h >= 0
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1543,7 +1543,7 @@ def main():
                     send_msg(msg)
                     state["r14"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 2 ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 2 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1565,7 +1565,7 @@ def main():
                     and tot_shots_h >= 13
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1583,7 +1583,7 @@ def main():
                     send_msg(msg)
                     state["r15"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 3 ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 3 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1605,7 +1605,7 @@ def main():
                     and tot_shots_h >= 15
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1623,7 +1623,7 @@ def main():
                     send_msg(msg)
                     state["r25"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 4 ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 4 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1645,7 +1645,7 @@ def main():
                     and tot_shots_h >= 10
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1663,7 +1663,7 @@ def main():
                     send_msg(msg)
                     state["r30"] = True
 
-            # =============== ⚽️ DA GIOCARE 4 TIRI AL 70° ===============
+            # =============== ⚽️ DA GIOCARE METODO TIRI IN PORTA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1678,20 +1678,20 @@ def main():
                             and (
                                 (on_h >= 9 or on_a >= 6)   # Tiri in porta
                                 or
-                                (on_h >= 8 or on_a >= 7)
+                                (on_h >= 9 or on_a >= 9)
                             )
                             and tot_shots_h >= 0           # Tiri totali casa
                         )
                         or
                         (
-                            "Royal" in home                 # 2° SQUADRA
-                            and minute in [70]              # Minuto
-                            and (hg, ag) == (0,0)           # Risultato
+                            "Wieczysta" in home                 # 2° SQUADRA
+                            and minute in [57]              # Minuto
+                            and (hg, ag) == (1,1)           # Risultato
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 3 or on_a >= 4)    # Tiri in porta
+                                (on_h >= 7 or on_a >= 7)    # Tiri in porta
                                 or
-                                (on_h >= 4 or on_a >= 4)
+                                (on_h >= 6 or on_a >= 8)
                             )  
                             and tot_shots_h >= 0            # Tiri totali casa
                         )
@@ -1704,7 +1704,7 @@ def main():
                             and (
                                 (on_h >= 3 or on_a >= 4)      # Tiri in porta
                                 or
-                                (on_h >= 4 or on_a >= 4)
+                                (on_h >= 9 or on_a >= 9)
                             )  
                             and tot_shots_h >= 0              # Tiri totali casa
                         )
@@ -1717,7 +1717,7 @@ def main():
                             and (
                                 (on_h >= 3 or on_a >= 1)       # Tiri in porta
                                 or
-                                (on_h >= 4 or on_a >= 1)
+                                (on_h >= 9 or on_a >= 9)
                             )  
                             and tot_shots_h >= 0               # Tiri totali casa
                         )
@@ -1730,7 +1730,7 @@ def main():
                             and (                     
                                 (on_h >= 3 or on_a >= 4)        # Tiri in porta
                                 or
-                                (on_h >= 4 or on_a >= 4)
+                                (on_h >= 9 or on_a >= 9)
                             )  
                             and tot_shots_h >= 0                # Tiri totali casa
                         )
@@ -1742,7 +1742,7 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE 4 TIRI AL 70°\n\n"
+                        "DA GIOCARE METODO TIRI IN PORTA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1760,7 +1760,7 @@ def main():
                     send_msg(msg)
                     state["r31"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE CASA 6 ===============
+            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 6 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1782,7 +1782,7 @@ def main():
                     and tot_shots_h >= 0
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
+                        "⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

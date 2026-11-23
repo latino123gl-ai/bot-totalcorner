@@ -1671,16 +1671,16 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Ain" in home                  # 1° SQUADRA
-                            and minute in [70]             # Minuto
+                            "Podbeskidzie" in home                  # 1° SQUADRA
+                            and minute in [58]             # Minuto
                             and (hg, ag) == (1,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 3 or on_a >= 4)   # Tiri in porta
+                                (on_h >= 9 or on_a >= 6)   # Tiri in porta
                                 or
-                                (on_h >= 4 or on_a >= 4)
+                                (on_h >= 8 or on_a >= 7)
                             )
-                            and tot_shots_h >= 8           # Tiri totali casa
+                            and tot_shots_h >= 0           # Tiri totali casa
                         )
                         or
                         (
@@ -1693,7 +1693,7 @@ def main():
                                 or
                                 (on_h >= 4 or on_a >= 4)
                             )  
-                            and tot_shots_h >= 8            # Tiri totali casa
+                            and tot_shots_h >= 0            # Tiri totali casa
                         )
                         or
                         (
@@ -1706,7 +1706,7 @@ def main():
                                 or
                                 (on_h >= 4 or on_a >= 4)
                             )  
-                            and tot_shots_h >= 8              # Tiri totali casa
+                            and tot_shots_h >= 0              # Tiri totali casa
                         )
                         or
                         (
@@ -1719,7 +1719,7 @@ def main():
                                 or
                                 (on_h >= 4 or on_a >= 1)
                             )  
-                            and tot_shots_h >= 8               # Tiri totali casa
+                            and tot_shots_h >= 0               # Tiri totali casa
                         )
                         or
                         (
@@ -1732,7 +1732,7 @@ def main():
                                 or
                                 (on_h >= 4 or on_a >= 4)
                             )  
-                            and tot_shots_h >= 8                # Tiri totali casa
+                            and tot_shots_h >= 0                # Tiri totali casa
                         )
                     )                    
                     and not is_female_match(sex, home, away)   # solo maschi

@@ -418,19 +418,19 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [86]
+                    and minute in [60]
                     and ish == "1"
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-0" or
-                        f"{hf_hg}-{hf_ag}" == "1-1"
+                        f"{hf_hg}-{hf_ag}" == "9-9"
                     )
                     and (hg, ag) in [
-                        (2,0),(1,1)
+                        (0,0)
                     ]    
                     and datt_h >= 4              # attacchi pericolosi casa
-                    and (on_h + on_a) >= 1        # tiri in porta casa e ospite
-                    and on_h >= 1 
-                    and on_a >= 1                  # tiri in porta casa
+                    and (on_h + on_a) >= 12        # tiri in porta casa e ospite
+                    and on_h >= 5 
+                    and on_a >= 4                  # tiri in porta casa
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
@@ -442,19 +442,19 @@ def main():
                 ):
                     msg = (
                         "⚽️ 12 TIRI IN PORTA AL 60°\n\n"
-                        f"Lega: {league}\n"
+                       f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap live: {handi_raw}\n\n"
                         f"Handicap iniziale: {p_asian}\n"
                         f"Gol line: {p_goal}\n"
-                        f"ESPULSIONI: {red_h} - {red_a}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"
                         f"Tiri totali casa: {tot_shots_h}\n"
                         f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
                     state["r2"] = True
@@ -471,7 +471,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and ish == "0"
-                    and minute in [33]
+                    and minute in [34]
                     and (hg, ag) in [
                         (0,0)
                     ]    
@@ -483,7 +483,7 @@ def main():
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) <= 2.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) <= 2.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
@@ -609,43 +609,48 @@ def main():
                     send_msg(msg)
                     state["r3"] = True
 
-                # =============== ⚽️ 6 TIRI CASA/OSPITE AL 44° ===============
+                # =============== ⚽️ 12 TIRI IN PORTA AL 60° ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r24"]                      # non ancora mandato
-                    and not is_female_match(sex, home, away)   # solo maschi
+                   and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
+                    and -3.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and -3.5 <= handi_val <= -0.0
-                    and minute in [44]
+                    and minute in [60]
+                    and ish == "1"
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "1-1" or
+                        f"{hf_hg}-{hf_ag}" == "9-9"
+                    )
                     and (hg, ag) in [
-                        (0,0),(1,1),(2,2)
-                    ]  
-                    and datt_h >= 22
-                    and on_h >= 6
-                    and on_a >= 6
+                        (1,1)
+                    ]    
+                    and datt_h >= 4              # attacchi pericolosi casa
+                    and (on_h + on_a) >= 12        # tiri in porta casa e ospite
+                    and on_h >= 5 
+                    and on_a >= 4                  # tiri in porta casa
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 2.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
                 ):
                     msg = (
-                        "⚽️ 6 TIRI CASA/OSPITE AL 44°\n\n"
-                        f"Lega: {league}\n"
+                        "⚽️ 12 TIRI IN PORTA AL 60°\n\n"
+                       f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
                         f"Minuto: {minute}'\n"
                         f"Handicap live: {handi_raw}\n\n"
                         f"Handicap iniziale: {p_asian}\n"
                         f"Gol line: {p_goal}\n"
-                        f"ESPULSIONI: {red_h} - {red_a}\n"
                         f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
                         f"Tiri in porta: {on_h} - {on_a}\n"
                         f"Tiri fuori: {off_h} - {off_a}\n"

@@ -1387,7 +1387,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r28"]                      # non ancora mandato
-                    and "Varea" in home                    
+                    and "Royal" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1507,7 +1507,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Gil" in home                    
+                    and "Chinland" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1515,10 +1515,10 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (2,2)
                     ]    
-                    and datt_h >= 4
-                    and on_h >= 0
+                    and datt_h >= 7
+                    and on_h >= 7
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1547,7 +1547,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Gil" in home                    
+                    and "Chinland" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1555,12 +1555,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (2,2)
                     ]    
-                    and datt_h >= 71
-                    and on_h >= 3
-                    and off_h >= 6
-                    and tot_shots_h >= 10
+                    and datt_h >= 65
+                    and on_h >= 6
+                    and off_h >= 5
+                    and tot_shots_h >= 13
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
@@ -1587,7 +1587,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r25"]                      # non ancora mandato
-                    and "Celta" in home                    
+                    and "Royal" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1595,10 +1595,10 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (2,0)
+                        (0,0)
                     ]    
-                    and datt_h >= 71
-                    and on_h >= 9
+                    and datt_h >= 0
+                    and on_h >= 5
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1627,7 +1627,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r30"]                      # non ancora mandato
-                    and "Panathinaikos" in home                    
+                    and "Royal" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1637,10 +1637,10 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 0
-                    and on_h >= 5
-                    and off_h >= 0
-                    and tot_shots_h >= 5
+                    and datt_h >= 53
+                    and on_h >= 4
+                    and off_h >= 4
+                    and tot_shots_h >= 10
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE CASA\n\n"
@@ -1669,17 +1669,17 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Megt" in home                  # 1° SQUADRA
-                            and (hg, ag) == (1,1)
+                            "Chinland" in home                  # 1° SQUADRA
+                            and (hg, ag) == (2,2)
                             and datt_h >= 0                     # Attacchi pericolosi
-                            and (on_h >= 7 or on_a >= 6)        # Tiri in Porta
+                            and (on_h >= 8 or on_a >= 6)        # Tiri in Porta
                         )
                         or
                         (
-                            "Arenal" in home                 # 2° SQUADRA
-                            and (hg, ag) == (1,1)
+                            "Royal" in home                 # 2° SQUADRA
+                            and (hg, ag) == (0,0)
                             and datt_h >= 0
-                            and (on_h >= 7 or on_a >= 5)        # Tiri in Porta      
+                            and (on_h >= 6 or on_a >= 5)        # Tiri in Porta      
                         )
                         or
                         (
@@ -1775,7 +1775,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r33"]                      # non ancora mandato
-                    and "Dragones" in home                    
+                    and "Chinland" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1783,12 +1783,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [50]
                     and (hg, ag) in [
-                        (1,2)
+                        (2,2)
                     ]    
                     and datt_h >= 0
                     and on_h >= 4
-                    and off_h >= 4
-                    and tot_shots_h >= 10
+                    and off_h >= 5
+                    and tot_shots_h >= 11
                 ):
                     msg = (
                         "⚽️ GIOCARE OVER AL MINUTO 75\n\n"

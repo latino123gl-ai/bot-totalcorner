@@ -1671,12 +1671,12 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Podbeskidzie" in home                  # 1° SQUADRA
+                            "Ajax" in home                  # 1° SQUADRA
                             and minute in [58]             # Minuto
-                            and (hg, ag) == (1,1)          # Risultato
+                            and (hg, ag) == (0,0)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 9 or on_a >= 6)   # Tiri in porta
+                                (on_h >= 4 or on_a >= 4)   # Tiri in porta
                                 or
                                 (on_h >= 9 or on_a >= 9)
                             )
@@ -1684,14 +1684,14 @@ def main():
                         )
                         or
                         (
-                            "Wieczysta" in home                 # 2° SQUADRA
-                            and minute in [57]              # Minuto
-                            and (hg, ag) == (1,1)           # Risultato
+                            "Vitesse" in home                 # 2° SQUADRA
+                            and minute in [58]              # Minuto
+                            and (hg, ag) == (0,0)           # Risultato
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 7 or on_a >= 7)    # Tiri in porta
+                                (on_h >= 4 or on_a >= 4)    # Tiri in porta
                                 or
-                                (on_h >= 6 or on_a >= 8)
+                                (on_h >= 9 or on_a >= 9)
                             )  
                             and tot_shots_h >= 0            # Tiri totali casa
                         )

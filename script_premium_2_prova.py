@@ -1671,10 +1671,14 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Sharjah" in home                  # 1° SQUADRA
+                            "Ain" in home                  # 1° SQUADRA
                             and (hg, ag) == (1,1)
                             and datt_h >= 0                     # Attacchi pericolosi
-                            and (on_h >= 11 or on_a >= 10)        # Tiri in Porta
+                            and (
+                                (on_h >= 3 or on_a >= 4)
+                                or
+                                (on_h >= 4 or on_a >= 4)
+                            )   
                         )
                         or
                         (
@@ -1710,7 +1714,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [59]
+                    and minute in [70]
                 ):
                     msg = (
                         "⚽️ DA GIOCARE 4 TIRI AL 70°\n\n"

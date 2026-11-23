@@ -1685,28 +1685,44 @@ def main():
                             "Royal" in home                 # 2° SQUADRA
                             and (hg, ag) == (0,0)
                             and datt_h >= 0
-                            and (on_h >= 6 or on_a >= 5)        # Tiri in Porta      
+                            and (
+                                (on_h >= 3 or on_a >= 4)
+                                or
+                                (on_h >= 4 or on_a >= 4)
+                            )         
                         )
                         or
                         (
                             "Maziya" in home                  # 3° SQUADRA
                             and (hg, ag) == (1,1)
                             and datt_h >= 0
-                            and (on_h >= 9 or on_a >= 7)        # Tiri in Porta
+                            and (
+                                (on_h >= 3 or on_a >= 4)
+                                or
+                                (on_h >= 4 or on_a >= 4)
+                            )   
                         )
                         or
                         (
-                            "Dragones" in home                  # 4° SQUADRA
-                            and (hg, ag) == (0,0)
+                            "Razgrad" in home                  # 4° SQUADRA
+                            and (hg, ag) == (1,0)
                             and datt_h >= 0
-                            and (on_h >= 2 or on_a >= 2)        # Tiri in Porta
+                            and (
+                                (on_h >= 3 or on_a >= 1)
+                                or
+                                (on_h >= 4 or on_a >= 1)
+                            )   
                         )
                         or
                         (
                             "Dragones" in home                  # 5° SQUADRA
                             and (hg, ag) == (0,0)
                             and datt_h >= 0
-                            and (on_h >= 2 or on_a >= 2)        # Tiri in Porta
+                            and (
+                                (on_h >= 3 or on_a >= 4)
+                                or
+                                (on_h >= 4 or on_a >= 4)
+                            )   
                         )
                     )                    
                     and not is_female_match(sex, home, away)   # solo maschi
@@ -1714,7 +1730,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [70]
+                    and minute in [72]
                 ):
                     msg = (
                         "⚽️ DA GIOCARE 4 TIRI AL 70°\n\n"

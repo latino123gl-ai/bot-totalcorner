@@ -468,7 +468,7 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h <= 15
+                    and datt_h <= 17
                     and datt_a <= 15
                     and on_h == 0
                     and on_a == 0
@@ -476,7 +476,7 @@ def main():
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 2.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) <= 2.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
@@ -577,7 +577,7 @@ def main():
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
@@ -602,7 +602,7 @@ def main():
                     send_msg(msg)
                     state["r3"] = True
 
-                # =============== ⚽️ DOPPIA ESPULSIONE OSPITE ===============
+                # =============== ⚽️ 6 TIRI CASA/OSPITE AL 44° ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -611,25 +611,26 @@ def main():
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
-                    and red_a == 2
+                    and red_a == 0
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [70]
+                    and minute in [44]
                     and (hg, ag) in [
-                        (0,0),(1,1),(2,2),(0,1),(1,2),(2,3)
+                        (0,0),(1,1),(2,2)
                     ]  
-                    and datt_h >= 30
-                    and on_h >= 5
+                    and datt_h >= 22
+                    and on_h >= 6
+                    and on_a >= 6
                     and off_h >= 0                 # tiri fuori porta casa
-                    and tot_shots_h >= 0
+                    and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
                 ):
                     msg = (
-                        "⚽️ DOPPIA ESPULSIONE OSPITE\n\n"
+                        "⚽️ 6 TIRI CASA/OSPITE AL 44°\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

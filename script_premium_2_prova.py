@@ -1684,12 +1684,12 @@ def main():
                         )
                         or
                         (
-                            "Vitesse" in home                 # 2° SQUADRA
-                            and minute in [58]              # Minuto
+                            "Joaquin" in home                 # 2° SQUADRA
+                            and minute in [59]              # Minuto
                             and (hg, ag) == (0,0)           # Risultato
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 4 or on_a >= 4)    # Tiri in porta
+                                (on_h >= 4 or on_a >= 7)    # Tiri in porta
                                 or
                                 (on_h >= 9 or on_a >= 9)
                             )  

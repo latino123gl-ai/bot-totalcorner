@@ -1671,9 +1671,9 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Ajax" in home                  # 1° SQUADRA
-                            and minute in [58]             # Minuto
-                            and (hg, ag) == (0,0)          # Risultato
+                            "Sochaux" in home                  # 1° SQUADRA
+                            and minute in [59]             # Minuto
+                            and (hg, ag) == (1,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
                                 (on_h >= 4 or on_a >= 4)   # Tiri in porta

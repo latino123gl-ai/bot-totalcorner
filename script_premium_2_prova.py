@@ -418,14 +418,14 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [85]
+                    and minute in [86]
                     and ish == "1"
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-0" or
                         f"{hf_hg}-{hf_ag}" == "1-1"
                     )
                     and (hg, ag) in [
-                        (2,1),(1,1)
+                        (2,0),(1,1)
                     ]    
                     and datt_h >= 4              # attacchi pericolosi casa
                     and (on_h + on_a) >= 1        # tiri in porta casa e ospite

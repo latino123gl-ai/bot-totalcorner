@@ -1589,7 +1589,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r25"]                      # non ancora mandato
-                    and "Istanbul" in home                    
+                    and "Cliftonville" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1599,10 +1599,10 @@ def main():
                     and (hg, ag) in [
                         (1,0)
                     ]    
-                    and datt_h >= 57
-                    and on_h >= 6
-                    and off_h >= 7
-                    and tot_shots_h >= 15
+                    and datt_h >= 54
+                    and on_h >= 8
+                    and off_h >= 0
+                    and tot_shots_h >= 0
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA\n\n"

@@ -1683,10 +1683,10 @@ def main():
                         )
                         or
                         (
-                            "Canoneros" in home                  # 3° SQUADRA
-                            and (hg, ag) == (1,1)
+                            "Rilindja" in home                  # 3° SQUADRA
+                            and (hg, ag) == (0,0)
                             and datt_h >= 0
-                            and (on_h >= 9 or on_a >= 7)        # Tiri in Porta
+                            and (on_h >= 6 or on_a >= 4)        # Tiri in Porta
                         )
                         or
                         (
@@ -1708,7 +1708,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [69]
+                    and minute in [59]
                 ):
                     msg = (
                         "⚽️ DA GIOCARE 4 TIRI AL 70°\n\n"

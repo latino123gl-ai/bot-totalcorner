@@ -1672,62 +1672,67 @@ def main():
                     and (
                         (
                             "Ain" in home                  # 1° SQUADRA
-                            and minute in [70]
-                            and (hg, ag) == (1,1)
-                            and datt_h >= 0                     # Attacchi pericolosi
+                            and minute in [70]             # Minuto
+                            and (hg, ag) == (1,1)          # Risultato
+                            and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 3 or on_a >= 4)
+                                (on_h >= 3 or on_a >= 4)   # Tiri in porta
                                 or
                                 (on_h >= 4 or on_a >= 4)
-                            )   
+                            )
+                            and tot_shots_h >= 8           # Tiri totali casa
                         )
                         or
                         (
                             "Royal" in home                 # 2° SQUADRA
-                            and minute in [70]
-                            and (hg, ag) == (0,0)
-                            and datt_h >= 0
+                            and minute in [70]              # Minuto
+                            and (hg, ag) == (0,0)           # Risultato
+                            and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 3 or on_a >= 4)
+                                (on_h >= 3 or on_a >= 4)    # Tiri in porta
                                 or
                                 (on_h >= 4 or on_a >= 4)
-                            )         
+                            )  
+                            and tot_shots_h >= 8            # Tiri totali casa
                         )
                         or
                         (
                             "Maziya" in home                  # 3° SQUADRA
-                            and minute in [70]
-                            and (hg, ag) == (1,1)
-                            and datt_h >= 0
+                            and minute in [70]                # Minuto
+                            and (hg, ag) == (1,1)             # Risultato
+                            and datt_h >= 0                   # Attacchi pericolosi
                             and (
-                                (on_h >= 3 or on_a >= 4)
+                                (on_h >= 3 or on_a >= 4)      # Tiri in porta
                                 or
                                 (on_h >= 4 or on_a >= 4)
-                            )   
+                            )  
+                            and tot_shots_h >= 8              # Tiri totali casa
                         )
                         or
                         (
                             "Razgrad" in home                  # 4° SQUADRA
-                            and minute in [75]
-                            and (hg, ag) == (1,0)
-                            and datt_h >= 0
+                            and minute in [85]                 # Minuto
+                            and (hg, ag) == (1,0)              # Risultato
+                            and datt_h >= 0                    # Attacchi pericolosi
                             and (
-                                (on_h >= 3 or on_a >= 1)
+                                (on_h >= 3 or on_a >= 1)       # Tiri in porta
                                 or
                                 (on_h >= 4 or on_a >= 1)
-                            )   
+                            )  
+                            and tot_shots_h >= 8               # Tiri totali casa
                         )
                         or
                         (
                             "Dragones" in home                  # 5° SQUADRA
-                            and minute in [70]
-                            and (hg, ag) == (0,0)
-                            and datt_h >= 0
-                            and (
-                                (on_h >= 3 or on_a >= 4)
+                            and minute in [70]                  # Minuto
+                            and (hg, ag) == (0,0)               # Risultato
+                            and datt_h >= 0                     # Attacchi pericolosi
+                            and (                     
+                                (on_h >= 3 or on_a >= 4)        # Tiri in porta
                                 or
                                 (on_h >= 4 or on_a >= 4)
-                            )   
+                            )  
+                            and tot_shots_h >= 8                # Tiri totali casa
                         )
                     )                    
                     and not is_female_match(sex, home, away)   # solo maschi

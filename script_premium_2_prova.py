@@ -1220,7 +1220,8 @@ def main():
                         (1,1),(0,0),(2,2)
                     ]    
                     and datt_h >= 0                 # attacchi pericolosi casa
-                    and on_h >= 0                    # tiri in porta casa
+                    and on_h >= 4
+                    and on_a >= 4
                     and off_h >= 0                   # tiri fuori casa
                     and tot_shots_h >= 0             # tiri totali casa
                     and isinstance(p_goal, list)

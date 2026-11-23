@@ -1734,6 +1734,15 @@ def main():
                             )  
                             and tot_shots_h >= 0                # Tiri totali casa
                         )
+                        or
+                        (
+                            "Dragones" in home                  # 6° SQUADRA
+                            and minute in [70]                  # Minuto
+                            and (hg, ag) == (0,0)               # Risultato
+                            and datt_h >= 0                     # Attacchi pericolosi
+                            and (on_h >= 8 or on_a >= 3)        # Tiri in porta 
+                            and tot_shots_h >= 0                # Tiri totali casa
+                        )
                     )                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None

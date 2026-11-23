@@ -1672,6 +1672,7 @@ def main():
                     and (
                         (
                             "Ain" in home                  # 1° SQUADRA
+                            and minute in [70]
                             and (hg, ag) == (1,1)
                             and datt_h >= 0                     # Attacchi pericolosi
                             and (
@@ -1683,6 +1684,7 @@ def main():
                         or
                         (
                             "Royal" in home                 # 2° SQUADRA
+                            and minute in [70]
                             and (hg, ag) == (0,0)
                             and datt_h >= 0
                             and (
@@ -1694,6 +1696,7 @@ def main():
                         or
                         (
                             "Maziya" in home                  # 3° SQUADRA
+                            and minute in [70]
                             and (hg, ag) == (1,1)
                             and datt_h >= 0
                             and (
@@ -1705,6 +1708,7 @@ def main():
                         or
                         (
                             "Razgrad" in home                  # 4° SQUADRA
+                            and minute in [75]
                             and (hg, ag) == (1,0)
                             and datt_h >= 0
                             and (
@@ -1716,6 +1720,7 @@ def main():
                         or
                         (
                             "Dragones" in home                  # 5° SQUADRA
+                            and minute in [70]
                             and (hg, ag) == (0,0)
                             and datt_h >= 0
                             and (
@@ -1730,7 +1735,6 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [72]
                 ):
                     msg = (
                         "⚽️ DA GIOCARE 4 TIRI AL 70°\n\n"

@@ -1710,12 +1710,12 @@ def main():
                         )
                         or
                         (
-                            "Razgrad" in home                  # 4° SQUADRA
-                            and minute in [85]                 # Minuto
-                            and (hg, ag) == (1,0)              # Risultato
+                            "Ceuta" in home                  # 4° SQUADRA
+                            and minute in [57]                 # Minuto
+                            and (hg, ag) == (2,2)              # Risultato
                             and datt_h >= 0                    # Attacchi pericolosi
                             and (
-                                (on_h >= 3 or on_a >= 1)       # Tiri in porta
+                                (on_h >= 6 or on_a >= 5)       # Tiri in porta
                                 or
                                 (on_h >= 9 or on_a >= 9)
                             )  

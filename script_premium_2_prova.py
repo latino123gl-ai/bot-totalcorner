@@ -408,22 +408,29 @@ def main():
                     send_msg(msg)
                     state["r16"] = True
 
-                # ================= ⚽️ UNDER 0,5 =================
+                # ================= ⚽️ 12 TIRI IN PORTA AL 60° =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
                 # pericolosi casa >= 10, tiri totali >= 1
                 if (
                     not state["r2"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -0.5
+                    and -3.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [33]
+                    and minute in [83]
+                    and ish == "1"
+                    and (
+                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "1-1"
+                    )
                     and (hg, ag) in [
-                        (0,0)
+                        (2,0),(1,1)
                     ]    
                     and datt_h >= 4              # attacchi pericolosi casa
-                    and on_h == 0                  # tiri in porta casa
+                    and (on_h + on_a) >= 1        # tiri in porta casa e ospite
+                    and on_h >= 1 
+                    and on_a >= 1                  # tiri in porta casa
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
@@ -431,10 +438,10 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 2.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
                 ):
                     msg = (
-                        "⚽️ UNDER 0,5\n\n"
+                        "⚽️ 12 TIRI IN PORTA AL 60°\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

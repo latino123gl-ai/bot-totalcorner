@@ -408,7 +408,7 @@ def main():
                     send_msg(msg)
                     state["r16"] = True
 
-                # ================= ⚽️ 12 TIRI IN PORTA AL 60° =================
+                # ================= ⚽️ 13 TIRI IN PORTA AL 62° =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
                 # pericolosi casa >= 10, tiri totali >= 1
                 if (
@@ -418,7 +418,7 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [60]
+                    and minute in [62]
                     and ish == "1"
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-0" or
@@ -428,9 +428,9 @@ def main():
                         (0,0)
                     ]    
                     and datt_h >= 4              # attacchi pericolosi casa
-                    and (on_h + on_a) >= 12        # tiri in porta casa e ospite
+                    and (on_h + on_a) >= 13        # tiri in porta casa e ospite
                     and on_h >= 5 
-                    and on_a >= 4                  # tiri in porta casa
+                    and on_a >= 5                  # tiri in porta casa
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
@@ -441,7 +441,7 @@ def main():
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
                 ):
                     msg = (
-                        "⚽️ 12 TIRI IN PORTA AL 60°\n\n"
+                        "⚽️ 13 TIRI IN PORTA AL 62°\n\n"
                        f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -607,7 +607,7 @@ def main():
                     send_msg(msg)
                     state["r3"] = True
 
-                # =============== ⚽️ 12 TIRI IN PORTA AL 60° ===============
+                # =============== ⚽️ 13 TIRI IN PORTA AL 62° ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -618,7 +618,7 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [60]
+                    and minute in [62]
                     and ish == "1"
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-1" or
@@ -628,9 +628,9 @@ def main():
                         (1,1)
                     ]    
                     and datt_h >= 4              # attacchi pericolosi casa
-                    and (on_h + on_a) >= 12        # tiri in porta casa e ospite
+                    and (on_h + on_a) >= 13        # tiri in porta casa e ospite
                     and on_h >= 5 
-                    and on_a >= 4                  # tiri in porta casa
+                    and on_a >= 5                  # tiri in porta casa
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
@@ -641,7 +641,7 @@ def main():
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
                 ):
                     msg = (
-                        "⚽️ 12 TIRI IN PORTA AL 60°\n\n"
+                        "⚽️ 13 TIRI IN PORTA AL 62°\n\n"
                        f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

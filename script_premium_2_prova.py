@@ -1229,9 +1229,9 @@ def main():
                     and red_a == 0
                     and -2.0 <= handi_val <= +0.5
                     and ish == "1"
-                    and minute in [54]
+                    and minute in [56]
                     and (hg, ag) in [
-                        (3,1),(2,0)
+                        (4,1),(2,0)
                     ]    
                     and datt_h >= 0                 # attacchi pericolosi casa
                     and on_h >= 2

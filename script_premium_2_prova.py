@@ -1227,9 +1227,9 @@ def main():
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
-                    and -4.0 <= handi_val <= -0.0
+                    and -4.0 <= handi_val <= +0.5
                     and ish == "0"
-                    and minute in [25]
+                    and minute in [27]
                     and (hg, ag) in [
                         (1,1),(0,0)
                     ]    

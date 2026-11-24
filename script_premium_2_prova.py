@@ -1686,18 +1686,18 @@ def main():
                     and (
                         (
                             "Northeast" in home                  # 1° SQUADRA
-                            and minute in [68]             # Minuto
-                            and (hg, ag) == (1,1)          # Risultato
+                            and minute in [79]             # Minuto
+                            and (hg, ag) == (2,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 9 or on_a >= 3)   # Tiri in porta
+                                (on_h >= 11 or on_a >= 3)   # Tiri in porta
                                 or
                                 (on_h >= 9 or on_a >= 9)
                             )
                             and (
-                                (off_h == 2 and off_a == 3)  # Tiri fuori 
+                                (off_h >= 2 or off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h == 4 and off_a == 4)  # Tiri fuori 
+                                (off_h >= 8 or off_a >= 4)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1713,9 +1713,9 @@ def main():
                                 (on_h >= 9 or on_a >= 9)
                             )
                             and (
-                                (off_h == 2 and off_a == 3)  # Tiri fuori 
+                                (off_h >= 2 or off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h == 3 and off_a == 2)  # Tiri fuori 
+                                (off_h >= 3 or off_a >= 2)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1731,9 +1731,9 @@ def main():
                                 (on_h >= 9 or on_a >= 9)
                             ) 
                             and (
-                                (off_h == 2 and off_a == 3)  # Tiri fuori 
+                                (off_h >= 2 or off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h == 3 and off_a == 2)  # Tiri fuori 
+                                (off_h >= 3 or off_a >= 2)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1749,9 +1749,9 @@ def main():
                                 (on_h >= 9 or on_a >= 9)
                             ) 
                             and (
-                                (off_h == 2 and off_a == 3)  # Tiri fuori 
+                                (off_h >= 2 or off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h == 3 and off_a == 2)  # Tiri fuori 
+                                (off_h >= 3 or off_a >= 2)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1767,9 +1767,9 @@ def main():
                                 (on_h >= 9 or on_a >= 9)
                             ) 
                             and (
-                                (off_h == 2 and off_a == 3)  # Tiri fuori 
+                                (off_h >= 2 or off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h == 3 and off_a == 2)  # Tiri fuori 
+                                (off_h >= 3 or off_a >= 2)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1781,9 +1781,9 @@ def main():
                             and datt_h >= 0                     # Attacchi pericolosi
                             and (on_h >= 8 or on_a >= 3)        # Tiri in porta 
                             and (
-                                (off_h == 2 and off_a == 3)  # Tiri fuori 
+                                (off_h >= 2 or off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h == 3 and off_a == 2)  # Tiri fuori 
+                                (off_h >= 3 or off_a >= 2)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )

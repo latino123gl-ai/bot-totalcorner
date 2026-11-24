@@ -433,7 +433,7 @@ def main():
                     and datt_h >= 4              # attacchi pericolosi casa
                     and (on_h + on_a) >= 13        # tiri in porta casa e ospite
                     and on_h >= 5 
-                    and on_a >= 5                  # tiri in porta casa
+                    and on_a >= 4                  # tiri in porta casa
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
@@ -633,7 +633,7 @@ def main():
                     and datt_h >= 4              # attacchi pericolosi casa
                     and (on_h + on_a) >= 13        # tiri in porta casa e ospite
                     and on_h >= 5 
-                    and on_a >= 5                  # tiri in porta casa
+                    and on_a >= 4                  # tiri in porta casa
                     and off_h >= 0                 # tiri fuori porta casa
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)

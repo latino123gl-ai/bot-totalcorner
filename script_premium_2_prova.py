@@ -1898,7 +1898,7 @@ def main():
                         or
                         (
                             "City" in home                  # 11° SQUADRA
-                            and minute in [73]                  # Minuto
+                            and minute in [75]                  # Minuto
                             and (hg, ag) == (1,1)               # Risultato
                             and datt_h >= 54                     # Attacchi pericolosi
                             and (                     
@@ -1907,9 +1907,9 @@ def main():
                                 (on_h >= 4 and on_a >= 2)
                             ) 
                             and (
-                                (off_h >= 6 and off_a >= 9)  # Tiri fuori 
+                                (off_h >= 1 and off_a >= 9)  # Tiri fuori 
                                 or
-                                (off_h >= 6 and off_a >= 5)  # Tiri fuori 
+                                (off_h >= 9 and off_a >= 9)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )

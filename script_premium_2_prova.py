@@ -1563,7 +1563,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Dunfermline" in home                    
+                    and "Rangers" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1571,12 +1571,12 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,0)
+                        (0,1)
                     ]    
-                    and datt_h >= 39
+                    and datt_h >= 0
                     and on_h >= 3
-                    and off_h >= 5
-                    and tot_shots_h >= 5
+                    and off_h >= 0
+                    and tot_shots_h >= 0
                 ):
                     msg = (
                         "⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA\n\n"
@@ -1757,14 +1757,14 @@ def main():
                         )
                         or
                         (
-                            "Woking" in home                  # 5° SQUADRA
+                            "Como" in home                  # 5° SQUADRA
                             and minute in [59]                  # Minuto
-                            and (hg, ag) == (1,1)               # Risultato
-                            and datt_h >= 0                     # Attacchi pericolosi
+                            and (hg, ag) == (0,0)               # Risultato
+                            and datt_h >= 54                     # Attacchi pericolosi
                             and (                     
-                                (on_h >= 7 or on_a >= 4)        # Tiri in porta
+                                (on_h >= 3 or on_a >= 3)        # Tiri in porta
                                 or
-                                (on_h >= 6 or on_a >= 5)
+                                (on_h >= 9 or on_a >= 1)
                             ) 
                             and (
                                 (off_h >= 2 or off_a >= 4)  # Tiri fuori 

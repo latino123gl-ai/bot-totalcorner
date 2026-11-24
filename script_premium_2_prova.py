@@ -1685,37 +1685,37 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Northeast" in home                  # 1° SQUADRA
-                            and minute in [79]             # Minuto
+                            "Oxford" in home                  # 1° SQUADRA
+                            and minute in [59]             # Minuto
                             and (hg, ag) == (2,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 11 or on_a >= 3)   # Tiri in porta
+                                (on_h >= 5 or on_a >= 3)   # Tiri in porta
                                 or
-                                (on_h >= 9 or on_a >= 9)
+                                (on_h >= 4 or on_a >= 4)
                             )
                             and (
-                                (off_h >= 2 or off_a >= 3)  # Tiri fuori 
+                                (off_h >= 7 or off_a >= 1)  # Tiri fuori 
                                 or
-                                (off_h >= 8 or off_a >= 4)  # Tiri fuori 
+                                (off_h >= 6 or off_a >= 2)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
                         or
                         (
-                            "Joaquin" in home                 # 2° SQUADRA
+                            "Salford" in home                 # 2° SQUADRA
                             and minute in [59]              # Minuto
                             and (hg, ag) == (0,0)           # Risultato
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 4 or on_a >= 7)    # Tiri in porta
+                                (on_h >= 6 or on_a >= 3)    # Tiri in porta
                                 or
-                                (on_h >= 9 or on_a >= 9)
+                                (on_h >= 5 or on_a >= 4)
                             )
                             and (
-                                (off_h >= 2 or off_a >= 3)  # Tiri fuori 
+                                (off_h >= 5 or off_a >= 1)  # Tiri fuori 
                                 or
-                                (off_h >= 3 or off_a >= 2)  # Tiri fuori 
+                                (off_h >= 4 or off_a >= 2)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )

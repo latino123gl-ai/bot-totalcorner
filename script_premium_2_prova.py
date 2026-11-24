@@ -1142,13 +1142,13 @@ def main():
                     and (hg, ag) in [
                         (1,0),(2,0),(3,0),(4,0),(2,1),(3,1),(3,2),(4,2),(4,3)
                     ]  
-                    and datt_h >= 38
-                    and on_h >= 2
+                    and datt_h >= 40
+                    and on_h >= 4
                     and off_h >= 0
                     and tot_shots_h >= 0
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
@@ -1187,7 +1187,7 @@ def main():
                     and (hg, ag) in [
                         (0,1),(1,2),(2,2),(1,0),(2,1)
                     ]  
-                    and datt_h >= 35
+                    and datt_h >= 99
                     and on_h >= 3
                     and off_h >= 0
                     and tot_shots_h >= 0

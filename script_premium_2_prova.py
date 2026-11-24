@@ -1227,11 +1227,11 @@ def main():
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
-                    and -4.0 <= handi_val <= +0.5
+                    and -2.0 <= handi_val <= +0.5
                     and ish == "1"
-                    and minute in [61]
+                    and minute in [54]
                     and (hg, ag) in [
-                        (1,1),(2,0)
+                        (3,1),(2,0)
                     ]    
                     and datt_h >= 0                 # attacchi pericolosi casa
                     and on_h >= 2

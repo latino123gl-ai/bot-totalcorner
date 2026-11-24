@@ -1690,14 +1690,14 @@ def main():
                             and (hg, ag) == (1,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 6 or on_a >= 5)   # Tiri in porta
+                                (on_h >= 6 and on_a >= 5)   # Tiri in porta
                                 or
-                                (on_h >= 5 or on_a >= 6)
+                                (on_h >= 5 and on_a >= 6)
                             )
                             and (
-                                (off_h >= 9 or off_a >= 3)  # Tiri fuori 
+                                (off_h >= 9 and off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h >= 8 or off_a >= 4)  # Tiri fuori 
+                                (off_h >= 8 and off_a >= 4)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1708,14 +1708,14 @@ def main():
                             and (hg, ag) == (1,1)           # Risultato
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 5 or on_a >= 6)    # Tiri in porta
+                                (on_h >= 5 and on_a >= 6)    # Tiri in porta
                                 or
-                                (on_h >= 4 or on_a >= 7)
+                                (on_h >= 4 and on_a >= 7)
                             )
                             and (
-                                (off_h >= 3 or off_a >= 3)  # Tiri fuori 
+                                (off_h >= 3 and off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h >= 2 or off_a >= 4)  # Tiri fuori 
+                                (off_h >= 2 and off_a >= 4)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1726,14 +1726,14 @@ def main():
                             and (hg, ag) == (1,1)             # Risultato
                             and datt_h >= 0                   # Attacchi pericolosi
                             and (
-                                (on_h >= 5 or on_a >= 5)      # Tiri in porta
+                                (on_h >= 5 and on_a >= 5)      # Tiri in porta
                                 or
-                                (on_h >= 4 or on_a >= 6)
+                                (on_h >= 4 and on_a >= 6)
                             ) 
                             and (
-                                (off_h >= 6 or off_a >= 3)  # Tiri fuori 
+                                (off_h >= 6 and off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h >= 5 or off_a >= 4)  # Tiri fuori 
+                                (off_h >= 5 and off_a >= 4)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1744,14 +1744,14 @@ def main():
                             and (hg, ag) == (0,0)              # Risultato
                             and datt_h >= 0                    # Attacchi pericolosi
                             and (
-                                (on_h >= 4 or on_a >= 3)       # Tiri in porta
+                                (on_h >= 4 and on_a >= 3)       # Tiri in porta
                                 or
-                                (on_h >= 3 or on_a >= 4)
+                                (on_h >= 3 and on_a >= 4)
                             ) 
                             and (
-                                (off_h >= 5 or off_a >= 2)  # Tiri fuori 
+                                (off_h >= 5 and off_a >= 2)  # Tiri fuori 
                                 or
-                                (off_h >= 4 or off_a >= 3)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 3)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1762,14 +1762,14 @@ def main():
                             and (hg, ag) == (0,0)               # Risultato
                             and datt_h >= 54                     # Attacchi pericolosi
                             and (                     
-                                (on_h >= 3 or on_a >= 3)        # Tiri in porta
+                                (on_h >= 3 and on_a >= 3)        # Tiri in porta
                                 or
-                                (on_h >= 9 or on_a >= 1)
+                                (on_h >= 9 and on_a >= 1)
                             ) 
                             and (
-                                (off_h >= 2 or off_a >= 4)  # Tiri fuori 
+                                (off_h >= 2 and off_a >= 4)  # Tiri fuori 
                                 or
-                                (off_h >= 1 or off_a >= 5)  # Tiri fuori 
+                                (off_h >= 1 and off_a >= 5)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1779,11 +1779,15 @@ def main():
                             and minute in [59]                  # Minuto
                             and (hg, ag) == (0,0)               # Risultato
                             and datt_h >= 0                     # Attacchi pericolosi
-                            and (on_h >= 7 or on_a >= 4)        # Tiri in porta 
-                            and (
-                                (off_h >= 3 or off_a >= 5)  # Tiri fuori 
+                            and (                     
+                                (on_h >= 3 and on_a >= 3)        # Tiri in porta
                                 or
-                                (off_h >= 2 or off_a >= 6)  # Tiri fuori 
+                                (on_h >= 9 and on_a >= 1)
+                            )  
+                            and (
+                                (off_h >= 3 and off_a >= 5)  # Tiri fuori 
+                                or
+                                (off_h >= 2 and off_a >= 6)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1819,23 +1823,123 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r32"]                      # non ancora mandato
-                    and "CEFAT" in home                    
+                    and (
+                        (
+                            "Scunthorpe" in home                  # 7° SQUADRA
+                            and minute in [59]             # Minuto
+                            and (hg, ag) == (1,1)          # Risultato
+                            and datt_h >= 0                # Attacchi pericolosi
+                            and (
+                                (on_h >= 6 and on_a >= 5)   # Tiri in porta
+                                or
+                                (on_h >= 5 and on_a >= 6)
+                            )
+                            and (
+                                (off_h >= 9 and off_a >= 3)  # Tiri fuori 
+                                or
+                                (off_h >= 8 and off_a >= 4)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Darlington" in home                 # 8° SQUADRA
+                            and minute in [59]              # Minuto
+                            and (hg, ag) == (1,1)           # Risultato
+                            and datt_h >= 0                 # Attacchi pericolosi
+                            and (
+                                (on_h >= 5 and on_a >= 6)    # Tiri in porta
+                                or
+                                (on_h >= 4 and on_a >= 7)
+                            )
+                            and (
+                                (off_h >= 3 and off_a >= 3)  # Tiri fuori 
+                                or
+                                (off_h >= 2 and off_a >= 4)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Dag" in home                  # 9° SQUADRA
+                            and minute in [59]                # Minuto
+                            and (hg, ag) == (1,1)             # Risultato
+                            and datt_h >= 0                   # Attacchi pericolosi
+                            and (
+                                (on_h >= 5 and on_a >= 5)      # Tiri in porta
+                                or
+                                (on_h >= 4 and on_a >= 6)
+                            ) 
+                            and (
+                                (off_h >= 6 and off_a >= 3)  # Tiri fuori 
+                                or
+                                (off_h >= 5 and off_a >= 4)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Forest" in home                    # 10° SQUADRA
+                            and minute in [59]                 # Minuto
+                            and (hg, ag) == (0,0)              # Risultato
+                            and datt_h >= 0                    # Attacchi pericolosi
+                            and (
+                                (on_h >= 4 and on_a >= 3)       # Tiri in porta
+                                or
+                                (on_h >= 3 and on_a >= 4)
+                            ) 
+                            and (
+                                (off_h >= 5 and off_a >= 2)  # Tiri fuori 
+                                or
+                                (off_h >= 4 and off_a >= 3)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "City" in home                  # 11° SQUADRA
+                            and minute in [73]                  # Minuto
+                            and (hg, ag) == (1,1)               # Risultato
+                            and datt_h >= 54                     # Attacchi pericolosi
+                            and (                     
+                                (on_h >= 4 and on_a >= 5)        # Tiri in porta
+                                or
+                                (on_h >= 4 and on_a >= 2)
+                            ) 
+                            and (
+                                (off_h >= 6 and off_a >= 9)  # Tiri fuori 
+                                or
+                                (off_h >= 6 and off_a >= 5)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Fylde" in home                  # 12° SQUADRA
+                            and minute in [59]                  # Minuto
+                            and (hg, ag) == (0,0)               # Risultato
+                            and datt_h >= 0                     # Attacchi pericolosi
+                            and (                     
+                                (on_h >= 3 and on_a >= 3)        # Tiri in porta
+                                or
+                                (on_h >= 9 and on_a >= 1)
+                            )  
+                            and (
+                                (off_h >= 3 and off_a >= 5)  # Tiri fuori 
+                                or
+                                (off_h >= 2 and off_a >= 6)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                    )                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [59]
-                    and (hg, ag) in [
-                        (1,0)
-                    ]    
-                    and datt_h >= 53
-                    and on_h >= 4
-                    and off_h >= 4
-                    and tot_shots_h >= 0
                 ):
                     msg = (
-                        "⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA\n\n"
+                        "DA GIOCARE METODO TIRI IN PORTA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1852,46 +1956,6 @@ def main():
                     )
                     send_msg(msg)
                     state["r32"] = True
-
-            # =============== ⚽️ GIOCARE OVER AL MINUTO 75 ===============
-                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
-                # risultati ammessi, pericolosi >= 0,
-                # tiri in porta >= 0, tiri totali >= 0
-                if (
-                    not state["r33"]                      # non ancora mandato
-                    and "Chinland" in home                    
-                    and not is_female_match(sex, home, away)   # solo maschi
-                    and handi_val is not None
-                    and red_h == 0
-                    and red_a == 0
-                    and -4.0 <= handi_val <= -0.0
-                    and minute in [50]
-                    and (hg, ag) in [
-                        (2,2)
-                    ]    
-                    and datt_h >= 0
-                    and on_h >= 4
-                    and off_h >= 5
-                    and tot_shots_h >= 11
-                ):
-                    msg = (
-                        "⚽️ GIOCARE OVER AL MINUTO 75\n\n"
-                        f"Lega: {league}\n"
-                        f"Partita: {home} vs {away}\n"
-                        f"Ora inizio: {start}\n\n"
-                        f"Minuto: {minute}'\n"
-                        f"Handicap live: {handi_raw}\n\n"
-                        f"Handicap iniziale: {p_asian}\n"
-                        f"Gol line: {p_goal}\n"
-                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Tiri in porta: {on_h} - {on_a}\n"
-                        f"Tiri fuori: {off_h} - {off_a}\n"
-                        f"Tiri totali casa: {tot_shots_h}\n"
-                        f"Risultato attuale: {hg} - {ag}\n"
-                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
-                    )
-                    send_msg(msg)
-                    state["r33"] = True
 
             except Exception as e:
                 print("Errore:", e)

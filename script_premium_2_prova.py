@@ -236,6 +236,9 @@ def main():
                 hf_hg = m.get("hf_hg")
                 hf_ag = m.get("hf_ag")
 
+                # TIRI IN PORTA PRIMO TEMPO
+                shot_on_ht = m.get("shot_on_h") or []
+
                 # CONFIGURAZIONE GOL LINE PRE-MATCH
                 gol_line_1 = 2.5
                 gol_line_2 = 3.0
@@ -251,7 +254,7 @@ def main():
                 print(
                     f"  {league} | {home} vs {away} | {minute}' | {hg}-{ag} "
                     f"(att={att_h}-{att_a}, dang={datt_h}-{datt_a}, "
-                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}, PRIMO TEMPO={hf_hg}-{hf_ag}, ROSSI={red_h}-{red_a}, ISH={ish}"
+                    f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}, PRIMO TEMPO={hf_hg}-{hf_ag}, ROSSI={red_h}-{red_a}, ISH={ish}, TIRI IN PORTA PT={shot_on_ht}"
                 )
 
                 # ================= ⚽ FAVORITA OSPITE X/2 =================

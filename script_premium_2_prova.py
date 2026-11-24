@@ -1228,14 +1228,15 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= +0.5
-                    and ish == "0"
-                    and minute in [58]
+                    and ish == "1"
+                    and minute in [60]
                     and (hg, ag) in [
                         (1,1),(2,0)
                     ]    
                     and datt_h >= 0                 # attacchi pericolosi casa
                     and on_h >= 2
-                    and off_h >= 2                   # tiri fuori casa
+                    and on_a >= 0
+                    and off_h >= 0                   # tiri fuori casa
                     and tot_shots_h >= 0             # tiri totali casa
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1

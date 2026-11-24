@@ -1229,13 +1229,13 @@ def main():
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
                     and ish == "0"
-                    and minute in [44]
+                    and minute in [25]
                     and (hg, ag) in [
                         (1,1),(0,0)
                     ]    
                     and datt_h >= 0                 # attacchi pericolosi casa
-                    and on_h >= 3
-                    and on_a >= 3
+                    and on_h >= 2
+                    and on_a >= 2
                     and off_h >= 0                   # tiri fuori casa
                     and tot_shots_h >= 0             # tiri totali casa
                     and isinstance(p_goal, list)
@@ -1243,7 +1243,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 2.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= +0.5
                 ):
                     msg = (
                         "⚽ PAREGGIO PRIMO TEMPO\n\n"

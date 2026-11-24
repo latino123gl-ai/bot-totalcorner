@@ -1229,7 +1229,7 @@ def main():
                     and red_a == 0
                     and -2.0 <= handi_val <= +0.5
                     and ish == "1"
-                    and minute in [58]
+                    and minute in [60]
                     and (hg, ag) in [
                         (4,2),(2,0)
                     ]    
@@ -1243,7 +1243,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 2.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and -2.0 <= min(float(x.strip()) for x in p_asian[0].split(",")) <= +0.5
+                    and -1.0 <= min(float(x.strip()) for x in p_asian[0].split(",")) <= +0.5
                 ):
                     msg = (
                         "⚽ PAREGGIO PRIMO TEMPO\n\n"

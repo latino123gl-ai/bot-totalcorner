@@ -1603,7 +1603,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r25"]                      # non ancora mandato
-                    and "City" in home                    
+                    and "Royal" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1611,11 +1611,11 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,0)
+                        (1,0)
                     ]    
-                    and datt_h >= 52
-                    and on_h >= 4
-                    and off_h >= 5
+                    and datt_h >= 59
+                    and on_h >= 7
+                    and off_h >= 7
                     and tot_shots_h >= 0
                 ):
                     msg = (
@@ -1956,6 +1956,46 @@ def main():
                     )
                     send_msg(msg)
                     state["r32"] = True
+
+                    # =============== ⚽️ DA GIOCARE  FAVORITA AL75° ===============
+                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
+                # risultati ammessi, pericolosi >= 0,
+                # tiri in porta >= 0, tiri totali >= 0
+                if (
+                    not state["r33"]                      # non ancora mandato
+                    and "City" in home                    
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and red_h == 0
+                    and red_a == 0
+                    and -4.0 <= handi_val <= -0.0
+                    and minute in [59]
+                    and (hg, ag) in [
+                        (0,0)
+                    ]    
+                    and datt_h >= 52
+                    and on_h >= 4
+                    and off_h >= 5
+                    and tot_shots_h >= 0
+                ):
+                    msg = (
+                        "⚽️ DA GIOCARE FAVORITA AL 75°\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap live: {handi_raw}\n\n"
+                        f"Handicap iniziale: {p_asian}\n"
+                        f"Gol line: {p_goal}\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r33"] = True
 
             except Exception as e:
                 print("Errore:", e)

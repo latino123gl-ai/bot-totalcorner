@@ -1231,7 +1231,7 @@ def main():
                     and ish == "0"
                     and minute in [44]
                     and (hg, ag) in [
-                        (0,0),(1,1)
+                        (0,0),(1,1),(1,0),(0,1),(1,2),(2,1)
                     ]    
                     and datt_h >= 0                 # attacchi pericolosi casa
                     and on_h >= 3

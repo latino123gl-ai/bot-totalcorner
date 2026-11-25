@@ -1817,19 +1817,19 @@ def main():
                     not state["r32"]                      # non ancora mandato
                     and (
                         (
-                            "Scunthorpe" in home                  # 7° SQUADRA
+                            "Diamond" in home                  # 7° SQUADRA
                             and minute in [60]             # Minuto
-                            and (hg, ag) == (1,1)          # Risultato
+                            and (hg, ag) == (1,0)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 6 and on_a >= 5)   # Tiri in porta
+                                (on_h >= 7 and on_a >= 4)   # Tiri in porta
                                 or
-                                (on_h >= 5 and on_a >= 6)
+                                (on_h >= 6 and on_a >= 5)
                             )
                             and (
-                                (off_h >= 9 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 6)  # Tiri fuori 
                                 or
-                                (off_h >= 8 and off_a >= 4)  # Tiri fuori 
+                                (off_h >= 3 and off_a >= 7)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )

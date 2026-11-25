@@ -1395,7 +1395,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r28"]                      # non ancora mandato
-                    and "Melbourne" in home                    
+                    and "Al-Kharitiyath" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1405,7 +1405,7 @@ def main():
                     and (hg, ag) in [
                         (1,0)
                     ]    
-                    and datt_h >= 37
+                    and datt_h >= 99
                     and on_h >= 3
                     and off_h >= 0
                     and tot_shots_h >= 1
@@ -1515,7 +1515,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Bali" in home                    
+                    and "Al-Kharitiyath" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1526,7 +1526,7 @@ def main():
                         (0,0)
                     ]    
                     and datt_h >= 6
-                    and on_h >= 4
+                    and on_h >= 6
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1555,7 +1555,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Bali" in home                    
+                    and "Al-Kharitiyath" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1565,9 +1565,9 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 54
-                    and on_h >= 3
-                    and off_h >= 3
+                    and datt_h >= 39
+                    and on_h >= 5
+                    and off_h >= 9
                     and tot_shots_h >= 0
                 ):
                     msg = (
@@ -1949,25 +1949,25 @@ def main():
                     send_msg(msg)
                     state["r32"] = True
 
-                    # =============== ⚽️ DA GIOCARE  FAVORITA AL75° ===============
+                    # =============== ⚽️ DA GIOCARE FAVORITA AL 75° ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r33"]                      # non ancora mandato
-                    and "City" in home                    
+                    and "Al-Kharitiyath" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [59]
+                    and minute in [53]
                     and (hg, ag) in [
                         (0,0)
                     ]    
                     and datt_h >= 52
                     and on_h >= 4
-                    and off_h >= 5
+                    and off_h >= 9
                     and tot_shots_h >= 0
                 ):
                     msg = (

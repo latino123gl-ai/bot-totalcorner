@@ -1843,19 +1843,19 @@ def main():
                         )
                         or
                         (
-                            "Darlington" in home                 # 8° SQUADRA
+                            "Batavia" in home                 # 8° SQUADRA
                             and minute in [59]              # Minuto
-                            and (hg, ag) == (1,1)           # Risultato
+                            and (hg, ag) == (0,0)           # Risultato
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 5 and on_a >= 6)    # Tiri in porta
+                                (on_h >= 5 and on_a >= 3)    # Tiri in porta
                                 or
-                                (on_h >= 4 and on_a >= 7)
+                                (on_h >= 4 and on_a >= 4)
                             )
                             and (
-                                (off_h >= 3 and off_a >= 3)  # Tiri fuori 
-                                or
                                 (off_h >= 2 and off_a >= 4)  # Tiri fuori 
+                                or
+                                (off_h >= 1 and off_a >= 5)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )

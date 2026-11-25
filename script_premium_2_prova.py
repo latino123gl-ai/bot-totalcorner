@@ -585,7 +585,7 @@ def main():
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
@@ -1403,7 +1403,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r28"]                      # non ancora mandato
-                    and "Royal" in home                    
+                    and "Melbourne" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1523,7 +1523,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Dunfermline" in home                    
+                    and "Melbourne" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1533,7 +1533,7 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 4
+                    and datt_h >= 6
                     and on_h >= 0
                     and off_h >= 0
                     and tot_shots_h >= 0
@@ -1563,7 +1563,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Rangers" in home                    
+                    and "Melbourne" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1571,11 +1571,11 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,1)
+                        (0,0)
                     ]    
-                    and datt_h >= 0
-                    and on_h >= 3
-                    and off_h >= 0
+                    and datt_h >= 48
+                    and on_h >= 5
+                    and off_h >= 6
                     and tot_shots_h >= 0
                 ):
                     msg = (

@@ -1515,7 +1515,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Al-Kharitiyath" in home                    
+                    and "Flora" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1526,7 +1526,7 @@ def main():
                         (0,0)
                     ]    
                     and datt_h >= 6
-                    and on_h >= 6
+                    and on_h >= 3
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1555,7 +1555,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Al-Kharitiyath" in home                    
+                    and "Flora" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1565,9 +1565,9 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 39
-                    and on_h >= 5
-                    and off_h >= 9
+                    and datt_h >= 51
+                    and on_h >= 2
+                    and off_h >= 4
                     and tot_shots_h >= 0
                 ):
                     msg = (
@@ -1871,19 +1871,19 @@ def main():
                         )
                         or
                         (
-                            "Forest" in home                    # 10° SQUADRA
+                            "APR" in home                    # 10° SQUADRA
                             and minute in [60]                 # Minuto
                             and (hg, ag) == (0,0)              # Risultato
                             and datt_h >= 0                    # Attacchi pericolosi
                             and (
-                                (on_h >= 4 and on_a >= 3)       # Tiri in porta
+                                (on_h >= 6 and on_a >= 3)       # Tiri in porta
                                 or
-                                (on_h >= 3 and on_a >= 4)
+                                (on_h >= 5 and on_a >= 4)
                             ) 
                             and (
-                                (off_h >= 5 and off_a >= 2)  # Tiri fuori 
+                                (off_h >= 9 and off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h >= 4 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 8 and off_a >= 4)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1955,7 +1955,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r33"]                      # non ancora mandato
-                    and "Al-Kharitiyath" in home                    
+                    and "Flora" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1965,9 +1965,9 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 52
-                    and on_h >= 4
-                    and off_h >= 9
+                    and datt_h >= 22
+                    and on_h >= 1
+                    and off_h >= 4
                     and tot_shots_h >= 0
                 ):
                     msg = (

@@ -1515,7 +1515,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Melbourne" in home                    
+                    and "Bali" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1526,7 +1526,7 @@ def main():
                         (0,0)
                     ]    
                     and datt_h >= 6
-                    and on_h >= 0
+                    and on_h >= 4
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1555,7 +1555,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r15"]                      # non ancora mandato
-                    and "Melbourne" in home                    
+                    and "Bali" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1565,9 +1565,9 @@ def main():
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 48
-                    and on_h >= 5
-                    and off_h >= 6
+                    and datt_h >= 54
+                    and on_h >= 3
+                    and off_h >= 3
                     and tot_shots_h >= 0
                 ):
                     msg = (
@@ -1678,7 +1678,7 @@ def main():
                     and (
                         (
                             "Renofa" in home                  # 1° SQUADRA
-                            and minute in [59]             # Minuto
+                            and minute in [60]             # Minuto
                             and (hg, ag) == (0,0)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
@@ -1696,7 +1696,7 @@ def main():
                         or
                         (
                             "Nagasaki" in home                 # 2° SQUADRA
-                            and minute in [59]              # Minuto
+                            and minute in [60]              # Minuto
                             and (hg, ag) == (1,1)           # Risultato
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
@@ -1714,7 +1714,7 @@ def main():
                         or
                         (
                             "Dag" in home                  # 3° SQUADRA
-                            and minute in [59]                # Minuto
+                            and minute in [60]                # Minuto
                             and (hg, ag) == (1,1)             # Risultato
                             and datt_h >= 0                   # Attacchi pericolosi
                             and (
@@ -1732,7 +1732,7 @@ def main():
                         or
                         (
                             "Forest" in home                    # 4° SQUADRA
-                            and minute in [59]                 # Minuto
+                            and minute in [60]                 # Minuto
                             and (hg, ag) == (0,0)              # Risultato
                             and datt_h >= 0                    # Attacchi pericolosi
                             and (
@@ -1750,7 +1750,7 @@ def main():
                         or
                         (
                             "Como" in home                  # 5° SQUADRA
-                            and minute in [59]                  # Minuto
+                            and minute in [60]                  # Minuto
                             and (hg, ag) == (0,0)               # Risultato
                             and datt_h >= 54                     # Attacchi pericolosi
                             and (                     
@@ -1767,19 +1767,19 @@ def main():
                         )
                         or
                         (
-                            "Fylde" in home                  # 6° SQUADRA
-                            and minute in [59]                  # Minuto
-                            and (hg, ag) == (0,0)               # Risultato
+                            "Adhyaksa" in home                  # 6° SQUADRA
+                            and minute in [60]                  # Minuto
+                            and (hg, ag) == (1,1)               # Risultato
                             and datt_h >= 0                     # Attacchi pericolosi
                             and (                     
-                                (on_h >= 3 and on_a >= 3)        # Tiri in porta
+                                (on_h >= 7 and on_a >= 4)        # Tiri in porta
                                 or
-                                (on_h >= 9 and on_a >= 1)
+                                (on_h >= 6 and on_a >= 5)
                             )  
                             and (
-                                (off_h >= 3 and off_a >= 5)  # Tiri fuori 
+                                (off_h >= 5 and off_a >= 6)  # Tiri fuori 
                                 or
-                                (off_h >= 2 and off_a >= 6)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 7)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1818,7 +1818,7 @@ def main():
                     and (
                         (
                             "Scunthorpe" in home                  # 7° SQUADRA
-                            and minute in [59]             # Minuto
+                            and minute in [60]             # Minuto
                             and (hg, ag) == (1,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
@@ -1836,7 +1836,7 @@ def main():
                         or
                         (
                             "Batavia" in home                 # 8° SQUADRA
-                            and minute in [59]              # Minuto
+                            and minute in [60]              # Minuto
                             and (hg, ag) == (0,0)           # Risultato
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
@@ -1854,7 +1854,7 @@ def main():
                         or
                         (
                             "Dag" in home                  # 9° SQUADRA
-                            and minute in [59]                # Minuto
+                            and minute in [60]                # Minuto
                             and (hg, ag) == (1,1)             # Risultato
                             and datt_h >= 0                   # Attacchi pericolosi
                             and (
@@ -1872,7 +1872,7 @@ def main():
                         or
                         (
                             "Forest" in home                    # 10° SQUADRA
-                            and minute in [59]                 # Minuto
+                            and minute in [60]                 # Minuto
                             and (hg, ag) == (0,0)              # Risultato
                             and datt_h >= 0                    # Attacchi pericolosi
                             and (
@@ -1890,7 +1890,7 @@ def main():
                         or
                         (
                             "City" in home                  # 11° SQUADRA
-                            and minute in [75]                  # Minuto
+                            and minute in [60]                  # Minuto
                             and (hg, ag) == (1,1)               # Risultato
                             and datt_h >= 54                     # Attacchi pericolosi
                             and (                     
@@ -1908,7 +1908,7 @@ def main():
                         or
                         (
                             "Fylde" in home                  # 12° SQUADRA
-                            and minute in [59]                  # Minuto
+                            and minute in [60]                  # Minuto
                             and (hg, ag) == (0,0)               # Risultato
                             and datt_h >= 0                     # Attacchi pericolosi
                             and (                     

@@ -1677,19 +1677,19 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Helsinki" in home                  # 1° SQUADRA
+                            "Longuera" in home                  # 1° SQUADRA
                             and minute in [60]             # Minuto
                             and (hg, ag) == (1,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 5 and on_a >= 7)   # Tiri in porta
+                                (on_h >= 5 and on_a >= 4)   # Tiri in porta
                                 or
-                                (on_h >= 4 and on_a >= 8)
+                                (on_h >= 4 and on_a >= 5)
                             )
                             and (
-                                (off_h >= 4 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 8 and off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h >= 3 and off_a >= 4)  # Tiri fuori 
+                                (off_h >= 7 and off_a >= 4)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )

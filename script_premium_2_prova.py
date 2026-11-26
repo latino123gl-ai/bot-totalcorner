@@ -146,7 +146,7 @@ def main():
                     continue
 
                 if match_id not in tracked:
-                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False, "r19": False, "r20": False, "r21": False, "r22": False, "r23": False, "r24": False, "r25": False, "r26": False, "r27": False, "r28": False, "r29": False, "r30": False, "r31": False, "r32": False, "r33": False}
+                    tracked[match_id] = {"r1": False, "r2": False, "r3": False, "r4": False, "r5": False, "r6": False, "r7": False, "r8": False, "r9": False, "r10": False, "r11": False, "r12": False, "r13": False, "r14": False, "r15": False, "r16": False, "r17": False, "r18": False, "r19": False, "r20": False, "r21": False, "r22": False, "r23": False, "r24": False, "r25": False, "r26": False, "r27": False, "r28": False, "r29": False, "r30": False, "r31": False, "r32": False, "r33": False, "r34": False}
                 state = tracked[match_id]
 
                 league = m.get("l", "?")
@@ -306,7 +306,7 @@ def main():
                 # ================= ⚽ FAST & FOURIOUS XG =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
-                    not state["r23"]                 # non ancora mandato
+                    not state["r2"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
@@ -356,12 +356,12 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r23"] = True
+                    state["r2"] = True
 
                  # ================= ⚽ FAVORITA OSPITE PERDE + XG =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
-                    not state["r16"]                 # non ancora mandato
+                    not state["r3"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
@@ -407,13 +407,13 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r16"] = True
+                    state["r3"] = True
 
                 # ================= ⚽️ 13 TIRI IN PORTA AL 62° =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
                 # pericolosi casa >= 10, tiri totali >= 1
                 if (
-                    not state["r2"]                 # non ancora mandato
+                    not state["r4"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.0
@@ -458,14 +458,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r2"] = True
+                    state["r4"] = True
 
                 # =============== 🚨 UNDER 0.5 TUTTI I RISULTATI ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 45,
                 # risultati ammessi, attacchi pericolosi >= 30,
                 # tiri in porta >= 4, tiri totali >= 0
                 if (
-                    not state["r19"]                      # non ancora mandato
+                    not state["r5"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
@@ -509,13 +509,13 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r19"] = True
+                    state["r5"] = True
 
                 # ================= ⚽️ 12 TIRI IN PORTA FAVORITA =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
                 # pericolosi casa >= 10, tiri totali >= 1
                 if (
-                    not state["r7"]                 # non ancora mandato
+                    not state["r6"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.5
@@ -560,14 +560,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r7"] = True
+                    state["r6"] = True
 
                 # =============== ⚽️ FAVORITA CASA PAREGGIA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r3"]                      # non ancora mandato
+                    not state["r7"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.5
@@ -606,14 +606,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r3"] = True
+                    state["r7"] = True
 
                 # =============== ⚽️ 13 TIRI IN PORTA AL 62° ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r24"]                      # non ancora mandato
+                    not state["r8"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.0
@@ -658,14 +658,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r24"] = True
+                    state["r8"] = True
 
                 # =============== ⚽️ FAVORITA CASA PAREGGIA AL 88° ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r17"]                      # non ancora mandato
+                    not state["r9"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.0
@@ -704,14 +704,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r17"] = True
+                    state["r9"] = True
 
                 # =============== ⚽️ FAVORITA CASA PERDE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r8"]                      # non ancora mandato
+                    not state["r10"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.5
@@ -752,14 +752,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r8"] = True
+                    state["r10"] = True
 
                 # =============== ⚽️ FAVORITA CASA PERDE + XG ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r18"]                      # non ancora mandato
+                    not state["r11"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
@@ -805,14 +805,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r18"] = True
+                    state["r11"] = True
 
                 # =============== 🚨 12 TIRI IN PORTA FAVORITA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 45,
                 # risultati ammessi, attacchi pericolosi >= 30,
                 # tiri in porta >= 4, tiri totali >= 0
                 if (
-                    not state["r20"]                      # non ancora mandato
+                    not state["r12"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.5
@@ -857,14 +857,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r20"] = True
+                    state["r12"] = True
 
                 # =============== 🚨 REGOLA XG ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 45,
                 # risultati ammessi, attacchi pericolosi >= 30,
                 # tiri in porta >= 4, tiri totali >= 0
                 if (
-                    not state["r4"]                      # non ancora mandato
+                    not state["r13"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
@@ -913,12 +913,12 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r4"] = True
+                    state["r13"] = True
 
                 # ================= ⚽ REGOLA 20° PRIMO TEMPO =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
-                    not state["r5"]                 # non ancora mandato
+                    not state["r14"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -1.5
@@ -957,12 +957,12 @@ def main():
                         f"Risultato attuale: {hg} - {ag}\n"
                     )
                     send_msg(msg)
-                    state["r5"] = True
+                    state["r14"] = True
 
                 # ================= ⚽️ REGOLA 1-1 CASA =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
-                    not state["r6"]                 # non ancora mandato
+                    not state["r15"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.0 <= handi_val <= -0.0
@@ -1001,13 +1001,13 @@ def main():
                         f"Risultato attuale: {hg} - {ag}\n"
                     )
                     send_msg(msg)
-                    state["r6"] = True
+                    state["r15"] = True
 
                 # ================= ⚽️ REGOLA XG 2 GOL =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
                 # pericolosi casa >= 10, tiri totali >= 1
                 if (
-                    not state["r9"]                 # non ancora mandato
+                    not state["r16"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
@@ -1058,13 +1058,13 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r9"] = True
+                    state["r16"] = True
 
                 # ================= ⚽️ REGOLA XG 1 GOL =================
                 # Solo MASCHILI, handi casa +3.5..+1.5, minuto 60,
                 # pericolosi casa >= 10, tiri totali >= 1
                 if (
-                    not state["r21"]                 # non ancora mandato
+                    not state["r17"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and xg_h is not None
@@ -1115,14 +1115,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r21"] = True
+                    state["r17"] = True
 
                 # =============== ⚽️ FAST & FURIOUS CASA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r10"]                      # non ancora mandato
+                    not state["r18"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -3.5 <= handi_val <= -0.5
@@ -1160,14 +1160,14 @@ def main():
                         f"Risultato attuale: {hg} - {ag}\n"
                     )
                     send_msg(msg)
-                    state["r10"] = True
+                    state["r18"] = True
 
             # =============== ⚽️ TERMINALE FAST & FORIOUS ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r11"]                      # non ancora mandato
+                    not state["r19"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and -1.0 <= handi_val <= -0.0
@@ -1205,14 +1205,14 @@ def main():
                         f"Risultato attuale: {hg} - {ag}\n"
                     )
                     send_msg(msg)
-                    state["r11"] = True
+                    state["r19"] = True
 
                         # =============== ⚽ PAREGGIO PRIMO TEMPO ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r12"]                      # non ancora mandato
+                    not state["r20"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1253,14 +1253,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r12"] = True
+                    state["r20"] = True
 
                 # =============== ⚽️ GRANDE PAREGGIO FAVORITA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r26"]                      # non ancora mandato
+                    not state["r21"]                      # non ancora mandato
                     and "Junior" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1293,7 +1293,7 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r26"] = True
+                    state["r21"] = True
 
                 # =============== ⚽️ GIOCARE IMMEDIATAMENTE XG CASA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
@@ -1346,7 +1346,7 @@ def main():
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r27"]                      # non ancora mandato
+                    not state["r23"]                      # non ancora mandato
                     and "Lech" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1385,14 +1385,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r27"] = True
+                    state["r23"] = True
 
                 # =============== 1-GIOCARE IMMEDIATAMENTE GOL ENTRO 59° ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r28"]                      # non ancora mandato
+                    not state["r24"]                      # non ancora mandato
                     and "Al-Kharitiyath" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1425,14 +1425,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r28"] = True
+                    state["r24"] = True
 
                 # =============== 2-GIOCARE IMMEDIATAMENTE GOL ENTRO 59° ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r29"]                      # non ancora mandato
+                    not state["r25"]                      # non ancora mandato
                     and "Sporting" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1465,14 +1465,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r29"] = True
+                    state["r25"] = True
 
                         # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE OSPITE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r13"]                      # non ancora mandato
+                    not state["r26"]                      # non ancora mandato
                     and "Myawady" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1505,14 +1505,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r13"] = True
+                    state["r26"] = True
 
             # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 1 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r14"]                      # non ancora mandato
+                    not state["r27"]                      # non ancora mandato
                     and "Sareeh" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1545,14 +1545,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r14"] = True
+                    state["r27"] = True
 
             # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 2 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r15"]                      # non ancora mandato
+                    not state["r28"]                      # non ancora mandato
                     and "Flora" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1585,14 +1585,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r15"] = True
+                    state["r28"] = True
 
             # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 3 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r25"]                      # non ancora mandato
+                    not state["r29"]                      # non ancora mandato
                     and "Royal" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1625,7 +1625,7 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r25"] = True
+                    state["r29"] = True
 
             # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 4 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
@@ -1675,14 +1675,14 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Fateh" in home                  # 1° SQUADRA
+                            "Sektzia" in home                  # 1° SQUADRA
                             and minute in [60]             # Minuto
-                            and (hg, ag) == (0,0)          # Risultato
+                            and (hg, ag) == (0,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 6 and on_a >= 3)   # Tiri in porta
+                                (on_h >= 5 and on_a >= 3)   # Tiri in porta
                                 or
-                                (on_h >= 5 and on_a >= 4)
+                                (on_h >= 4 and on_a >= 4)
                             )
                             and (
                                 (off_h >= 11 and off_a >= 5)  # Tiri fuori 
@@ -1693,19 +1693,19 @@ def main():
                         )
                         or
                         (
-                            "Harrogate" in home                 # 2° SQUADRA
+                            "Discoveries" in home                 # 2° SQUADRA
                             and minute in [60]              # Minuto
                             and (hg, ag) == (0,1)           # Risultato
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 5 and on_a >= 3)    # Tiri in porta
+                                (on_h >= 4 and on_a >= 4)    # Tiri in porta
                                 or
-                                (on_h >= 4 and on_a >= 4)
+                                (on_h >= 3 and on_a >= 5)
                             )
                             and (
-                                (off_h >= 7 and off_a >= 2)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 3)  # Tiri fuori 
                                 or
-                                (off_h >= 6 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 3 and off_a >= 4)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1786,7 +1786,7 @@ def main():
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
-                    and -4.0 <= handi_val <= -0.0
+                    and -4.0 <= handi_val <= +0.5
                 ):
                     msg = (
                         "DA GIOCARE METODO TIRI IN PORTA\n\n"
@@ -1807,7 +1807,7 @@ def main():
                     send_msg(msg)
                     state["r31"] = True
 
-            # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 6 ===============
+            # =============== ⚽️ DA GIOCARE METODO TIRI IN PORTA 2 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1926,7 +1926,7 @@ def main():
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
-                    and -4.0 <= handi_val <= -0.0
+                    and -4.0 <= handi_val <= +0.5
                 ):
                     msg = (
                         "DA GIOCARE METODO TIRI IN PORTA\n\n"
@@ -1947,12 +1947,164 @@ def main():
                     send_msg(msg)
                     state["r32"] = True
 
-                    # =============== ⚽️ DA GIOCARE FAVORITA AL 75° ===============
+                # =============== ⚽️ DA GIOCARE PROVA TIRI IN PORTA ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r33"]                      # non ancora mandato
+                    and (
+                        (
+                            "Sektzia" in home                  # 1° SQUADRA
+                            and minute in [60]             # Minuto
+                            and (hg, ag) in [              # Risultato
+                                (0,0),(1,1)
+                            ]    
+                            and datt_h >= 0                # Attacchi pericolosi
+                            and (
+                                (on_h >= 4 and on_a >= 8)   # Tiri in porta
+                                or
+                                (on_h >= 22 and on_a >= 22)
+                            )
+                            and (
+                                (off_h >= 5 and off_a >= 4)  # Tiri fuori 
+                                or
+                                (off_h >= 22 and off_a >= 22)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Discoveries" in home                 # 2° SQUADRA
+                            and minute in [60]              # Minuto
+                            and (hg, ag) in [               # Risultato
+                                (0,0),(1,1)
+                            ]              
+                            and datt_h >= 0                 # Attacchi pericolosi
+                            and (
+                                (on_h >= 4 and on_a >= 5)    # Tiri in porta
+                                or
+                                (on_h >= 22 and on_a >= 22)
+                            )
+                            and (
+                                (off_h >= 4 and off_a >= 4)  # Tiri fuori 
+                                or
+                                (off_h >= 22 and off_a >= 22)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Dag" in home                  # 3° SQUADRA
+                            and minute in [60]                # Minuto
+                            and (hg, ag) in [              # Risultato
+                                (0,0),(1,0)
+                            ]    
+                            and datt_h >= 0                   # Attacchi pericolosi
+                            and (
+                                (on_h >= 5 and on_a >= 5)      # Tiri in porta
+                                or
+                                (on_h >= 22 and on_a >= 22)
+                            ) 
+                            and (
+                                (off_h >= 6 and off_a >= 3)  # Tiri fuori 
+                                or
+                                (off_h >= 22 and off_a >= 22)  # Tiri fuori                             
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "APR" in home                    # 4° SQUADRA
+                            and minute in [60]                 # Minuto
+                            and (hg, ag) in [              # Risultato
+                                (0,0),(1,0)
+                            ]    
+                            and datt_h >= 0                    # Attacchi pericolosi
+                            and (
+                                (on_h >= 6 and on_a >= 3)       # Tiri in porta
+                                or
+                                (on_h >= 22 and on_a >= 22)
+                            ) 
+                            and (
+                                (off_h >= 5 and off_a >= 3)  # Tiri fuori 
+                                or
+                                (off_h >= 22 and off_a >= 22)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Kairat" in home                  # 5° SQUADRA
+                            and minute in [72]              # Minuto
+                            and (hg, ag) in [               # Risultato
+                                (0,0),(1,0)
+                            ]    
+                            and datt_h >= 0                     # Attacchi pericolosi
+                            and (                     
+                                (on_h >= 4 and on_a >= 3)        # Tiri in porta
+                                or
+                                (on_h >= 22 and on_a >= 22)
+                            ) 
+                            and (
+                                (off_h >= 1 and off_a >= 4)    # Tiri fuori 
+                                or
+                                (off_h >= 22 and off_a >= 22)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0               # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Taipei" in home                  # 6° SQUADRA
+                            and minute in [60]                  # Minuto
+                            and (hg, ag) in [                   # Risultato
+                                (0,0),(1,0)
+                            ]    
+                            and datt_h >= 0                     # Attacchi pericolosi
+                            and (                     
+                                (on_h >= 3 and on_a >= 0)       # Tiri in porta
+                                or
+                                (on_h >= 9 and on_a >= 1)
+                            )  
+                            and (
+                                (off_h >= 3 and off_a >= 5)  # Tiri fuori 
+                                or
+                                (off_h >= 2 and off_a >= 4)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                    )                    
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and red_h == 0
+                    and red_a == 0
+                    and -4.0 <= handi_val <= +0.5
+                ):
+                    msg = (
+                        "DA GIOCARE PROVA TIRI IN PORTA\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap live: {handi_raw}\n\n"
+                        f"Handicap iniziale: {p_asian}\n"
+                        f"Gol line: {p_goal}\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r33"] = True
+
+                    # =============== ⚽️ DA GIOCARE FAVORITA AL 75° ===============
+                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
+                # risultati ammessi, pericolosi >= 0,
+                # tiri in porta >= 0, tiri totali >= 0
+                if (
+                    not state["r34"]                      # non ancora mandato
                     and "Flora" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1985,7 +2137,7 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r33"] = True
+                    state["r34"] = True
 
             except Exception as e:
                 print("Errore:", e)

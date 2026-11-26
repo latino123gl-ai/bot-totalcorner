@@ -472,7 +472,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and ish == "0"
-                    and minute in [34]
+                    and minute in [33]
                     and (hg, ag) in [
                         (0,0)
                     ]    
@@ -1482,7 +1482,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and +0.0 <= handi_val <= +3.0
-                    and minute in [60]
+                    and minute in [59]
                     and (hg, ag) in [
                         (1,1)
                     ]    
@@ -1522,7 +1522,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [60]
+                    and minute in [59]
                     and (hg, ag) in [
                         (0,0)
                     ]    
@@ -1562,7 +1562,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [60]
+                    and minute in [59]
                     and (hg, ag) in [
                         (0,0)
                     ]    
@@ -1602,7 +1602,7 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [60]
+                    and minute in [59]
                     and (hg, ag) in [
                         (0,1)
                     ]    

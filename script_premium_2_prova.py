@@ -257,7 +257,7 @@ def main():
                     f"ON={on_h}-{on_a}, OFF={off_h}-{off_a}, HANDI={handi_raw}, xG={xg_h}-{xg_a}, P_GOAL={p_goal}, P_ASIAN={p_asian}, PRIMO TEMPO={hf_hg}-{hf_ag}, ROSSI={red_h}-{red_a}, ISH={ish}, TIRI IN PORTA PT={shot_on_ht}"
                 )
 
-                # ================= ⚽ FAVORITA OSPITE X/2 =================
+                # ================= ⚽ FAVORITA OSPITE PAREGGIA =================
                 # (come l’abbiamo testata prima, solo la favorita casa con handi -6..-1.0)
                 if (
                     not state["r1"]                 # non ancora mandato
@@ -269,10 +269,8 @@ def main():
                     and ish == "0"
                     and minute in [44]
                     and (
-                        f"{hf_hg}-{hf_ag}" == "1-0" or
-                        f"{hf_hg}-{hf_ag}" == "1-1" or
-                        f"{hf_hg}-{hf_ag}" == "2-2" or
-                        f"{hf_hg}-{hf_ag}" == "2-1"
+                        f"{hf_hg}-{hf_ag}" == "0-0" or
+                        f"{hf_hg}-{hf_ag}" == "1-1"
                     )
                     and datt_a >= 35                 # attacchi pericolosi casa
                     and on_a >= 3                    # tiri in porta casa
@@ -286,7 +284,7 @@ def main():
                     and max(float(x.strip()) for x in p_asian[0].split(",")) >= +2.0
                 ):
                     msg = (
-                        "⚽ FAVORITA OSPITE X/2\n\n"
+                        "⚽ FAVORITA OSPITE PAREGGIA\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1475,7 +1473,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r13"]                      # non ancora mandato
-                    and "Giang" in home                    
+                    and "Myawady" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1483,9 +1481,9 @@ def main():
                     and +0.0 <= handi_val <= +3.0
                     and minute in [60]
                     and (hg, ag) in [
-                        (1,0)
+                        (1,1)
                     ]    
-                    and datt_a >= 83
+                    and datt_a >= 50
                     and on_a >= 8
                     and off_a >= 0
                     and tot_shots_a >= 0

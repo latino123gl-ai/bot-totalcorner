@@ -1515,19 +1515,19 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r14"]                      # non ancora mandato
-                    and "Flora" in home                    
+                    and "Gresik" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
                     and -3.5 <= handi_val <= -0.0
-                    and minute in [59]
+                    and minute in [60]
                     and (hg, ag) in [
-                        (0,0)
+                        (0,1)
                     ]    
-                    and datt_h >= 6
-                    and on_h >= 3
-                    and off_h >= 0
+                    and datt_h >= 45
+                    and on_h >= 9
+                    and off_h >= 6
                     and tot_shots_h >= 0
                 ):
                     msg = (
@@ -1669,7 +1669,7 @@ def main():
                     send_msg(msg)
                     state["r30"] = True
 
-            # =============== ⚽️ DA GIOCARE METODO TIRI IN PORTA ===============
+            # =============== ⚽️ DA GIOCARE METODO TIRI IN PORTA 1 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -1677,19 +1677,19 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Willand" in home                  # 1° SQUADRA
+                            "Donggala" in home                  # 1° SQUADRA
                             and minute in [60]             # Minuto
                             and (hg, ag) == (1,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 6 and on_a >= 5)   # Tiri in porta
+                                (on_h >= 5 and on_a >= 4)   # Tiri in porta
                                 or
-                                (on_h >= 5 and on_a >= 6)
+                                (on_h >= 4 and on_a >= 5)
                             )
                             and (
-                                (off_h >= 6 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 5 and off_a >= 6)  # Tiri fuori 
                                 or
-                                (off_h >= 5 and off_a >= 4)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 7)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )

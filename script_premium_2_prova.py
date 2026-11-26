@@ -460,7 +460,7 @@ def main():
                     send_msg(msg)
                     state["r4"] = True
 
-                # =============== 🚨 UNDER 0.5 TUTTI I RISULTATI ===============
+                # =============== 🚨 UNDER 0.5 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 45,
                 # risultati ammessi, attacchi pericolosi >= 30,
                 # tiri in porta >= 4, tiri totali >= 0
@@ -491,7 +491,7 @@ def main():
                 ):
 
                     msg = (
-                        "🚨 UNDER 0.5 TUTTI I RISULTATI\n\n"
+                        "🚨 UNDER 0.5\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1516,7 +1516,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r27"]                      # non ancora mandato
-                    and "Salisburgo" in home                    
+                    and "Lyon" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1556,19 +1556,19 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r28"]                      # non ancora mandato
-                    and "Salisburgo" in home                    
+                    and "Lyon" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [59]
+                    and minute in [60]
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h >= 35
+                    and datt_h >= 60
                     and on_h >= 6
-                    and off_h >= 9
+                    and off_h >= 6
                     and tot_shots_h >= 0
                 ):
                     msg = (
@@ -1596,19 +1596,19 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r29"]                      # non ancora mandato
-                    and "Royal" in home                    
+                    and "Hoffenheim" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
                     and red_a == 0
                     and -4.0 <= handi_val <= -0.0
-                    and minute in [59]
+                    and minute in [60]
                     and (hg, ag) in [
-                        (1,0)
+                        (0,1)
                     ]    
-                    and datt_h >= 59
-                    and on_h >= 7
-                    and off_h >= 7
+                    and datt_h >= 36
+                    and on_h >= 4
+                    and off_h >= 0
                     and tot_shots_h >= 0
                 ):
                     msg = (
@@ -1678,19 +1678,19 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Salisb" in home                  # 1° SQUADRA
+                            "Torreense" in home                  # 1° SQUADRA
                             and minute in [60]             # Minuto
-                            and (hg, ag) == (0,0)          # Risultato
+                            and (hg, ag) == (1,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 6 and on_a >= 3)   # Tiri in porta
+                                (on_h >= 6 and on_a >= 6)   # Tiri in porta
                                 or
-                                (on_h >= 5 and on_a >= 4)
+                                (on_h >= 5 and on_a >= 7)
                             )
                             and (
-                                (off_h >= 5 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 5 and off_a >= 5)  # Tiri fuori 
                                 or
-                                (off_h >= 4 and off_a >= 4)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 6)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1714,19 +1714,19 @@ def main():
                         )
                         or
                         (
-                            "Burnley" in home                  # 3° SQUADRA
+                            "Freiburg" in home                  # 3° SQUADRA
                             and minute in [60]                # Minuto
-                            and (hg, ag) == (0,1)             # Risultato
+                            and (hg, ag) == (1,0)             # Risultato
                             and datt_h >= 0                   # Attacchi pericolosi
                             and (
-                                (on_h >= 5 and on_a >= 5)      # Tiri in porta
+                                (on_h >= 4 and on_a >= 5)      # Tiri in porta
                                 or
-                                (on_h >= 4 and on_a >= 6)
+                                (on_h >= 3 and on_a >= 6)
                             ) 
                             and (
-                                (off_h >= 8 and off_a >= 10)  # Tiri fuori 
+                                (off_h >= 5 and off_a >= 5)  # Tiri fuori 
                                 or
-                                (off_h >= 7 and off_a >= 11)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 6)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1958,19 +1958,19 @@ def main():
                     not state["r33"]                      # non ancora mandato
                     and (
                         (
-                            "Mesaimeer" in home                  # 1° SQUADRA
+                            "Torreense" in home                  # 1° SQUADRA
                             and minute in [60]             # Minuto
                             and (hg, ag) in [              # Risultato
-                                (1,0),(0,1)
+                                (1,2),(2,1)
                             ]    
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 6 and on_a >= 4)   # Tiri in porta
+                                (on_h >= 6 and on_a >= 7)   # Tiri in porta
                                 or
                                 (on_h >= 22 and on_a >= 22)
                             )
                             and (
-                                (off_h >= 5 and off_a >= 4)  # Tiri fuori 
+                                (off_h >= 5 and off_a >= 6)  # Tiri fuori 
                                 or
                                 (off_h >= 22 and off_a >= 22)  # Tiri fuori 
                             )
@@ -1978,19 +1978,19 @@ def main():
                         )
                         or
                         (
-                            "Discoveries" in home                 # 2° SQUADRA
+                            "Freiburg" in home                 # 2° SQUADRA
                             and minute in [60]              # Minuto
                             and (hg, ag) in [               # Risultato
                                 (0,0),(1,1)
                             ]              
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 4 and on_a >= 5)    # Tiri in porta
+                                (on_h >= 4 and on_a >= 6)    # Tiri in porta
                                 or
                                 (on_h >= 22 and on_a >= 22)
                             )
                             and (
-                                (off_h >= 4 and off_a >= 4)  # Tiri fuori 
+                                (off_h >= 5 and off_a >= 6)  # Tiri fuori 
                                 or
                                 (off_h >= 22 and off_a >= 22)  # Tiri fuori 
                             )
@@ -2108,7 +2108,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r34"]                      # non ancora mandato
-                    and "Salisburgo" in home                    
+                    and "Lyon" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -2119,8 +2119,8 @@ def main():
                         (0,0)
                     ]    
                     and datt_h >= 30
-                    and on_h >= 5
-                    and off_h >= 9
+                    and on_h >= 6
+                    and off_h >= 6
                     and tot_shots_h >= 0
                 ):
                     msg = (

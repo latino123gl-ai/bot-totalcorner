@@ -416,7 +416,7 @@ def main():
                     not state["r4"]                 # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -0.0
+                    and -3.0 <= handi_val <= +0.5
                     and red_h == 0
                     and red_a == 0
                     and minute in [62]
@@ -436,10 +436,10 @@ def main():
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 2.5
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
+                    and -4.0 <= min(float(x.strip()) for x in p_asian[0].split(",")) <= +0.5
                 ):
                     msg = (
                         "⚽️ 13 TIRI IN PORTA AL 62°\n\n"
@@ -616,7 +616,7 @@ def main():
                     not state["r8"]                      # non ancora mandato
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
-                    and -3.0 <= handi_val <= -0.0
+                    and -3.0 <= handi_val <= +0.5
                     and red_h == 0
                     and red_a == 0
                     and minute in [62]
@@ -636,10 +636,10 @@ def main():
                     and tot_shots_h >= 1
                     and isinstance(p_goal, list)
                     and len(p_goal) == 1
-                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 2.5
+                    and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.0
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -0.0
+                    and -4.0 <= min(float(x.strip()) for x in p_asian[0].split(",")) <= +0.5
                 ):
                     msg = (
                         "⚽️ 13 TIRI IN PORTA AL 62°\n\n"

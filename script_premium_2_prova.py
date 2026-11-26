@@ -1224,7 +1224,7 @@ def main():
                         (0,0),(1,1),(1,0),(0,1),(1,2),(2,1)
                     ]    
                     and datt_h >= 0                 # attacchi pericolosi casa
-                    and on_h >= 3
+                    and on_h >= 2
                     and on_a >= 2
                     and off_h >= 0                   # tiri fuori casa
                     and tot_shots_h >= 0             # tiri totali casa

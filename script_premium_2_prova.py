@@ -575,7 +575,7 @@ def main():
                     and red_a == 0
                     and minute in [44]
                     and (hg, ag) in [
-                        (0,0),(1,1),(2,2)
+                        (0,0),(1,1)
                     ]  
                     and datt_h >= 10
                     and on_h >= 0

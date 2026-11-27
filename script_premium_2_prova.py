@@ -1678,19 +1678,19 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Uthai" in home                  # 1° SQUADRA
+                            "Bnei" in home                  # 1° SQUADRA
                             and minute in [60]             # Minuto
                             and (hg, ag) == (1,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 9 and on_a >= 4)   # Tiri in porta
+                                (on_h >= 6 and on_a >= 5)   # Tiri in porta
                                 or
-                                (on_h >= 8 and on_a >= 5)
+                                (on_h >= 5 and on_a >= 6)
                             )
                             and (
-                                (off_h >= 3 and off_a >= 5)  # Tiri fuori 
+                                (off_h >= 10 and off_a >= 2)  # Tiri fuori 
                                 or
-                                (off_h >= 2 and off_a >= 6)  # Tiri fuori 
+                                (off_h >= 9 and off_a >= 3)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1958,19 +1958,19 @@ def main():
                     not state["r33"]                      # non ancora mandato
                     and (
                         (
-                            "Uthai" in home                  # 1° SQUADRA
+                            "Bnei" in home                  # 1° SQUADRA
                             and minute in [60]             # Minuto
                             and (hg, ag) in [              # Risultato
                                 (1,2),(2,1)
                             ]    
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 9 and on_a >= 5)   # Tiri in porta
+                                (on_h >= 6 and on_a >= 6)   # Tiri in porta
                                 or
                                 (on_h >= 22 and on_a >= 22)
                             )
                             and (
-                                (off_h >= 3 and off_a >= 6)  # Tiri fuori 
+                                (off_h >= 10 and off_a >= 3)  # Tiri fuori 
                                 or
                                 (off_h >= 22 and off_a >= 22)  # Tiri fuori 
                             )

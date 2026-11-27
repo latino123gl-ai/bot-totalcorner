@@ -1430,46 +1430,6 @@ def main():
                     send_msg(msg)
                     state["r24"] = True
 
-                # =============== 2-GIOCARE IMMEDIATAMENTE GOL ENTRO 59° ===============
-                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
-                # risultati ammessi, pericolosi >= 0,
-                # tiri in porta >= 0, tiri totali >= 0
-                if (
-                    not state["r25"]                      # non ancora mandato
-                    and "Sporting" in home                    
-                    and not is_female_match(sex, home, away)   # solo maschi
-                    and handi_val is not None
-                    and red_h == 0
-                    and red_a == 0
-                    and -4.0 <= handi_val <= -0.0
-                    and minute in [59]
-                    and (hg, ag) in [
-                        (1,0)
-                    ]    
-                    and datt_h >= 67
-                    and on_h >= 4
-                    and off_h >= 0
-                    and tot_shots_h >= 0
-                ):
-                    msg = (
-                        "⚽️ GIOCARE IMMEDIATAMENTE GOL ENTRO 59°\n\n"
-                        f"Lega: {league}\n"
-                        f"Partita: {home} vs {away}\n"
-                        f"Ora inizio: {start}\n\n"
-                        f"Minuto: {minute}'\n"
-                        f"Handicap live: {handi_raw}\n\n"
-                        f"Handicap iniziale: {p_asian}\n"
-                        f"Gol line: {p_goal}\n"
-                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
-                        f"Tiri in porta: {on_h} - {on_a}\n"
-                        f"Tiri fuori: {off_h} - {off_a}\n"
-                        f"Tiri totali casa: {tot_shots_h}\n"
-                        f"Risultato attuale: {hg} - {ag}\n"
-                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
-                    )
-                    send_msg(msg)
-                    state["r25"] = True
-
                         # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE OSPITE ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
@@ -1818,19 +1778,19 @@ def main():
                     not state["r32"]                      # non ancora mandato
                     and (
                         (
-                            "Diamond" in home                  # 7° SQUADRA
+                            "Southampton" in home                  # 7° SQUADRA
                             and minute in [60]             # Minuto
-                            and (hg, ag) == (1,0)          # Risultato
+                            and (hg, ag) == (0,0)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 7 and on_a >= 4)   # Tiri in porta
+                                (on_h >= 5 and on_a >= 4)   # Tiri in porta
                                 or
-                                (on_h >= 6 and on_a >= 5)
+                                (on_h >= 4 and on_a >= 5)
                             )
                             and (
-                                (off_h >= 4 and off_a >= 6)  # Tiri fuori 
+                                (off_h >= 7 and off_a >= 9)  # Tiri fuori 
                                 or
-                                (off_h >= 3 and off_a >= 7)  # Tiri fuori 
+                                (off_h >= 6 and off_a >= 10)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1950,7 +1910,7 @@ def main():
                     send_msg(msg)
                     state["r32"] = True
 
-                # =============== ⚽️ DA GIOCARE PROVA TIRI IN PORTA ===============
+                # =============== ⚽️ DA GIOCARE PROVA TIRI IN PORTA 1 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
@@ -2101,6 +2061,158 @@ def main():
                     )
                     send_msg(msg)
                     state["r33"] = True
+
+                # =============== ⚽️ DA GIOCARE PROVA TIRI IN PORTA 2 ===============
+                # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
+                # risultati ammessi, pericolosi >= 0,
+                # tiri in porta >= 0, tiri totali >= 0
+                if (
+                    not state["r25"]                      # non ancora mandato
+                    and (
+                        (
+                            "Southampton" in home                  # 7° SQUADRA
+                            and minute in [60]             # Minuto
+                            and (hg, ag) in [              # Risultato
+                                (0,1),(1,0)
+                            ]    
+                            and datt_h >= 0                # Attacchi pericolosi
+                            and (
+                                (on_h >= 5 and on_a >= 5)   # Tiri in porta
+                                or
+                                (on_h >= 22 and on_a >= 22)
+                            )
+                            and (
+                                (off_h >= 7 and off_a >= 10)  # Tiri fuori 
+                                or
+                                (off_h >= 22 and off_a >= 22)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Werder" in home                 # 8° SQUADRA
+                            and minute in [60]              # Minuto
+                            and (hg, ag) in [               # Risultato
+                                (1,2),(2,1)
+                            ]              
+                            and datt_h >= 0                 # Attacchi pericolosi
+                            and (
+                                (on_h >= 4 and on_a >= 5)    # Tiri in porta
+                                or
+                                (on_h >= 22 and on_a >= 22)
+                            )
+                            and (
+                                (off_h >= 5 and off_a >= 10)  # Tiri fuori 
+                                or
+                                (off_h >= 22 and off_a >= 22)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Carmarthen" in home                  # 9° SQUADRA
+                            and minute in [60]                # Minuto
+                            and (hg, ag) in [              # Risultato
+                                (2,2),(1,0)
+                            ]    
+                            and datt_h >= 0                   # Attacchi pericolosi
+                            and (
+                                (on_h >= 6 and on_a >= 6)      # Tiri in porta
+                                or
+                                (on_h >= 22 and on_a >= 22)
+                            ) 
+                            and (
+                                (off_h >= 5 and off_a >= 4)  # Tiri fuori 
+                                or
+                                (off_h >= 22 and off_a >= 22)  # Tiri fuori                             
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Bangor" in home                    # 10° SQUADRA
+                            and minute in [60]                 # Minuto
+                            and (hg, ag) in [              # Risultato
+                                (0,0),(2,2)
+                            ]    
+                            and datt_h >= 0                    # Attacchi pericolosi
+                            and (
+                                (on_h >= 6 and on_a >= 4)       # Tiri in porta
+                                or
+                                (on_h >= 22 and on_a >= 22)
+                            ) 
+                            and (
+                                (off_h >= 6 and off_a >= 4)  # Tiri fuori 
+                                or
+                                (off_h >= 22 and off_a >= 22)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Newport" in home                  # 11° SQUADRA
+                            and minute in [72]              # Minuto
+                            and (hg, ag) in [               # Risultato
+                                (2,1),(1,2)
+                            ]    
+                            and datt_h >= 0                     # Attacchi pericolosi
+                            and (                     
+                                (on_h >= 5 and on_a >= 9)        # Tiri in porta
+                                or
+                                (on_h >= 22 and on_a >= 22)
+                            ) 
+                            and (
+                                (off_h >= 4 and off_a >= 3)    # Tiri fuori 
+                                or
+                                (off_h >= 22 and off_a >= 22)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0               # Tiri totali casa
+                        )
+                        or
+                        (
+                            "Denbigh" in home                  # 12° SQUADRA
+                            and minute in [60]                  # Minuto
+                            and (hg, ag) in [                   # Risultato
+                                (0,1),(1,0)
+                            ]    
+                            and datt_h >= 0                     # Attacchi pericolosi
+                            and (                     
+                                (on_h >= 5 and on_a >= 4)       # Tiri in porta
+                                or
+                                (on_h >= 22 and on_a >= 22)
+                            )  
+                            and (
+                                (off_h >= 10 and off_a >= 3)  # Tiri fuori 
+                                or
+                                (off_h >= 22 and off_a >= 22)  # Tiri fuori 
+                            )
+                            and tot_shots_h >= 0             # Tiri totali casa
+                        )
+                    )                    
+                    and not is_female_match(sex, home, away)   # solo maschi
+                    and handi_val is not None
+                    and red_h == 0
+                    and red_a == 0
+                    and -4.0 <= handi_val <= +0.5
+                ):
+                    msg = (
+                        "DA GIOCARE PROVA TIRI IN PORTA\n\n"
+                        f"Lega: {league}\n"
+                        f"Partita: {home} vs {away}\n"
+                        f"Ora inizio: {start}\n\n"
+                        f"Minuto: {minute}'\n"
+                        f"Handicap live: {handi_raw}\n\n"
+                        f"Handicap iniziale: {p_asian}\n"
+                        f"Gol line: {p_goal}\n"
+                        f"Attacchi pericolosi: {datt_h} - {datt_a}\n"
+                        f"Tiri in porta: {on_h} - {on_a}\n"
+                        f"Tiri fuori: {off_h} - {off_a}\n"
+                        f"Tiri totali casa: {tot_shots_h}\n"
+                        f"Risultato attuale: {hg} - {ag}\n"
+                        f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
+                    )
+                    send_msg(msg)
+                    state["r25"] = True
 
                     # =============== ⚽️ DA GIOCARE FAVORITA AL 75° ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,

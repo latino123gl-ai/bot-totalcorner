@@ -1714,19 +1714,19 @@ def main():
                         )
                         or
                         (
-                            "Freiburg" in home                  # 3° SQUADRA
+                            "Kfar" in home                  # 3° SQUADRA
                             and minute in [60]                # Minuto
-                            and (hg, ag) == (1,0)             # Risultato
+                            and (hg, ag) == (0,0)             # Risultato
                             and datt_h >= 0                   # Attacchi pericolosi
                             and (
-                                (on_h >= 4 and on_a >= 5)      # Tiri in porta
+                                (on_h >= 5 and on_a >= 4)      # Tiri in porta
                                 or
-                                (on_h >= 3 and on_a >= 6)
+                                (on_h >= 4 and on_a >= 5)
                             ) 
                             and (
-                                (off_h >= 5 and off_a >= 5)  # Tiri fuori 
+                                (off_h >= 9 and off_a >= 5)  # Tiri fuori 
                                 or
-                                (off_h >= 4 and off_a >= 6)  # Tiri fuori 
+                                (off_h >= 8 and off_a >= 6)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1998,10 +1998,10 @@ def main():
                         )
                         or
                         (
-                            "Dag" in home                  # 3° SQUADRA
+                            "Kfar" in home                  # 3° SQUADRA
                             and minute in [60]                # Minuto
                             and (hg, ag) in [              # Risultato
-                                (0,0),(1,0)
+                                (0,1),(1,0)
                             ]    
                             and datt_h >= 0                   # Attacchi pericolosi
                             and (
@@ -2010,7 +2010,7 @@ def main():
                                 (on_h >= 22 and on_a >= 22)
                             ) 
                             and (
-                                (off_h >= 6 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 9 and off_a >= 6)  # Tiri fuori 
                                 or
                                 (off_h >= 22 and off_a >= 22)  # Tiri fuori                             
                             )

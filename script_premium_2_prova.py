@@ -472,12 +472,12 @@ def main():
                     and red_h == 0
                     and red_a == 0
                     and ish == "0"
-                    and minute in [33]
+                    and minute in [30]
                     and (hg, ag) in [
                         (0,0)
                     ]    
-                    and datt_h <= 17
-                    and datt_a <= 15
+                    and datt_h <= 10
+                    and datt_a <= 10
                     and on_h == 0
                     and on_a == 0
                     and off_h >= 0                 # tiri fuori porta casa
@@ -521,7 +521,7 @@ def main():
                     and -3.0 <= handi_val <= -0.5
                     and red_h == 0
                     and red_a == 0
-                    and minute in [53, 60, 70]
+                    and minute in [53, 62]
                     and ish == "1"
                     and (
                         f"{hf_hg}-{hf_ag}" == "0-0" or
@@ -818,7 +818,7 @@ def main():
                     and -3.0 <= handi_val <= -0.5
                     and red_h == 0
                     and red_a == 0
-                    and minute in [53, 60, 70]
+                    and minute in [53, 62]
                     and ish == "1"
                     and (
                         f"{hf_hg}-{hf_ag}" == "1-1" or
@@ -1435,7 +1435,7 @@ def main():
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r26"]                      # non ancora mandato
+                    not state["r25"]                      # non ancora mandato
                     and "Groningen" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1468,14 +1468,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r26"] = True
+                    state["r25"] = True
 
             # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 1 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r27"]                      # non ancora mandato
+                    not state["r26"]                      # non ancora mandato
                     and "Groningen" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1508,14 +1508,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r27"] = True
+                    state["r26"] = True
 
             # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 2 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r28"]                      # non ancora mandato
+                    not state["r27"]                      # non ancora mandato
                     and "Necaxa" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1548,14 +1548,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r28"] = True
+                    state["r27"] = True
 
             # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 3 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r29"]                      # non ancora mandato
+                    not state["r28"]                      # non ancora mandato
                     and "Hoffenheim" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1588,14 +1588,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r29"] = True
+                    state["r28"] = True
 
             # =============== ⚽️ DA GIOCARE IMMEDIATAMENTE FAVORITA 4 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r30"]                      # non ancora mandato
+                    not state["r29"]                      # non ancora mandato
                     and "Melbourne" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
@@ -1628,14 +1628,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r30"] = True
+                    state["r29"] = True
 
             # =============== ⚽️ DA GIOCARE METODO TIRI IN PORTA 1 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r31"]                      # non ancora mandato
+                    not state["r30"]                      # non ancora mandato
                     and (
                         (
                             "Montpelier" in home                  # 1° SQUADRA
@@ -1768,14 +1768,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r31"] = True
+                    state["r30"] = True
 
             # =============== ⚽️ DA GIOCARE METODO TIRI IN PORTA 2 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r32"]                      # non ancora mandato
+                    not state["r31"]                      # non ancora mandato
                     and (
                         (
                             "Southampton" in home                  # 7° SQUADRA
@@ -1908,14 +1908,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r32"] = True
+                    state["r31"] = True
 
                 # =============== ⚽️ DA GIOCARE PROVA TIRI IN PORTA 1 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r33"]                      # non ancora mandato
+                    not state["r32"]                      # non ancora mandato
                     and (
                         (
                             "Montpelier" in home                  # 1° SQUADRA
@@ -2060,14 +2060,14 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r33"] = True
+                    state["r32"] = True
 
                 # =============== ⚽️ DA GIOCARE PROVA TIRI IN PORTA 2 ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,
                 # risultati ammessi, pericolosi >= 0,
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
-                    not state["r25"]                      # non ancora mandato
+                    not state["r33"]                      # non ancora mandato
                     and (
                         (
                             "Southampton" in home                  # 7° SQUADRA
@@ -2212,7 +2212,7 @@ def main():
                         f"Risultato primo tempo: {hf_hg}-{hf_ag}\n"
                     )
                     send_msg(msg)
-                    state["r25"] = True
+                    state["r33"] = True
 
                     # =============== ⚽️ DA GIOCARE FAVORITA AL 75° ===============
                 # Solo MASCHILI, casa -1.0..-2.5, minuto 59,

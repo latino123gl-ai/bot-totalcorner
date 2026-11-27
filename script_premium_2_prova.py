@@ -1696,19 +1696,19 @@ def main():
                         )
                         or
                         (
-                            "Kfar" in home                 # 2° SQUADRA
+                            "Herzliya" in home                 # 2° SQUADRA
                             and minute in [60]              # Minuto
-                            and (hg, ag) == (1,0)           # Risultato
+                            and (hg, ag) == (0,1)           # Risultato
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 8 and on_a >= 6)    # Tiri in porta
+                                (on_h >= 4 and on_a >= 6)    # Tiri in porta
                                 or
-                                (on_h >= 7 and on_a >= 7)
+                                (on_h >= 3 and on_a >= 7)
                             )
                             and (
-                                (off_h >= 4 and off_a >= 2)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 5)  # Tiri fuori 
                                 or
-                                (off_h >= 3 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 3 and off_a >= 6)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1978,19 +1978,19 @@ def main():
                         )
                         or
                         (
-                            "Kfar" in home                 # 2° SQUADRA
+                            "Herzliya" in home                 # 2° SQUADRA
                             and minute in [60]              # Minuto
                             and (hg, ag) in [               # Risultato
                                 (0,0),(1,1)
                             ]              
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 8 and on_a >= 7)    # Tiri in porta
+                                (on_h >= 4 and on_a >= 7)    # Tiri in porta
                                 or
                                 (on_h >= 22 and on_a >= 22)
                             )
                             and (
-                                (off_h >= 4 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 6)  # Tiri fuori 
                                 or
                                 (off_h >= 22 and off_a >= 22)  # Tiri fuori 
                             )

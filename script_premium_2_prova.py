@@ -1476,7 +1476,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r26"]                      # non ancora mandato
-                    and "Myawady" in home                    
+                    and "Groningen" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1484,9 +1484,9 @@ def main():
                     and +0.0 <= handi_val <= +3.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (0,1)
                     ]    
-                    and datt_a >= 50
+                    and datt_a >= 99
                     and on_a >= 8
                     and off_a >= 0
                     and tot_shots_a >= 0
@@ -1516,7 +1516,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r27"]                      # non ancora mandato
-                    and "Necaxa" in home                    
+                    and "Groningen" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1524,10 +1524,10 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (0,0)
+                        (0,1)
                     ]    
-                    and datt_h >= 38
-                    and on_h >= 3
+                    and datt_h >= 43
+                    and on_h >= 7
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):

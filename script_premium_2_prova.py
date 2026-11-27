@@ -1678,32 +1678,32 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Tallinna" in home                  # 1° SQUADRA
+                            "Precko" in home                  # 1° SQUADRA
                             and minute in [60]             # Minuto
-                            and (hg, ag) == (0,0)          # Risultato
+                            and (hg, ag) == (1,0)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 5 and on_a >= 3)   # Tiri in porta
+                                (on_h >= 8 and on_a >= 5)   # Tiri in porta
                                 or
-                                (on_h >= 4 and on_a >= 4)
+                                (on_h >= 7 and on_a >= 6)
                             )
                             and (
-                                (off_h >= 7 and off_a >= 2)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 1)  # Tiri fuori 
                                 or
-                                (off_h >= 6 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 3 and off_a >= 2)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
                         or
                         (
-                            "Herzliya" in home                 # 2° SQUADRA
+                            "Omonia" in home                 # 2° SQUADRA
                             and minute in [60]              # Minuto
-                            and (hg, ag) == (0,1)           # Risultato
+                            and (hg, ag) == (1,1)           # Risultato
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 4 and on_a >= 6)    # Tiri in porta
+                                (on_h >= 6 and on_a >= 3)    # Tiri in porta
                                 or
-                                (on_h >= 3 and on_a >= 7)
+                                (on_h >= 5 and on_a >= 4)
                             )
                             and (
                                 (off_h >= 4 and off_a >= 5)  # Tiri fuori 
@@ -1958,19 +1958,19 @@ def main():
                     not state["r33"]                      # non ancora mandato
                     and (
                         (
-                            "Tallinna" in home                  # 1° SQUADRA
+                            "Precko" in home                  # 1° SQUADRA
                             and minute in [60]             # Minuto
                             and (hg, ag) in [              # Risultato
-                                (1,0),(0,1)
+                                (0,0),(1,1)
                             ]    
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 5 and on_a >= 4)   # Tiri in porta
+                                (on_h >= 8 and on_a >= 6)   # Tiri in porta
                                 or
                                 (on_h >= 22 and on_a >= 22)
                             )
                             and (
-                                (off_h >= 7 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 2)  # Tiri fuori 
                                 or
                                 (off_h >= 22 and off_a >= 22)  # Tiri fuori 
                             )
@@ -1978,19 +1978,19 @@ def main():
                         )
                         or
                         (
-                            "Jadran" in home                 # 2° SQUADRA
+                            "Omonia" in home                 # 2° SQUADRA
                             and minute in [60]              # Minuto
                             and (hg, ag) in [               # Risultato
                                 (1,2),(2,1)
                             ]              
                             and datt_h >= 0                 # Attacchi pericolosi
                             and (
-                                (on_h >= 5 and on_a >= 6)    # Tiri in porta
+                                (on_h >= 6 and on_a >= 4)    # Tiri in porta
                                 or
                                 (on_h >= 22 and on_a >= 22)
                             )
                             and (
-                                (off_h >= 3 and off_a >= 7)  # Tiri fuori 
+                                (off_h >= 4 and off_a >= 6)  # Tiri fuori 
                                 or
                                 (off_h >= 22 and off_a >= 22)  # Tiri fuori 
                             )

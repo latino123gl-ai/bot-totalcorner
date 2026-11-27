@@ -1516,7 +1516,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r27"]                      # non ancora mandato
-                    and "Jazira" in home                    
+                    and "Qadisiya" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1524,10 +1524,10 @@ def main():
                     and -3.5 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (0,0)
                     ]    
-                    and datt_h >= 58
-                    and on_h >= 4
+                    and datt_h >= 35
+                    and on_h >= 6
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):
@@ -1556,7 +1556,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r28"]                      # non ancora mandato
-                    and "Jazira" in home                    
+                    and "Qadisiya" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -1564,11 +1564,11 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [59]
                     and (hg, ag) in [
-                        (1,1)
+                        (0,0)
                     ]    
-                    and datt_h >= 60
-                    and on_h >= 3
-                    and off_h >= 2
+                    and datt_h >= 37
+                    and on_h >= 5
+                    and off_h >= 9
                     and tot_shots_h >= 0
                 ):
                     msg = (
@@ -1678,19 +1678,19 @@ def main():
                     not state["r31"]                      # non ancora mandato
                     and (
                         (
-                            "Bnei" in home                  # 1° SQUADRA
+                            "Bazar" in home                  # 1° SQUADRA
                             and minute in [60]             # Minuto
                             and (hg, ag) == (1,1)          # Risultato
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 6 and on_a >= 5)   # Tiri in porta
+                                (on_h >= 6 and on_a >= 4)   # Tiri in porta
                                 or
-                                (on_h >= 5 and on_a >= 6)
+                                (on_h >= 5 and on_a >= 5)
                             )
                             and (
-                                (off_h >= 10 and off_a >= 2)  # Tiri fuori 
-                                or
                                 (off_h >= 9 and off_a >= 3)  # Tiri fuori 
+                                or
+                                (off_h >= 8 and off_a >= 4)  # Tiri fuori 
                             )
                             and tot_shots_h >= 0             # Tiri totali casa
                         )
@@ -1958,19 +1958,19 @@ def main():
                     not state["r33"]                      # non ancora mandato
                     and (
                         (
-                            "Bnei" in home                  # 1° SQUADRA
+                            "Bazar" in home                  # 1° SQUADRA
                             and minute in [60]             # Minuto
                             and (hg, ag) in [              # Risultato
                                 (1,2),(2,1)
                             ]    
                             and datt_h >= 0                # Attacchi pericolosi
                             and (
-                                (on_h >= 6 and on_a >= 6)   # Tiri in porta
+                                (on_h >= 6 and on_a >= 5)   # Tiri in porta
                                 or
                                 (on_h >= 22 and on_a >= 22)
                             )
                             and (
-                                (off_h >= 10 and off_a >= 3)  # Tiri fuori 
+                                (off_h >= 9 and off_a >= 4)  # Tiri fuori 
                                 or
                                 (off_h >= 22 and off_a >= 22)  # Tiri fuori 
                             )
@@ -2108,7 +2108,7 @@ def main():
                 # tiri in porta >= 0, tiri totali >= 0
                 if (
                     not state["r34"]                      # non ancora mandato
-                    and "Jazira" in home                    
+                    and "Qadisiya" in home                    
                     and not is_female_match(sex, home, away)   # solo maschi
                     and handi_val is not None
                     and red_h == 0
@@ -2116,10 +2116,10 @@ def main():
                     and -4.0 <= handi_val <= -0.0
                     and minute in [53]
                     and (hg, ag) in [
-                        (1,1)
+                        (0,0)
                     ]    
-                    and datt_h >= 54
-                    and on_h >= 3
+                    and datt_h >= 30
+                    and on_h >= 5
                     and off_h >= 0
                     and tot_shots_h >= 0
                 ):

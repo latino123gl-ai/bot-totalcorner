@@ -1178,11 +1178,11 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [52]
+                    and minute in [54]
                     and ish == "1"
                     and (
                         (
-                            f"{hf_hg}-{hf_ag}" == "2-1"
+                            f"{hf_hg}-{hf_ag}" == "2-0"
                             and (hg, ag) == (2,1)
                         )
                         or

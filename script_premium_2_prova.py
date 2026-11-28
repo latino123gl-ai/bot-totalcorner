@@ -680,7 +680,7 @@ def main():
                     and (hg, ag) in [
                         (3,1)
                     ]  
-                    and datt_h >= 0
+                    and datt_h >= 99
                     and (on_h + on_a) >= 12        # tiri in porta casa e ospite
                     and on_h >= 8 
                     and on_a >= 3           
@@ -780,7 +780,7 @@ def main():
                     and (hg, ag) in [
                         (2,1)
                     ]  
-                    and datt_h >= 0
+                    and datt_h >= 99
                     and (on_h + on_a) >= 12        # tiri in porta casa e ospite
                     and on_h >= 8 
                     and on_a >= 3           
@@ -982,7 +982,7 @@ def main():
                     and (hg, ag) in [
                         (4,0)
                     ]  
-                    and datt_h >= 0
+                    and datt_h >= 99
                     and (on_h + on_a) >= 12        # tiri in porta casa e ospite
                     and on_h >= 8 
                     and on_a >= 3           
@@ -1090,7 +1090,7 @@ def main():
                     and (hg, ag) in [
                         (3,0)
                     ]  
-                    and datt_h >= 0
+                    and datt_h >= 99
                     and (on_h + on_a) >= 12        # tiri in porta casa e ospite
                     and on_h >= 8 
                     and on_a >= 3           
@@ -1178,58 +1178,58 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [72]
+                    and minute in [70]
                     and ish == "1"
                     and (
                         (
+                            f"{hf_hg}-{hf_ag}" == "1-0"
+                            and (hg, ag) == (1,0)
+                        )
+                        or
+                        (
                             f"{hf_hg}-{hf_ag}" == "2-0"
-                            and (hg, ag) == (2,1)
-                        )
-                        or
-                        (
-                            f"{hf_hg}-{hf_ag}" == "2-1"
                             and (hg, ag) == (2,0)
                         )
                         or
                         (
-                            f"{hf_hg}-{hf_ag}" == "2-1"
-                            and (hg, ag) == (2,0)
+                            f"{hf_hg}-{hf_ag}" == "3-0"
+                            and (hg, ag) == (3,0)
                         )
                         or
                         (
-                            f"{hf_hg}-{hf_ag}" == "2-1"
-                            and (hg, ag) == (2,0)
-                        )
-                        or
-                        (
-                            f"{hf_hg}-{hf_ag}" == "2-1"
-                            and (hg, ag) == (2,0)
-                        )
-                        or
-                        (
-                            f"{hf_hg}-{hf_ag}" == "2-1"
-                            and (hg, ag) == (2,0)
-                        )
-                        or
-                        (
-                            f"{hf_hg}-{hf_ag}" == "2-1"
-                            and (hg, ag) == (2,0)
-                        )
-                        or
-                        (
-                            f"{hf_hg}-{hf_ag}" == "2-1"
-                            and (hg, ag) == (2,0)
+                            f"{hf_hg}-{hf_ag}" == "4-0"
+                            and (hg, ag) == (4,0)
                         )
                         or
                         (
                             f"{hf_hg}-{hf_ag}" == "2-1"
                             and (hg, ag) == (2,1)
+                        )
+                        or
+                        (
+                            f"{hf_hg}-{hf_ag}" == "3-1"
+                            and (hg, ag) == (3,1)
+                        )
+                        or
+                        (
+                            f"{hf_hg}-{hf_ag}" == "4-1"
+                            and (hg, ag) == (4,1)
+                        )
+                        or
+                        (
+                            f"{hf_hg}-{hf_ag}" == "4-2"
+                            and (hg, ag) == (4,2)
+                        )
+                        or
+                        (
+                            f"{hf_hg}-{hf_ag}" == "4-3"
+                            and (hg, ag) == (4,3)
                         )
                     )
-                    and datt_h >= 0
-                    and (on_h + on_a) >= 0        # tiri in porta casa e ospite
-                    and on_h >= 0 
-                    and on_a >= 0           
+                    and datt_h >= 40
+                    and (on_h + on_a) >= 12        # tiri in porta casa e ospite
+                    and on_h >= 8 
+                    and on_a >= 3           
                     and off_h >= 0
                     and tot_shots_h >= 0
                     and isinstance(p_goal, list)
@@ -1237,10 +1237,10 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
                 ):
                     msg = (
-                        "⚽️ 1-FAVORITA 8 TIRI AL 70°\n\n"
+                        "⚽️ FAVORITA 8 TIRI AL 70°\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"
@@ -1329,7 +1329,7 @@ def main():
                     and (hg, ag) in [
                         (2,0)
                     ]  
-                    and datt_h >= 0
+                    and datt_h >= 99
                     and (on_h + on_a) >= 12        # tiri in porta casa e ospite
                     and on_h >= 8 
                     and on_a >= 3           

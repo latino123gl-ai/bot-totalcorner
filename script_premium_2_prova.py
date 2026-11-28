@@ -1178,17 +1178,17 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [50]
+                    and minute in [52]
                     and ish == "1"
                     and (
                         (
-                            f"{hf_hg}-{hf_ag}" == "1-0"
-                            and (hg, ag) == (1,0)
+                            f"{hf_hg}-{hf_ag}" == "2-1"
+                            and (hg, ag) == (2,1)
                         )
                         or
                         (
                             f"{hf_hg}-{hf_ag}" == "2-1"
-                            and (hg, ag) == (2,1)
+                            and (hg, ag) == (2,0)
                         )
                     )
                     and datt_h >= 0
@@ -1205,7 +1205,7 @@ def main():
                     and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
                     msg = (
-                        "⚽️ FAVORITA 8 TIRI AL 70°\n\n"
+                        "⚽️ 1-FAVORITA 8 TIRI AL 70°\n\n"
                         f"Lega: {league}\n"
                         f"Partita: {home} vs {away}\n"
                         f"Ora inizio: {start}\n\n"

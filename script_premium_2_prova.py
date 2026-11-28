@@ -1178,19 +1178,23 @@ def main():
                     and -3.0 <= handi_val <= -0.0
                     and red_h == 0
                     and red_a == 0
-                    and minute in [70]
+                    and minute in [50]
                     and ish == "1"
                     and (
-                        f"{hf_hg}-{hf_ag}" == "1-0" or
-                        f"{hf_hg}-{hf_ag}" == "9-9"
+                        (
+                            f"{hf_hg}-{hf_ag}" == "1-0"
+                            and (hg, ag) == (1,0)
+                        )
+                        or
+                        (
+                            f"{hf_hg}-{hf_ag}" == "2-1"
+                            and (hg, ag) == (2,1)
+                        )
                     )
-                    and (hg, ag) in [
-                        (1,0)
-                    ]  
                     and datt_h >= 0
-                    and (on_h + on_a) >= 12        # tiri in porta casa e ospite
-                    and on_h >= 8 
-                    and on_a >= 3           
+                    and (on_h + on_a) >= 0        # tiri in porta casa e ospite
+                    and on_h >= 0 
+                    and on_a >= 0           
                     and off_h >= 0
                     and tot_shots_h >= 0
                     and isinstance(p_goal, list)
@@ -1198,7 +1202,7 @@ def main():
                     and max(float(x.strip()) for x in p_goal[0].split(",")) >= 3.5
                     and isinstance(p_asian, list)
                     and len(p_asian) == 1
-                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -2.0
+                    and min(float(x.strip()) for x in p_asian[0].split(",")) <= -1.0
                 ):
                     msg = (
                         "⚽️ FAVORITA 8 TIRI AL 70°\n\n"
